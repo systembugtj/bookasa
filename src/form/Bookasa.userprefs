@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{EF4ED007-15D8-42F2-87BF-81776D5F3DAD}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/packages.config">
+    <Files>
+      <File FileName="iOS/packages.config" Line="1" Column="1" />
+      <File FileName="iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="Bookasa/BookasaPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Bookasa/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="23" Column="2" />
+      <File FileName="Droid/packages.config" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.ItemProperties.Bookasa.Droid PreferredExecutionTarget="Android.16cd9c0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Bookasa.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8092630F-4E0D-4EE2-9B32-D97D4D4A5BBB" />
+</Properties>
