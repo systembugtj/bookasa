@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b402513a-6625-4774-989d-4a2c89695062" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NewYorkTimes.disco" MetadataType="Disco" ID="10279805-2cf8-43b6-b1cb-4791b4db001f" SourceId="1" SourceUrl="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?disco" />
+    <MetadataFile FileName="NewYorkTimes.xsd" MetadataType="Schema" ID="44a44050-4d2c-4a12-a1dd-d8328dff5778" SourceId="1" SourceUrl="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?xsd=xsd0" />
+    <MetadataFile FileName="NewYorkTimes1.xsd" MetadataType="Schema" ID="dc4d188c-8709-4a01-a6ba-601019d5922d" SourceId="1" SourceUrl="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?xsd=xsd1" />
+    <MetadataFile FileName="NewYorkTimes2.xsd" MetadataType="Schema" ID="93bfd918-9265-4ec4-9145-b17644a28588" SourceId="1" SourceUrl="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?xsd=xsd2" />
+    <MetadataFile FileName="NewYorkTimes3.xsd" MetadataType="Schema" ID="732b93de-7fff-4928-9fb6-5ca4e9789db4" SourceId="1" SourceUrl="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?xsd=xsd3" />
+    <MetadataFile FileName="NewYorkTimes.wsdl" MetadataType="Wsdl" ID="cfd13ba3-b440-4fce-a745-dca78d848bc6" SourceId="1" SourceUrl="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

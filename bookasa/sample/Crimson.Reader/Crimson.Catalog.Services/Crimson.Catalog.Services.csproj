@@ -1,0 +1,177 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87B4897F-861A-475C-9E4E-0709FB779529}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crimson.Catalog.Services</RootNamespace>
+    <AssemblyName>Crimson.Catalog.Services</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmazonCatalog\AmazonCatalogEntry.cs" />
+    <Compile Include="AmazonCatalog\IAmazonCatalog.cs" />
+    <Compile Include="CustomHost.cs" />
+    <Compile Include="DublinCore.cs">
+      <DependentUpon>DublinCore.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DublinCore.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DublinCore.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryOfCongress\LibraryofCongress.cs" />
+    <Compile Include="Library\ILibraryBase.cs" />
+    <Compile Include="Library\BookCreator.cs" />
+    <Compile Include="Library\BookEdition.cs" />
+    <Compile Include="Library\IBookEdition.cs" />
+    <Compile Include="Library\IBook.cs" />
+    <Compile Include="Library\IBookCreator.cs" />
+    <Compile Include="Library\IBookList.cs" />
+    <Compile Include="Library\ICreator.cs" />
+    <Compile Include="Library\IEdition.cs" />
+    <Compile Include="Library\ILibraryCatalog.cs" />
+    <Compile Include="Library\ILibraryList.cs" />
+    <Compile Include="Library\ILibraryServices.cs" />
+    <Compile Include="Interfaces\INewYorkTimes.cs" />
+    <Compile Include="Library\IReview.cs" />
+    <Compile Include="Library\ISeries.cs" />
+    <Compile Include="Library\LibraryBase.cs" />
+    <Compile Include="Library\Book.cs" />
+    <Compile Include="Library\BookList.cs" />
+    <Compile Include="Library\Edition.cs" />
+    <Compile Include="Library\ILibrarySubject.cs" />
+    <Compile Include="Library\LibraryList.cs" />
+    <Compile Include="Library\Series.cs" />
+    <Compile Include="Library\LibraryServices.cs" />
+    <Compile Include="Interfaces\IBook.cs" />
+    <Compile Include="Interfaces\ICatalogServices.cs" />
+    <Compile Include="Library\Creator.cs" />
+    <Compile Include="Library\LibraryCatalog.cs" />
+    <Compile Include="Library\LibraryRepository.cs">
+      <DependentUpon>LibraryRepository.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\LibraryRepository.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryRepository.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\LibrarySubject.cs" />
+    <Compile Include="Library\Review.cs" />
+    <Compile Include="NewYorkTimes\BestSellerList.cs" />
+    <Compile Include="NewYorkTimes\IBestSellerList.cs" />
+    <Compile Include="NewYorkTimes\NewYorkTimes.cs" />
+    <Compile Include="NewYorkTimes\BestSeller.cs" />
+    <Compile Include="NewYorkTimes\Media.cs" />
+    <Compile Include="NewYorkTimes\NewsWire.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AmazonCatalog\AmazonCatalog.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CatalogSites.Designer.cs">
+      <DependentUpon>CatalogSites.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RuleViolation.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Library\LibraryRepository.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Crimson.Catalog.Services</CustomToolNamespace>
+      <LastGenOutput>LibraryRepository.designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DublinCore.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DublinCore.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Library\LibraryRepository.dbml.layout">
+      <DependentUpon>LibraryRepository.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DublinCore.dbml.layout">
+      <DependentUpon>DublinCore.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Resources\CatalogSites.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CatalogSites.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookasawp7", "bookasawp7\bookasawp7.csproj", "{21DDC4F6-BF75-4189-954A-DFC5272EFBE3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{38F38101-5103-42E1-916F-26032C874C86} = {38F38101-5103-42E1-916F-26032C874C86}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "txtreader", "txtreader\txtreader.csproj", "{38F38101-5103-42E1-916F-26032C874C86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pdfreader", "pdfreader\pdfreader.csproj", "{07790E73-3A49-4E15-A28A-1BA5DD770258}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookasam", "bookasam\bookasam.csproj", "{C56F041F-4884-4E7E-A3F9-53959CFC6B61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpZipLib.WindowsPhone7", "SharpZipLib\SharpZipLib.Silverlight\SharpZipLib.WindowsPhone7.csproj", "{7B257BE0-BAA4-4877-800C-05DDDAFB6443}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpZipLib.WindowsPhone7.Tests_Silverlight", "SharpZipLib\SharpZipLib.Silverlight.Tests_WindowsPhone7\SharpZipLib.WindowsPhone7.Tests_Silverlight.csproj", "{0F564263-6D40-4D93-82EF-B8072363254D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "epubreader", "epubreader\epubreader.csproj", "{EAEE6E30-A9E6-4A10-85AD-0B3D3FDFCD5A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs18
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = bookasam\\bookasam.csproj
+		SccProjectName1 = bookasam
+		SccLocalPath1 = bookasam
+		SccProjectUniqueName2 = bookasawp7\\bookasawp7.csproj
+		SccProjectName2 = bookasawp7
+		SccLocalPath2 = bookasawp7
+		SccProjectUniqueName3 = epubreader\\epubreader.csproj
+		SccProjectName3 = epubreader
+		SccLocalPath3 = epubreader
+		SccProjectUniqueName4 = pdfreader\\pdfreader.csproj
+		SccProjectName4 = pdfreader
+		SccLocalPath4 = pdfreader
+		SccProjectUniqueName5 = SharpZipLib\\SharpZipLib.Silverlight.Tests_WindowsPhone7\\SharpZipLib.WindowsPhone7.Tests_Silverlight.csproj
+		SccProjectName5 = SharpZipLib/SharpZipLib.Silverlight.Tests_WindowsPhone7
+		SccLocalPath5 = SharpZipLib\\SharpZipLib.Silverlight.Tests_WindowsPhone7
+		SccProjectUniqueName6 = SharpZipLib\\SharpZipLib.Silverlight\\SharpZipLib.WindowsPhone7.csproj
+		SccProjectName6 = SharpZipLib/SharpZipLib.Silverlight
+		SccLocalPath6 = SharpZipLib\\SharpZipLib.Silverlight
+		SccProjectUniqueName7 = txtreader\\txtreader.csproj
+		SccProjectName7 = txtreader
+		SccLocalPath7 = txtreader
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21DDC4F6-BF75-4189-954A-DFC5272EFBE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21DDC4F6-BF75-4189-954A-DFC5272EFBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21DDC4F6-BF75-4189-954A-DFC5272EFBE3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{21DDC4F6-BF75-4189-954A-DFC5272EFBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21DDC4F6-BF75-4189-954A-DFC5272EFBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21DDC4F6-BF75-4189-954A-DFC5272EFBE3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{38F38101-5103-42E1-916F-26032C874C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F38101-5103-42E1-916F-26032C874C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F38101-5103-42E1-916F-26032C874C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F38101-5103-42E1-916F-26032C874C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07790E73-3A49-4E15-A28A-1BA5DD770258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07790E73-3A49-4E15-A28A-1BA5DD770258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07790E73-3A49-4E15-A28A-1BA5DD770258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07790E73-3A49-4E15-A28A-1BA5DD770258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56F041F-4884-4E7E-A3F9-53959CFC6B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56F041F-4884-4E7E-A3F9-53959CFC6B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56F041F-4884-4E7E-A3F9-53959CFC6B61}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C56F041F-4884-4E7E-A3F9-53959CFC6B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56F041F-4884-4E7E-A3F9-53959CFC6B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56F041F-4884-4E7E-A3F9-53959CFC6B61}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7B257BE0-BAA4-4877-800C-05DDDAFB6443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B257BE0-BAA4-4877-800C-05DDDAFB6443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B257BE0-BAA4-4877-800C-05DDDAFB6443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B257BE0-BAA4-4877-800C-05DDDAFB6443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F564263-6D40-4D93-82EF-B8072363254D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F564263-6D40-4D93-82EF-B8072363254D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F564263-6D40-4D93-82EF-B8072363254D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0F564263-6D40-4D93-82EF-B8072363254D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F564263-6D40-4D93-82EF-B8072363254D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F564263-6D40-4D93-82EF-B8072363254D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EAEE6E30-A9E6-4A10-85AD-0B3D3FDFCD5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAEE6E30-A9E6-4A10-85AD-0B3D3FDFCD5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAEE6E30-A9E6-4A10-85AD-0B3D3FDFCD5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAEE6E30-A9E6-4A10-85AD-0B3D3FDFCD5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

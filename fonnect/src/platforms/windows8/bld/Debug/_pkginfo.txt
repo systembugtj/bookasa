@@ -1,0 +1,1 @@
+C:\workspace\project\fonnect\src\platforms\windows8\AppPackages\CordovaApp_0.0.1.0_AnyCPU_Debug_Test\CordovaApp_0.0.1.0_AnyCPU_Debug.appx

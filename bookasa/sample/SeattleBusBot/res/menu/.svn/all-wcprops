@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/230/trunk/res/menu
+END
+route_info_options.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/230/trunk/res/menu/route_info_options.xml
+END
+trip_info_options.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/222/trunk/res/menu/trip_info_options.xml
+END
+my_recent_stop_options.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/222/trunk/res/menu/my_recent_stop_options.xml
+END
+my_starred_stop_options.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/222/trunk/res/menu/my_starred_stop_options.xml
+END
+stop_info_options.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/222/trunk/res/menu/stop_info_options.xml
+END
+my_recent_route_options.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/222/trunk/res/menu/my_recent_route_options.xml
+END
+main_options.xml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/222/trunk/res/menu/main_options.xml
+END

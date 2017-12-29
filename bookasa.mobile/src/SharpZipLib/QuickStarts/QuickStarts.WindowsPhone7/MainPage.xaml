@@ -1,0 +1,25 @@
+﻿<phone:PhoneApplicationPage x:Class="QuickStart.MainPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" shell:SystemTray.IsVisible="True">
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="24,24,0,12">
+			<TextBlock x:Name="ApplicationTitle" Text="SharpZipLib.WindowsPhone7 QuickStart" Style="{StaticResource PhoneTextNormalStyle}" />
+		</StackPanel>
+		<Grid x:Name="ContentGrid" Grid.Row="1">
+			<StackPanel>
+				<Button Content="FastZip to ISO" Click="FastZipToISO" />
+				<Button Content="FastZip from ISO" Click="FastZipFromISO" x:Name="UnzipFromISOButton" IsEnabled="False" />
+				<Button Content="ZipFile to ISO" Click="ZipFileToISO" />
+				<Button Content="ZipFile from ISO" Click="ZipFileFromISO" x:Name="ZipFileFromISOButton" IsEnabled="False" />
+				<Button Content="gZip Stream to ISO" Click="ZipStreamToISO" />
+				<Button Content="gZip Stream from ISO" Click="ZipStreamFromISO" x:Name="ZipStreamFromISOButton" IsEnabled="False" />
+				<Button Content="Process GZipped WebResponse" Click="ProcessGzippedWebResponse" />
+				<ScrollViewer>
+					<TextBlock x:Name="OutputTextBlock" />
+				</ScrollViewer>
+			</StackPanel>
+		</Grid>
+	</Grid>
+</phone:PhoneApplicationPage>

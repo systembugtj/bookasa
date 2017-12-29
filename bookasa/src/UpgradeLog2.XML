@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Bookasa">
+</Property><Property Name="Solution File" Value="D:\workspace\project\reader\project\bookasa\src\Bookasa\Bookasa.sln">
+</Property><Property Name="Date" Value="2011年5月10日">
+</Property><Property Name="Time" Value="18:23:02">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="Crimson.Reader.EPub" Source="Crimson.Reader.EPub\Crimson.Reader.EPub.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Crimson.Reader.EPub" Source="Crimson.Reader.EPub\Crimson.Reader.EPub.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Crimson.Reader.EPub" Source="Crimson.Reader.EPub\Crimson.Reader.EPub.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

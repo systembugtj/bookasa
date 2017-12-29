@@ -1,0 +1,34 @@
+﻿<phoneNavigation:PhoneApplicationPage 
+    x:Class="WebBrowser.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phoneNavigation="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" xmlns:browser="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.WebBrowser" Loaded="onPageLoaded">
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitleGrid is the name of the application and page title-->
+        <Grid x:Name="TitleGrid" Grid.Row="0">
+            <TextBlock Text="EMBEDDED BROWSER DEMO" x:Name="textBlockPageTitle" Style="{StaticResource PhoneTextPageTitle1Style}"/>
+            <TextBlock Text="WebBrowser" x:Name="textBlockListTitle" Style="{StaticResource PhoneTextPageTitle2Style}"/>
+        </Grid>
+
+        <!--ContentGrid is empty. Place new content here-->
+        <Grid x:Name="ContentGrid" Grid.Row="1">
+            <browser:WebBrowser HorizontalAlignment="Left" Name="webBrowser1" VerticalAlignment="Top" Height="598" Width="468" Margin="6,48,0,0" Source="http://www.lynda.com" LoadCompleted="onLoadComplete" />
+            <TextBlock Height="34" HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock1" Text="Enter a URL:" VerticalAlignment="Top" />
+            <TextBox Height="61" HorizontalAlignment="Left" Margin="119,-9,0,0" Name="textBox1" VerticalAlignment="Top" Width="288" MinHeight="10" Padding="0" FontSize="20" Text="http://www.lynda.com" />
+            <Button Content="Go" Height="61" HorizontalAlignment="Left" Margin="390,-9,0,0" Name="button1" VerticalAlignment="Top" Width="84" MinHeight="0" DataContext="{Binding}" FontSize="22" Click="onClickGo" />
+        </Grid>
+    </Grid>
+    
+</phoneNavigation:PhoneApplicationPage>

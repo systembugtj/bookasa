@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Bookasa">
+</Property><Property Name="Solution File" Value="D:\workspace\project\reader\project\bookasa\src\Bookasa\Bookasa.sln">
+</Property><Property Name="Date" Value="2011年4月28日">
+</Property><Property Name="Time" Value="17:15:55">
+</Property></Properties><Event ErrorLevel="0" Project="pdfclown.lib" Source="Bookasa.Format.PDF\pdfclown.lib.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="pdfclown.lib" Source="Bookasa.Format.PDF\pdfclown.lib.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="pdfclown.lib" Source="Bookasa.Format.PDF\pdfclown.lib.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

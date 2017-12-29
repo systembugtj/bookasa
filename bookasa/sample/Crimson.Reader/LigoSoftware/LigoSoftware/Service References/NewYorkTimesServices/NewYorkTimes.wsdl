@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="NewYorkTimes" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://www.ligosoftware.com/services/v1/NewYorkTimes.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Crimson.Catalog.Services.NewYorkTimes" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INewYorkTimes_BestSellerLists_InputMessage">
+    <wsdl:part name="parameters" element="tns:BestSellerLists" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_BestSellerLists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BestSellerListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_BestSellers_InputMessage">
+    <wsdl:part name="parameters" element="tns:BestSellers" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_BestSellers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BestSellersResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_MovieReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:MovieReviews" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_MovieReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MovieReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_TodaysNewsWire_InputMessage">
+    <wsdl:part name="parameters" element="tns:TodaysNewsWire" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_TodaysNewsWire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TodaysNewsWireResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_RecentNewsWire_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecentNewsWire" />
+  </wsdl:message>
+  <wsdl:message name="INewYorkTimes_RecentNewsWire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecentNewsWireResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INewYorkTimes">
+    <wsdl:operation name="BestSellerLists">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewYorkTimes/BestSellerLists" message="tns:INewYorkTimes_BestSellerLists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewYorkTimes/BestSellerListsResponse" message="tns:INewYorkTimes_BestSellerLists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BestSellers">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewYorkTimes/BestSellers" message="tns:INewYorkTimes_BestSellers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewYorkTimes/BestSellersResponse" message="tns:INewYorkTimes_BestSellers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MovieReviews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewYorkTimes/MovieReviews" message="tns:INewYorkTimes_MovieReviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewYorkTimes/MovieReviewsResponse" message="tns:INewYorkTimes_MovieReviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TodaysNewsWire">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewYorkTimes/TodaysNewsWire" message="tns:INewYorkTimes_TodaysNewsWire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewYorkTimes/TodaysNewsWireResponse" message="tns:INewYorkTimes_TodaysNewsWire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecentNewsWire">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewYorkTimes/RecentNewsWire" message="tns:INewYorkTimes_RecentNewsWire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewYorkTimes/RecentNewsWireResponse" message="tns:INewYorkTimes_RecentNewsWire_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NewYorkTimes" type="tns:INewYorkTimes">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BestSellerLists">
+      <soap:operation soapAction="http://tempuri.org/INewYorkTimes/BestSellerLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BestSellers">
+      <soap:operation soapAction="http://tempuri.org/INewYorkTimes/BestSellers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovieReviews">
+      <soap:operation soapAction="http://tempuri.org/INewYorkTimes/MovieReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TodaysNewsWire">
+      <soap:operation soapAction="http://tempuri.org/INewYorkTimes/TodaysNewsWire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecentNewsWire">
+      <soap:operation soapAction="http://tempuri.org/INewYorkTimes/RecentNewsWire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NewYorkTimes">
+    <wsdl:port name="NewYorkTimes" binding="tns:NewYorkTimes">
+      <soap:address location="http://www.ligosoftware.com/services/v1/newyorktimes.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

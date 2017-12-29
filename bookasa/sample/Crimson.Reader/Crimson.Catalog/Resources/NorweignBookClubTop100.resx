@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="String" xml:space="preserve">
+    <value>Don Quixote|Miguel de Cervantes</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Things fall apart|Chinua Achebe</value>
+  </data>
+  <data name="String10" xml:space="preserve">
+    <value>Crime and punishment |Fyodor Dostoyevsky</value>
+  </data>
+  <data name="String11" xml:space="preserve">
+    <value>The Idiot |Fyodor Dostoyevsky</value>
+  </data>
+  <data name="String12" xml:space="preserve">
+    <value>Fairy tales and stories |Hans Christian Andersen</value>
+  </data>
+  <data name="String13" xml:space="preserve">
+    <value>The Possessed |Fyodor Dostoyevsky</value>
+  </data>
+  <data name="String14" xml:space="preserve">
+    <value>The Brothers Karamazov|Fyodor Dostoyevsky</value>
+  </data>
+  <data name="String15" xml:space="preserve">
+    <value>Middlemarch |George Eliot</value>
+  </data>
+  <data name="String16" xml:space="preserve">
+    <value>Invisible man|Ralph Ellison</value>
+  </data>
+  <data name="String17" xml:space="preserve">
+    <value>Medea |Euripides</value>
+  </data>
+  <data name="String18" xml:space="preserve">
+    <value>Absalom, Absalom|William Faulkner</value>
+  </data>
+  <data name="String19" xml:space="preserve">
+    <value>The Sound and the fury|William Faulkner</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Poems|Paul Celan</value>
+  </data>
+  <data name="String20" xml:space="preserve">
+    <value>Madame Bovary |Gustave Flaubert</value>
+  </data>
+  <data name="String21" xml:space="preserve">
+    <value>A Sentimental education Vol. II |Gustave Flaubert</value>
+  </data>
+  <data name="String22" xml:space="preserve">
+    <value>Gypsy Ballads|Federico Garcia Lorca</value>
+  </data>
+  <data name="String23" xml:space="preserve">
+    <value>Pride and prejudice |Jane Austen</value>
+  </data>
+  <data name="String24" xml:space="preserve">
+    <value>One hundred years of solitude|Gabriel Garcia Marquez</value>
+  </data>
+  <data name="String25" xml:space="preserve">
+    <value>Love in the time of cholera|Gabriel Garcia Marquez</value>
+  </data>
+  <data name="String26" xml:space="preserve">
+    <value>The Epic of Gilgamesh</value>
+  </data>
+  <data name="String27" xml:space="preserve">
+    <value>Faust|Johann Wolfgang von Goethe</value>
+  </data>
+  <data name="String28" xml:space="preserve">
+    <value>Dead souls |Nikolai Gogol</value>
+  </data>
+  <data name="String29" xml:space="preserve">
+    <value>The Tin Drum|Günter Grass</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Journey to the end of the night|Louis-Ferdinand Celine</value>
+  </data>
+  <data name="String30" xml:space="preserve">
+    <value>The Devil to pay in the backlands|Joao Guimaraes Rosa</value>
+  </data>
+  <data name="String31" xml:space="preserve">
+    <value>Hunger |Knut Hamsun</value>
+  </data>
+  <data name="String32" xml:space="preserve">
+    <value>The Old man and the sea|Ernest Hemingway</value>
+  </data>
+  <data name="String33" xml:space="preserve">
+    <value>The Iliad|Homer</value>
+  </data>
+  <data name="String34" xml:space="preserve">
+    <value>Old Goriot |Honoré de Balzac</value>
+  </data>
+  <data name="String35" xml:space="preserve">
+    <value>The Odyssey|Homer</value>
+  </data>
+  <data name="String36" xml:space="preserve">
+    <value>A Doll's house|Henrik Ibsen</value>
+  </data>
+  <data name="String37" xml:space="preserve">
+    <value>The Book of Job</value>
+  </data>
+  <data name="String38" xml:space="preserve">
+    <value>Ulysses |James Joyce</value>
+  </data>
+  <data name="String39" xml:space="preserve">
+    <value>The Complete Stories|Franz Kafka</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>Canterbury Tales |Geoffrey Chaucer</value>
+  </data>
+  <data name="String40" xml:space="preserve">
+    <value>The Trial|Franz Kafka</value>
+  </data>
+  <data name="String41" xml:space="preserve">
+    <value>The Castle|Franz Kafka</value>
+  </data>
+  <data name="String42" xml:space="preserve">
+    <value>The Recognition of Sakuntala |Kalidasa</value>
+  </data>
+  <data name="String43" xml:space="preserve">
+    <value>The Sound of the mountain|Yasunari Kawabata</value>
+  </data>
+  <data name="String44" xml:space="preserve">
+    <value>Zorba the Greek|Nikos Kazantzakis</value>
+  </data>
+  <data name="String45" xml:space="preserve">
+    <value>Trilogy: Molloy, Malone dies, The Unnamable|Samuel Beckett</value>
+  </data>
+  <data name="String46" xml:space="preserve">
+    <value>Sons and lovers |D H Lawrence</value>
+  </data>
+  <data name="String47" xml:space="preserve">
+    <value>Independent people|Halldor K Laxness</value>
+  </data>
+  <data name="String48" xml:space="preserve">
+    <value>Complete poems |Giacomo Leopardi</value>
+  </data>
+  <data name="String49" xml:space="preserve">
+    <value>The Golden notebook|Doris Lessing</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>Nostromo |Joseph Conrad</value>
+  </data>
+  <data name="String50" xml:space="preserve">
+    <value>Pippi Longstocking|Astrid Lindgren</value>
+  </data>
+  <data name="String51" xml:space="preserve">
+    <value>Diary of a madman and other stories|Lu Xun</value>
+  </data>
+  <data name="String52" xml:space="preserve">
+    <value>Mahabharata</value>
+  </data>
+  <data name="String53" xml:space="preserve">
+    <value>Children of Gebelawi|Naguib Mahfouz</value>
+  </data>
+  <data name="String54" xml:space="preserve">
+    <value>Buddenbrooks|Thomas Mann</value>
+  </data>
+  <data name="String55" xml:space="preserve">
+    <value>The Magic Mountain|Thomas Mann</value>
+  </data>
+  <data name="String56" xml:space="preserve">
+    <value>Decameron|Giovanni Boccaccio</value>
+  </data>
+  <data name="String57" xml:space="preserve">
+    <value>Moby Dick |Herman Melville</value>
+  </data>
+  <data name="String58" xml:space="preserve">
+    <value>Essays |Michel de Montaigne</value>
+  </data>
+  <data name="String59" xml:space="preserve">
+    <value>History|Elsa Morante</value>
+  </data>
+  <data name="String6" xml:space="preserve">
+    <value>The Divine Comedy |Dante Alighieri</value>
+  </data>
+  <data name="String60" xml:space="preserve">
+    <value>Beloved|Toni Morrison</value>
+  </data>
+  <data name="String61" xml:space="preserve">
+    <value>The Tale of Genji |Murasaki Shikibu</value>
+  </data>
+  <data name="String62" xml:space="preserve">
+    <value>The Man without qualities|Robert Musil</value>
+  </data>
+  <data name="String63" xml:space="preserve">
+    <value>Lolita|Vladimir Nabokov</value>
+  </data>
+  <data name="String64" xml:space="preserve">
+    <value>Njal's saga</value>
+  </data>
+  <data name="String65" xml:space="preserve">
+    <value>1984|George Orwell</value>
+  </data>
+  <data name="String66" xml:space="preserve">
+    <value>Metamorphoses |Ovid</value>
+  </data>
+  <data name="String67" xml:space="preserve">
+    <value>Collected fictions|Jorge Luis Borges</value>
+  </data>
+  <data name="String68" xml:space="preserve">
+    <value>The Book of Disquiet|Fernando Pessoa</value>
+  </data>
+  <data name="String69" xml:space="preserve">
+    <value>The Complete tales|Edgar Allan Poe</value>
+  </data>
+  <data name="String7" xml:space="preserve">
+    <value>Great expectations |Charles Dickens</value>
+  </data>
+  <data name="String70" xml:space="preserve">
+    <value>Remembrance of things past|Marcel Proust</value>
+  </data>
+  <data name="String71" xml:space="preserve">
+    <value>Gargantua and Pantagruel |Francois Rabelais</value>
+  </data>
+  <data name="String72" xml:space="preserve">
+    <value>Pedro Paramo|Juan Rulfo</value>
+  </data>
+  <data name="String73" xml:space="preserve">
+    <value>The Mathnawi|Jalalu'l-Din Rumi</value>
+  </data>
+  <data name="String74" xml:space="preserve">
+    <value>Midnight's children|Salman Rushdie</value>
+  </data>
+  <data name="String75" xml:space="preserve">
+    <value>The Bostan of Saadi (The Orchard)|Sheikh Saadi of Shiraz</value>
+  </data>
+  <data name="String76" xml:space="preserve">
+    <value>A Season of migration to the north|Tayeb Salih</value>
+  </data>
+  <data name="String77" xml:space="preserve">
+    <value>Blindness|Jose Saramago</value>
+  </data>
+  <data name="String78" xml:space="preserve">
+    <value>Wuthering Heights |Emily Brontë</value>
+  </data>
+  <data name="String79" xml:space="preserve">
+    <value>Hamlet|William Shakespeare</value>
+  </data>
+  <data name="String8" xml:space="preserve">
+    <value>Jacques the fatalist and his master|Denis Diderot</value>
+  </data>
+  <data name="String80" xml:space="preserve">
+    <value>King Lear |William Shakespeare</value>
+  </data>
+  <data name="String81" xml:space="preserve">
+    <value>Othello |William Shakespeare</value>
+  </data>
+  <data name="String82" xml:space="preserve">
+    <value>Oedipus the King |Sophocles</value>
+  </data>
+  <data name="String83" xml:space="preserve">
+    <value>The Red and the black|Stendhal</value>
+  </data>
+  <data name="String84" xml:space="preserve">
+    <value>The Life and opinions of Tristram Shandy|Laurence Sterne</value>
+  </data>
+  <data name="String85" xml:space="preserve">
+    <value>Confessions of Zeno|Italo Svevo</value>
+  </data>
+  <data name="String86" xml:space="preserve">
+    <value>Gulliver's travels |Jonathan Swift</value>
+  </data>
+  <data name="String87" xml:space="preserve">
+    <value>War and Peace |Leo Tolstoy</value>
+  </data>
+  <data name="String88" xml:space="preserve">
+    <value>Anna Karenina |Leo Tolstoy</value>
+  </data>
+  <data name="String89" xml:space="preserve">
+    <value>The Stranger|Albert Camus</value>
+  </data>
+  <data name="String9" xml:space="preserve">
+    <value>Berlin Alexanderplatz|Alfred Doblin</value>
+  </data>
+  <data name="String90" xml:space="preserve">
+    <value>The Death of Ivan Ilyich and other stories|Leo Tolstoy</value>
+  </data>
+  <data name="String91" xml:space="preserve">
+    <value>Selected Stories|Anton Chekhov</value>
+  </data>
+  <data name="String92" xml:space="preserve">
+    <value>Thousand and One Nights</value>
+  </data>
+  <data name="String93" xml:space="preserve">
+    <value>The Adventures of Huckleberry Finn |Mark Twain</value>
+  </data>
+  <data name="String94" xml:space="preserve">
+    <value>Ramayana |Valmiki</value>
+  </data>
+  <data name="String95" xml:space="preserve">
+    <value>The Aeneid|Virgil</value>
+  </data>
+  <data name="String96" xml:space="preserve">
+    <value>Leaves of grass |Walt Whitman</value>
+  </data>
+  <data name="String97" xml:space="preserve">
+    <value>Mrs Dalloway|Virginia Woolf</value>
+  </data>
+  <data name="String98" xml:space="preserve">
+    <value>To the lighthouse|Virginia Woolf</value>
+  </data>
+  <data name="String99" xml:space="preserve">
+    <value>Memoirs of Hadrian|Marguerite Yourcenar</value>
+  </data>
+</root>

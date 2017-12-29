@@ -1,0 +1,3123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="String0" xml:space="preserve">
+    <value>Never Let Me Go|Kazuo Ishiguro</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Saturday|Ian McEwan</value>
+  </data>
+  <data name="String10" xml:space="preserve">
+    <value>The Lambs of London|Peter Ackroyd</value>
+  </data>
+  <data name="String100" xml:space="preserve">
+    <value>Silk|Alessandro Baricco</value>
+  </data>
+  <data name="String1000" xml:space="preserve">
+    <value>Aesop’s Fables|Aesopus</value>
+  </data>
+  <data name="String101" xml:space="preserve">
+    <value>Cocaine Nights|J.G. Ballard</value>
+  </data>
+  <data name="String102" xml:space="preserve">
+    <value>Hallucinating Foucault|Patricia Duncker</value>
+  </data>
+  <data name="String103" xml:space="preserve">
+    <value>Fugitive Pieces|Anne Michaels</value>
+  </data>
+  <data name="String104" xml:space="preserve">
+    <value>The Ghost Road|Pat Barker</value>
+  </data>
+  <data name="String105" xml:space="preserve">
+    <value>Forever a Stranger|Hella Haasse</value>
+  </data>
+  <data name="String106" xml:space="preserve">
+    <value>Infinite Jest|David Foster Wallace</value>
+  </data>
+  <data name="String107" xml:space="preserve">
+    <value>The Clay Machine-Gun|Victor Pelevin</value>
+  </data>
+  <data name="String108" xml:space="preserve">
+    <value>Alias Grace|Margaret Atwood</value>
+  </data>
+  <data name="String109" xml:space="preserve">
+    <value>The Unconsoled|Kazuo Ishiguro</value>
+  </data>
+  <data name="String11" xml:space="preserve">
+    <value>Dining on Stones|Iain Sinclair</value>
+  </data>
+  <data name="String110" xml:space="preserve">
+    <value>Morvern Callar|Alan Warner</value>
+  </data>
+  <data name="String111" xml:space="preserve">
+    <value>The Information|Martin Amis</value>
+  </data>
+  <data name="String112" xml:space="preserve">
+    <value>The Moor’s Last Sigh|Salman Rushdie</value>
+  </data>
+  <data name="String113" xml:space="preserve">
+    <value>Sabbath’s Theater|Philip Roth</value>
+  </data>
+  <data name="String114" xml:space="preserve">
+    <value>The Rings of Saturn|W.G. Sebald</value>
+  </data>
+  <data name="String115" xml:space="preserve">
+    <value>The Reader|Bernhard Schlink</value>
+  </data>
+  <data name="String116" xml:space="preserve">
+    <value>A Fine Balance|Rohinton Mistry</value>
+  </data>
+  <data name="String117" xml:space="preserve">
+    <value>Love’s Work|Gillian Rose</value>
+  </data>
+  <data name="String118" xml:space="preserve">
+    <value>The End of the Story|Lydia Davis</value>
+  </data>
+  <data name="String119" xml:space="preserve">
+    <value>Mr. Vertigo|Paul Auster</value>
+  </data>
+  <data name="String12" xml:space="preserve">
+    <value>Cloud Atlas|David Mitchell</value>
+  </data>
+  <data name="String120" xml:space="preserve">
+    <value>The Folding Star|Alan Hollinghurst</value>
+  </data>
+  <data name="String121" xml:space="preserve">
+    <value>Whatever|Michel Houellebecq</value>
+  </data>
+  <data name="String122" xml:space="preserve">
+    <value>Land|Park Kyong-ni</value>
+  </data>
+  <data name="String123" xml:space="preserve">
+    <value>The Master of Petersburg|J.M. Coetzee</value>
+  </data>
+  <data name="String124" xml:space="preserve">
+    <value>The Wind-Up Bird Chronicle|Haruki Murakami</value>
+  </data>
+  <data name="String125" xml:space="preserve">
+    <value>Pereira Declares: A Testimony|Antonio Tabucchi</value>
+  </data>
+  <data name="String126" xml:space="preserve">
+    <value>City Sister Silver|Jàchym Topol</value>
+  </data>
+  <data name="String127" xml:space="preserve">
+    <value>How Late It Was, How Late|James Kelman</value>
+  </data>
+  <data name="String128" xml:space="preserve">
+    <value>Captain Corelli’s Mandolin|Louis de Bernieres</value>
+  </data>
+  <data name="String129" xml:space="preserve">
+    <value>Felicia’s Journey|William Trevor</value>
+  </data>
+  <data name="String13" xml:space="preserve">
+    <value>Drop City|T. Coraghessan Boyle</value>
+  </data>
+  <data name="String130" xml:space="preserve">
+    <value>Disappearance|David Dabydeen</value>
+  </data>
+  <data name="String131" xml:space="preserve">
+    <value>The Invention of Curried Sausage|Uwe Timm</value>
+  </data>
+  <data name="String132" xml:space="preserve">
+    <value>The Shipping News|E. Annie Proulx</value>
+  </data>
+  <data name="String133" xml:space="preserve">
+    <value>Trainspotting|Irvine Welsh</value>
+  </data>
+  <data name="String134" xml:space="preserve">
+    <value>Birdsong|Sebastian Faulks</value>
+  </data>
+  <data name="String135" xml:space="preserve">
+    <value>Looking for the Possible Dance|A.L. Kennedy</value>
+  </data>
+  <data name="String136" xml:space="preserve">
+    <value>Operation Shylock|Philip Roth</value>
+  </data>
+  <data name="String137" xml:space="preserve">
+    <value>Complicity|Iain Banks</value>
+  </data>
+  <data name="String138" xml:space="preserve">
+    <value>On Love|Alain de Botton</value>
+  </data>
+  <data name="String139" xml:space="preserve">
+    <value>What a Carve Up!|Jonathan Coe</value>
+  </data>
+  <data name="String14" xml:space="preserve">
+    <value>The Colour|Rose Tremain</value>
+  </data>
+  <data name="String140" xml:space="preserve">
+    <value>A Suitable Boy|Vikram Seth</value>
+  </data>
+  <data name="String141" xml:space="preserve">
+    <value>The Stone Diaries|Carol Shields</value>
+  </data>
+  <data name="String142" xml:space="preserve">
+    <value>The Virgin Suicides|Jeffrey Eugenides</value>
+  </data>
+  <data name="String143" xml:space="preserve">
+    <value>The House of Doctor Dee|Peter Ackroyd</value>
+  </data>
+  <data name="String144" xml:space="preserve">
+    <value>The Robber Bride|Margaret Atwood</value>
+  </data>
+  <data name="String145" xml:space="preserve">
+    <value>The Emigrants|W.G. Sebald</value>
+  </data>
+  <data name="String146" xml:space="preserve">
+    <value>The Secret History|Donna Tartt</value>
+  </data>
+  <data name="String147" xml:space="preserve">
+    <value>Life is a Caravanserai|Emine Özdamar</value>
+  </data>
+  <data name="String148" xml:space="preserve">
+    <value>The Discovery of Heaven|Harry Mulisch</value>
+  </data>
+  <data name="String149" xml:space="preserve">
+    <value>A Heart So White|Javier Marias</value>
+  </data>
+  <data name="String15" xml:space="preserve">
+    <value>Thursbitch|Alan Garner</value>
+  </data>
+  <data name="String150" xml:space="preserve">
+    <value>Possessing the Secret of Joy|Alice Walker</value>
+  </data>
+  <data name="String151" xml:space="preserve">
+    <value>Indigo|Marina Warner</value>
+  </data>
+  <data name="String152" xml:space="preserve">
+    <value>The Crow Road|Iain Banks</value>
+  </data>
+  <data name="String153" xml:space="preserve">
+    <value>Written on the Body|Jeanette Winterson</value>
+  </data>
+  <data name="String154" xml:space="preserve">
+    <value>Jazz|Toni Morrison</value>
+  </data>
+  <data name="String155" xml:space="preserve">
+    <value>The English Patient|Michael Ondaatje</value>
+  </data>
+  <data name="String156" xml:space="preserve">
+    <value>Smilla’s Sense of Snow|Peter Høeg</value>
+  </data>
+  <data name="String157" xml:space="preserve">
+    <value>The Butcher Boy|Patrick McCabe</value>
+  </data>
+  <data name="String158" xml:space="preserve">
+    <value>Black Water|Joyce Carol Oates</value>
+  </data>
+  <data name="String159" xml:space="preserve">
+    <value>The Heather Blazing|Colm Tóibín</value>
+  </data>
+  <data name="String16" xml:space="preserve">
+    <value>The Light of Day|Graham Swift</value>
+  </data>
+  <data name="String160" xml:space="preserve">
+    <value>Asphodel|H.D. (Hilda Doolittle)</value>
+  </data>
+  <data name="String161" xml:space="preserve">
+    <value>Black Dogs|Ian McEwan</value>
+  </data>
+  <data name="String162" xml:space="preserve">
+    <value>Hideous Kinky|Esther Freud</value>
+  </data>
+  <data name="String163" xml:space="preserve">
+    <value>Arcadia|Jim Crace</value>
+  </data>
+  <data name="String164" xml:space="preserve">
+    <value>Wild Swans|Jung Chang</value>
+  </data>
+  <data name="String165" xml:space="preserve">
+    <value>American Psycho|Bret Easton Ellis</value>
+  </data>
+  <data name="String166" xml:space="preserve">
+    <value>Time’s Arrow|Martin Amis</value>
+  </data>
+  <data name="String167" xml:space="preserve">
+    <value>Mao II|Don DeLillo</value>
+  </data>
+  <data name="String168" xml:space="preserve">
+    <value>Typical|Padgett Powell</value>
+  </data>
+  <data name="String169" xml:space="preserve">
+    <value>Regeneration|Pat Barker</value>
+  </data>
+  <data name="String17" xml:space="preserve">
+    <value>What I Loved|Siri Hustvedt</value>
+  </data>
+  <data name="String170" xml:space="preserve">
+    <value>Downriver|Iain Sinclair</value>
+  </data>
+  <data name="String171" xml:space="preserve">
+    <value>Señor Vivo and the Coca Lord|Louis de Bernieres</value>
+  </data>
+  <data name="String172" xml:space="preserve">
+    <value>Wise Children|Angela Carter</value>
+  </data>
+  <data name="String173" xml:space="preserve">
+    <value>Get Shorty|Elmore Leonard</value>
+  </data>
+  <data name="String174" xml:space="preserve">
+    <value>Amongst Women|John McGahern</value>
+  </data>
+  <data name="String175" xml:space="preserve">
+    <value>Vineland|Thomas Pynchon</value>
+  </data>
+  <data name="String176" xml:space="preserve">
+    <value>Vertigo|W.G. Sebald</value>
+  </data>
+  <data name="String177" xml:space="preserve">
+    <value>Stone Junction|Jim Dodge</value>
+  </data>
+  <data name="String178" xml:space="preserve">
+    <value>The Music of Chance|Paul Auster</value>
+  </data>
+  <data name="String179" xml:space="preserve">
+    <value>The Things They Carried|Tim O’Brien</value>
+  </data>
+  <data name="String18" xml:space="preserve">
+    <value>The Curious Incident of the Dog in the Night-Time|Mark Haddon</value>
+  </data>
+  <data name="String180" xml:space="preserve">
+    <value>A Home at the End of the World|Michael Cunningham</value>
+  </data>
+  <data name="String181" xml:space="preserve">
+    <value>Like Life|Lorrie Moore</value>
+  </data>
+  <data name="String182" xml:space="preserve">
+    <value>Possession|A.S. Byatt</value>
+  </data>
+  <data name="String183" xml:space="preserve">
+    <value>The Buddha of Suburbia|Hanif Kureishi</value>
+  </data>
+  <data name="String184" xml:space="preserve">
+    <value>The Midnight Examiner|William Kotzwinkle</value>
+  </data>
+  <data name="String185" xml:space="preserve">
+    <value>A Disaffection|James Kelman</value>
+  </data>
+  <data name="String186" xml:space="preserve">
+    <value>Sexing the Cherry|Jeanette Winterson</value>
+  </data>
+  <data name="String187" xml:space="preserve">
+    <value>Moon Palace|Paul Auster</value>
+  </data>
+  <data name="String188" xml:space="preserve">
+    <value>Billy Bathgate|E.L. Doctorow</value>
+  </data>
+  <data name="String189" xml:space="preserve">
+    <value>Remains of the Day|Kazuo Ishiguro</value>
+  </data>
+  <data name="String19" xml:space="preserve">
+    <value>Islands|Dan Sleigh</value>
+  </data>
+  <data name="String190" xml:space="preserve">
+    <value>The Melancholy of Resistance|László Krasznahorkai</value>
+  </data>
+  <data name="String191" xml:space="preserve">
+    <value>The Temple of My Familiar|Alice Walker</value>
+  </data>
+  <data name="String192" xml:space="preserve">
+    <value>The Trick is to Keep Breathing|Janice Galloway</value>
+  </data>
+  <data name="String193" xml:space="preserve">
+    <value>The History of the Siege of Lisbon|José Saramago</value>
+  </data>
+  <data name="String194" xml:space="preserve">
+    <value>Like Water for Chocolate|Laura Esquivel</value>
+  </data>
+  <data name="String195" xml:space="preserve">
+    <value>A Prayer for Owen Meany|John Irving</value>
+  </data>
+  <data name="String196" xml:space="preserve">
+    <value>London Fields|Martin Amis</value>
+  </data>
+  <data name="String197" xml:space="preserve">
+    <value>The Book of Evidence|John Banville</value>
+  </data>
+  <data name="String198" xml:space="preserve">
+    <value>Cat’s Eye|Margaret Atwood</value>
+  </data>
+  <data name="String199" xml:space="preserve">
+    <value>Foucault’s Pendulum|Umberto Eco</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>On Beauty|Zadie Smith</value>
+  </data>
+  <data name="String20" xml:space="preserve">
+    <value>Elizabeth Costello|J.M. Coetzee</value>
+  </data>
+  <data name="String200" xml:space="preserve">
+    <value>The Beautiful Room is Empty|Edmund White</value>
+  </data>
+  <data name="String201" xml:space="preserve">
+    <value>Wittgenstein’s Mistress|David Markson</value>
+  </data>
+  <data name="String202" xml:space="preserve">
+    <value>The Satanic Verses|Salman Rushdie</value>
+  </data>
+  <data name="String203" xml:space="preserve">
+    <value>The Swimming-Pool Library|Alan Hollinghurst</value>
+  </data>
+  <data name="String204" xml:space="preserve">
+    <value>Oscar and Lucinda|Peter Carey</value>
+  </data>
+  <data name="String205" xml:space="preserve">
+    <value>Libra|Don DeLillo</value>
+  </data>
+  <data name="String206" xml:space="preserve">
+    <value>The Player of Games|Iain M. Banks</value>
+  </data>
+  <data name="String207" xml:space="preserve">
+    <value>Nervous Conditions|Tsitsi Dangarembga</value>
+  </data>
+  <data name="String208" xml:space="preserve">
+    <value>The Long Dark Teatime of the Soul|Douglas Adams</value>
+  </data>
+  <data name="String209" xml:space="preserve">
+    <value>Dirk Gently’s Holistic Detective Agency|Douglas Adams</value>
+  </data>
+  <data name="String21" xml:space="preserve">
+    <value>London Orbital|Iain Sinclair</value>
+  </data>
+  <data name="String210" xml:space="preserve">
+    <value>The Radiant Way|Margaret Drabble</value>
+  </data>
+  <data name="String211" xml:space="preserve">
+    <value>The Afternoon of a Writer|Peter Handke</value>
+  </data>
+  <data name="String212" xml:space="preserve">
+    <value>The Black Dahlia|James Ellroy</value>
+  </data>
+  <data name="String213" xml:space="preserve">
+    <value>The Passion|Jeanette Winterson</value>
+  </data>
+  <data name="String214" xml:space="preserve">
+    <value>The Pigeon|Patrick Süskind</value>
+  </data>
+  <data name="String215" xml:space="preserve">
+    <value>The Child in Time|Ian McEwan</value>
+  </data>
+  <data name="String216" xml:space="preserve">
+    <value>Cigarettes|Harry Mathews</value>
+  </data>
+  <data name="String217" xml:space="preserve">
+    <value>The Bonfire of the Vanities|Tom Wolfe</value>
+  </data>
+  <data name="String218" xml:space="preserve">
+    <value>The New York Trilogy|Paul Auster</value>
+  </data>
+  <data name="String219" xml:space="preserve">
+    <value>World’s End|T. Coraghessan Boyle</value>
+  </data>
+  <data name="String22" xml:space="preserve">
+    <value>Family Matters|Rohinton Mistry</value>
+  </data>
+  <data name="String220" xml:space="preserve">
+    <value>Enigma of Arrival|V.S. Naipaul</value>
+  </data>
+  <data name="String221" xml:space="preserve">
+    <value>The Taebek Mountains|Jo Jung-rae</value>
+  </data>
+  <data name="String222" xml:space="preserve">
+    <value>Beloved|Toni Morrison</value>
+  </data>
+  <data name="String223" xml:space="preserve">
+    <value>Anagrams|Lorrie Moore</value>
+  </data>
+  <data name="String224" xml:space="preserve">
+    <value>Matigari|Ngugi Wa Thiong’o</value>
+  </data>
+  <data name="String225" xml:space="preserve">
+    <value>Marya|Joyce Carol Oates</value>
+  </data>
+  <data name="String226" xml:space="preserve">
+    <value>Watchmen|Alan Moore &amp; David Gibbons</value>
+  </data>
+  <data name="String227" xml:space="preserve">
+    <value>The Old Devils|Kingsley Amis</value>
+  </data>
+  <data name="String228" xml:space="preserve">
+    <value>Lost Language of Cranes|David Leavitt</value>
+  </data>
+  <data name="String229" xml:space="preserve">
+    <value>An Artist of the Floating World|Kazuo Ishiguro</value>
+  </data>
+  <data name="String23" xml:space="preserve">
+    <value>Fingersmith|Sarah Waters</value>
+  </data>
+  <data name="String230" xml:space="preserve">
+    <value>Extinction|Thomas Bernhard</value>
+  </data>
+  <data name="String231" xml:space="preserve">
+    <value>Foe|J.M. Coetzee</value>
+  </data>
+  <data name="String232" xml:space="preserve">
+    <value>The Drowned and the Saved|Primo Levi</value>
+  </data>
+  <data name="String233" xml:space="preserve">
+    <value>Reasons to Live|Amy Hempel</value>
+  </data>
+  <data name="String234" xml:space="preserve">
+    <value>The Parable of the Blind|Gert Hofmann</value>
+  </data>
+  <data name="String235" xml:space="preserve">
+    <value>Love in the Time of Cholera|Gabriel García Márquez</value>
+  </data>
+  <data name="String236" xml:space="preserve">
+    <value>Oranges Are Not the Only Fruit|Jeanette Winterson</value>
+  </data>
+  <data name="String237" xml:space="preserve">
+    <value>The Cider House Rules|John Irving</value>
+  </data>
+  <data name="String238" xml:space="preserve">
+    <value>A Maggot|John Fowles</value>
+  </data>
+  <data name="String239" xml:space="preserve">
+    <value>Less Than Zero|Bret Easton Ellis</value>
+  </data>
+  <data name="String24" xml:space="preserve">
+    <value>The Double|José Saramago</value>
+  </data>
+  <data name="String240" xml:space="preserve">
+    <value>Contact|Carl Sagan</value>
+  </data>
+  <data name="String241" xml:space="preserve">
+    <value>The Handmaid’s Tale|Margaret Atwood</value>
+  </data>
+  <data name="String242" xml:space="preserve">
+    <value>Perfume|Patrick Süskind</value>
+  </data>
+  <data name="String243" xml:space="preserve">
+    <value>Old Masters|Thomas Bernhard</value>
+  </data>
+  <data name="String244" xml:space="preserve">
+    <value>White Noise|Don DeLillo</value>
+  </data>
+  <data name="String245" xml:space="preserve">
+    <value>Queer|William Burroughs</value>
+  </data>
+  <data name="String246" xml:space="preserve">
+    <value>Hawksmoor|Peter Ackroyd</value>
+  </data>
+  <data name="String247" xml:space="preserve">
+    <value>Legend|David Gemmell</value>
+  </data>
+  <data name="String248" xml:space="preserve">
+    <value>Dictionary of the Khazars|Milorad Pavi?</value>
+  </data>
+  <data name="String249" xml:space="preserve">
+    <value>The Bus Conductor Hines|James Kelman</value>
+  </data>
+  <data name="String25" xml:space="preserve">
+    <value>Everything is Illuminated|Jonathan Safran Foer</value>
+  </data>
+  <data name="String250" xml:space="preserve">
+    <value>The Year of the Death of Ricardo Reis|José Saramago</value>
+  </data>
+  <data name="String251" xml:space="preserve">
+    <value>The Lover|Marguerite Duras</value>
+  </data>
+  <data name="String252" xml:space="preserve">
+    <value>Empire of the Sun|J.G. Ballard</value>
+  </data>
+  <data name="String253" xml:space="preserve">
+    <value>The Wasp Factory|Iain Banks</value>
+  </data>
+  <data name="String254" xml:space="preserve">
+    <value>Nights at the Circus|Angela Carter</value>
+  </data>
+  <data name="String255" xml:space="preserve">
+    <value>The Unbearable Lightness of Being|Milan Kundera</value>
+  </data>
+  <data name="String256" xml:space="preserve">
+    <value>Blood and Guts in High School|Kathy Acker</value>
+  </data>
+  <data name="String257" xml:space="preserve">
+    <value>Neuromancer|William Gibson</value>
+  </data>
+  <data name="String258" xml:space="preserve">
+    <value>Flaubert’s Parrot|Julian Barnes</value>
+  </data>
+  <data name="String259" xml:space="preserve">
+    <value>Money: A Suicide Note|Martin Amis</value>
+  </data>
+  <data name="String26" xml:space="preserve">
+    <value>Unless|Carol Shields</value>
+  </data>
+  <data name="String260" xml:space="preserve">
+    <value>Shame|Salman Rushdie</value>
+  </data>
+  <data name="String261" xml:space="preserve">
+    <value>Worstward Ho|Samuel Beckett</value>
+  </data>
+  <data name="String262" xml:space="preserve">
+    <value>Fools of Fortune|William Trevor</value>
+  </data>
+  <data name="String263" xml:space="preserve">
+    <value>La Brava|Elmore Leonard</value>
+  </data>
+  <data name="String264" xml:space="preserve">
+    <value>Waterland|Graham Swift</value>
+  </data>
+  <data name="String265" xml:space="preserve">
+    <value>The Life and Times of Michael K|J.M. Coetzee</value>
+  </data>
+  <data name="String266" xml:space="preserve">
+    <value>The Diary of Jane Somers|Doris Lessing</value>
+  </data>
+  <data name="String267" xml:space="preserve">
+    <value>The Piano Teacher|Elfriede Jelinek</value>
+  </data>
+  <data name="String268" xml:space="preserve">
+    <value>The Sorrow of Belgium|Hugo Claus</value>
+  </data>
+  <data name="String269" xml:space="preserve">
+    <value>If Not Now, When?|Primo Levi</value>
+  </data>
+  <data name="String27" xml:space="preserve">
+    <value>Kafka on the Shore|Haruki Murakami</value>
+  </data>
+  <data name="String270" xml:space="preserve">
+    <value>A Boy’s Own Story|Edmund White</value>
+  </data>
+  <data name="String271" xml:space="preserve">
+    <value>The Color Purple|Alice Walker</value>
+  </data>
+  <data name="String272" xml:space="preserve">
+    <value>Wittgenstein’s Nephew|Thomas Bernhard</value>
+  </data>
+  <data name="String273" xml:space="preserve">
+    <value>A Pale View of Hills|Kazuo Ishiguro</value>
+  </data>
+  <data name="String274" xml:space="preserve">
+    <value>Schindler’s Ark|Thomas Keneally</value>
+  </data>
+  <data name="String275" xml:space="preserve">
+    <value>The House of the Spirits|Isabel Allende</value>
+  </data>
+  <data name="String276" xml:space="preserve">
+    <value>The Newton Letter|John Banville</value>
+  </data>
+  <data name="String277" xml:space="preserve">
+    <value>On the Black Hill|Bruce Chatwin</value>
+  </data>
+  <data name="String278" xml:space="preserve">
+    <value>Concrete|Thomas Bernhard</value>
+  </data>
+  <data name="String279" xml:space="preserve">
+    <value>The Names|Don DeLillo</value>
+  </data>
+  <data name="String28" xml:space="preserve">
+    <value>The Story of Lucy Gault|William Trevor</value>
+  </data>
+  <data name="String280" xml:space="preserve">
+    <value>Rabbit is Rich|John Updike</value>
+  </data>
+  <data name="String281" xml:space="preserve">
+    <value>Lanark: A Life in Four Books|Alasdair Gray</value>
+  </data>
+  <data name="String282" xml:space="preserve">
+    <value>The Comfort of Strangers|Ian McEwan</value>
+  </data>
+  <data name="String283" xml:space="preserve">
+    <value>July’s People|Nadine Gordimer</value>
+  </data>
+  <data name="String284" xml:space="preserve">
+    <value>Summer in Baden-Baden|Leonid Tsypkin</value>
+  </data>
+  <data name="String285" xml:space="preserve">
+    <value>Broken April|Ismail Kadare</value>
+  </data>
+  <data name="String286" xml:space="preserve">
+    <value>Waiting for the Barbarians|J.M. Coetzee</value>
+  </data>
+  <data name="String287" xml:space="preserve">
+    <value>Midnight’s Children|Salman Rushdie</value>
+  </data>
+  <data name="String288" xml:space="preserve">
+    <value>Rites of Passage|William Golding</value>
+  </data>
+  <data name="String289" xml:space="preserve">
+    <value>Rituals|Cees Nooteboom</value>
+  </data>
+  <data name="String29" xml:space="preserve">
+    <value>That They May Face the Rising Sun|John McGahern</value>
+  </data>
+  <data name="String290" xml:space="preserve">
+    <value>Confederacy of Dunces|John Kennedy Toole</value>
+  </data>
+  <data name="String291" xml:space="preserve">
+    <value>City Primeval|Elmore Leonard</value>
+  </data>
+  <data name="String292" xml:space="preserve">
+    <value>The Name of the Rose|Umberto Eco</value>
+  </data>
+  <data name="String293" xml:space="preserve">
+    <value>The Book of Laughter and Forgetting|Milan Kundera</value>
+  </data>
+  <data name="String294" xml:space="preserve">
+    <value>Smiley’s People|John Le Carré</value>
+  </data>
+  <data name="String295" xml:space="preserve">
+    <value>Shikasta|Doris Lessing</value>
+  </data>
+  <data name="String296" xml:space="preserve">
+    <value>A Bend in the River|V.S. Naipaul</value>
+  </data>
+  <data name="String297" xml:space="preserve">
+    <value>Burger’s Daughter - Nadine Gordimer</value>
+  </data>
+  <data name="String298" xml:space="preserve">
+    <value>The Safety Net|Heinrich Böll</value>
+  </data>
+  <data name="String299" xml:space="preserve">
+    <value>If On a Winter’s Night a Traveler|Italo Calvino</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Slow Man|J.M. Coetzee</value>
+  </data>
+  <data name="String30" xml:space="preserve">
+    <value>In the Forest|Edna O’Brien</value>
+  </data>
+  <data name="String300" xml:space="preserve">
+    <value>The Hitchhiker’s Guide to the Galaxy|Douglas Adams</value>
+  </data>
+  <data name="String301" xml:space="preserve">
+    <value>The Cement Garden|Ian McEwan</value>
+  </data>
+  <data name="String302" xml:space="preserve">
+    <value>The World According to Garp|John Irving</value>
+  </data>
+  <data name="String303" xml:space="preserve">
+    <value>Life: A User’s Manual|Georges Perec</value>
+  </data>
+  <data name="String304" xml:space="preserve">
+    <value>The Sea, The Sea|Iris Murdoch</value>
+  </data>
+  <data name="String305" xml:space="preserve">
+    <value>The Singapore Grip|J.G. Farrell</value>
+  </data>
+  <data name="String306" xml:space="preserve">
+    <value>Yes|Thomas Bernhard</value>
+  </data>
+  <data name="String307" xml:space="preserve">
+    <value>The Virgin in the Garden|A.S. Byatt</value>
+  </data>
+  <data name="String308" xml:space="preserve">
+    <value>In the Heart of the Country|J.M. Coetzee</value>
+  </data>
+  <data name="String309" xml:space="preserve">
+    <value>The Passion of New Eve|Angela Carter</value>
+  </data>
+  <data name="String31" xml:space="preserve">
+    <value>Shroud|John Banville</value>
+  </data>
+  <data name="String310" xml:space="preserve">
+    <value>Delta of Venus|Anaïs Nin</value>
+  </data>
+  <data name="String311" xml:space="preserve">
+    <value>The Shining|Stephen King</value>
+  </data>
+  <data name="String312" xml:space="preserve">
+    <value>Dispatches|Michael Herr</value>
+  </data>
+  <data name="String313" xml:space="preserve">
+    <value>Petals of Blood|Ngugi Wa Thiong’o</value>
+  </data>
+  <data name="String314" xml:space="preserve">
+    <value>Song of Solomon|Toni Morrison</value>
+  </data>
+  <data name="String315" xml:space="preserve">
+    <value>The Hour of the Star|Clarice Lispector</value>
+  </data>
+  <data name="String316" xml:space="preserve">
+    <value>The Left-Handed Woman|Peter Handke</value>
+  </data>
+  <data name="String317" xml:space="preserve">
+    <value>Ratner’s Star|Don DeLillo</value>
+  </data>
+  <data name="String318" xml:space="preserve">
+    <value>The Public Burning|Robert Coover</value>
+  </data>
+  <data name="String319" xml:space="preserve">
+    <value>Interview With the Vampire|Anne Rice</value>
+  </data>
+  <data name="String32" xml:space="preserve">
+    <value>Middlesex|Jeffrey Eugenides</value>
+  </data>
+  <data name="String320" xml:space="preserve">
+    <value>Cutter and Bone|Newton Thornburg</value>
+  </data>
+  <data name="String321" xml:space="preserve">
+    <value>Amateurs|Donald Barthelme</value>
+  </data>
+  <data name="String322" xml:space="preserve">
+    <value>Patterns of Childhood|Christa Wolf</value>
+  </data>
+  <data name="String323" xml:space="preserve">
+    <value>Autumn of the Patriarch|Gabriel García Márquez</value>
+  </data>
+  <data name="String324" xml:space="preserve">
+    <value>W, or the Memory of Childhood|Georges Perec</value>
+  </data>
+  <data name="String325" xml:space="preserve">
+    <value>A Dance to the Music of Time|Anthony Powell</value>
+  </data>
+  <data name="String326" xml:space="preserve">
+    <value>Grimus|Salman Rushdie</value>
+  </data>
+  <data name="String327" xml:space="preserve">
+    <value>The Dead Father|Donald Barthelme</value>
+  </data>
+  <data name="String328" xml:space="preserve">
+    <value>Fateless|Imre Kertész</value>
+  </data>
+  <data name="String329" xml:space="preserve">
+    <value>Willard and His Bowling Trophies|Richard Brautigan</value>
+  </data>
+  <data name="String33" xml:space="preserve">
+    <value>Youth|J.M. Coetzee</value>
+  </data>
+  <data name="String330" xml:space="preserve">
+    <value>High Rise|J.G. Ballard</value>
+  </data>
+  <data name="String331" xml:space="preserve">
+    <value>Humboldt’s Gift|Saul Bellow</value>
+  </data>
+  <data name="String332" xml:space="preserve">
+    <value>Dead Babies|Martin Amis</value>
+  </data>
+  <data name="String333" xml:space="preserve">
+    <value>Correction|Thomas Bernhard</value>
+  </data>
+  <data name="String334" xml:space="preserve">
+    <value>Ragtime|E.L. Doctorow</value>
+  </data>
+  <data name="String335" xml:space="preserve">
+    <value>The Fan Man|William Kotzwinkle</value>
+  </data>
+  <data name="String336" xml:space="preserve">
+    <value>Dusklands|J.M. Coetzee</value>
+  </data>
+  <data name="String337" xml:space="preserve">
+    <value>The Lost Honor of Katharina Blum|Heinrich Böll</value>
+  </data>
+  <data name="String338" xml:space="preserve">
+    <value>Tinker Tailor Soldier Spy|John Le Carré</value>
+  </data>
+  <data name="String339" xml:space="preserve">
+    <value>Breakfast of Champions|Kurt Vonnegut, Jr.</value>
+  </data>
+  <data name="String34" xml:space="preserve">
+    <value>Dead Air|Iain Banks</value>
+  </data>
+  <data name="String340" xml:space="preserve">
+    <value>Fear of Flying|Erica Jong</value>
+  </data>
+  <data name="String341" xml:space="preserve">
+    <value>A Question of Power|Bessie Head</value>
+  </data>
+  <data name="String342" xml:space="preserve">
+    <value>The Siege of Krishnapur|J.G. Farrell</value>
+  </data>
+  <data name="String343" xml:space="preserve">
+    <value>The Castle of Crossed Destinies|Italo Calvino</value>
+  </data>
+  <data name="String344" xml:space="preserve">
+    <value>Crash|J.G. Ballard</value>
+  </data>
+  <data name="String345" xml:space="preserve">
+    <value>The Honorary Consul|Graham Greene</value>
+  </data>
+  <data name="String346" xml:space="preserve">
+    <value>Gravity’s Rainbow|Thomas Pynchon</value>
+  </data>
+  <data name="String347" xml:space="preserve">
+    <value>The Black Prince|Iris Murdoch</value>
+  </data>
+  <data name="String348" xml:space="preserve">
+    <value>Sula|Toni Morrison</value>
+  </data>
+  <data name="String349" xml:space="preserve">
+    <value>Invisible Cities|Italo Calvino</value>
+  </data>
+  <data name="String35" xml:space="preserve">
+    <value>Nowhere Man|Aleksandar Hemon</value>
+  </data>
+  <data name="String350" xml:space="preserve">
+    <value>The Breast|Philip Roth</value>
+  </data>
+  <data name="String351" xml:space="preserve">
+    <value>The Summer Book|Tove Jansson</value>
+  </data>
+  <data name="String352" xml:space="preserve">
+    <value>G|John Berger</value>
+  </data>
+  <data name="String353" xml:space="preserve">
+    <value>Surfacing|Margaret Atwood</value>
+  </data>
+  <data name="String354" xml:space="preserve">
+    <value>House Mother Normal|B.S. Johnson</value>
+  </data>
+  <data name="String355" xml:space="preserve">
+    <value>In A Free State|V.S. Naipaul</value>
+  </data>
+  <data name="String356" xml:space="preserve">
+    <value>The Book of Daniel|E.L. Doctorow</value>
+  </data>
+  <data name="String357" xml:space="preserve">
+    <value>Fear and Loathing in Las Vegas|Hunter S. Thompson</value>
+  </data>
+  <data name="String358" xml:space="preserve">
+    <value>Group Portrait With Lady|Heinrich Böll</value>
+  </data>
+  <data name="String359" xml:space="preserve">
+    <value>The Wild Boys|William Burroughs</value>
+  </data>
+  <data name="String36" xml:space="preserve">
+    <value>The Book of Illusions|Paul Auster</value>
+  </data>
+  <data name="String360" xml:space="preserve">
+    <value>Rabbit Redux|John Updike</value>
+  </data>
+  <data name="String361" xml:space="preserve">
+    <value>The Sea of Fertility|Yukio Mishima</value>
+  </data>
+  <data name="String362" xml:space="preserve">
+    <value>The Driver’s Seat|Muriel Spark</value>
+  </data>
+  <data name="String363" xml:space="preserve">
+    <value>The Ogre|Michael Tournier</value>
+  </data>
+  <data name="String364" xml:space="preserve">
+    <value>The Bluest Eye|Toni Morrison</value>
+  </data>
+  <data name="String365" xml:space="preserve">
+    <value>Goalie’s Anxiety at the Penalty Kick|Peter Handke</value>
+  </data>
+  <data name="String366" xml:space="preserve">
+    <value>I Know Why the Caged Bird Sings|Maya Angelou</value>
+  </data>
+  <data name="String367" xml:space="preserve">
+    <value>Mercier et Camier|Samuel Beckett</value>
+  </data>
+  <data name="String368" xml:space="preserve">
+    <value>Troubles|J.G. Farrell</value>
+  </data>
+  <data name="String369" xml:space="preserve">
+    <value>Jahrestage|Uwe Johnson</value>
+  </data>
+  <data name="String37" xml:space="preserve">
+    <value>Gabriel’s Gift|Hanif Kureishi</value>
+  </data>
+  <data name="String370" xml:space="preserve">
+    <value>The Atrocity Exhibition|J.G. Ballard</value>
+  </data>
+  <data name="String371" xml:space="preserve">
+    <value>Tent of Miracles|Jorge Amado</value>
+  </data>
+  <data name="String372" xml:space="preserve">
+    <value>Pricksongs and Descants|Robert Coover</value>
+  </data>
+  <data name="String373" xml:space="preserve">
+    <value>Blind Man With a Pistol|Chester Hines</value>
+  </data>
+  <data name="String374" xml:space="preserve">
+    <value>Slaughterhouse-five|Kurt Vonnegut, Jr.</value>
+  </data>
+  <data name="String375" xml:space="preserve">
+    <value>The French Lieutenant’s Woman|John Fowles</value>
+  </data>
+  <data name="String376" xml:space="preserve">
+    <value>The Green Man|Kingsley Amis</value>
+  </data>
+  <data name="String377" xml:space="preserve">
+    <value>Portnoy’s Complaint|Philip Roth</value>
+  </data>
+  <data name="String378" xml:space="preserve">
+    <value>The Godfather|Mario Puzo</value>
+  </data>
+  <data name="String379" xml:space="preserve">
+    <value>Ada|Vladimir Nabokov</value>
+  </data>
+  <data name="String38" xml:space="preserve">
+    <value>Austerlitz|W.G. Sebald</value>
+  </data>
+  <data name="String380" xml:space="preserve">
+    <value>Them|Joyce Carol Oates</value>
+  </data>
+  <data name="String381" xml:space="preserve">
+    <value>A Void/Avoid|Georges Perec</value>
+  </data>
+  <data name="String382" xml:space="preserve">
+    <value>Eva Trout|Elizabeth Bowen</value>
+  </data>
+  <data name="String383" xml:space="preserve">
+    <value>Myra Breckinridge|Gore Vidal</value>
+  </data>
+  <data name="String384" xml:space="preserve">
+    <value>The Nice and the Good|Iris Murdoch</value>
+  </data>
+  <data name="String385" xml:space="preserve">
+    <value>Belle du Seigneur|Albert Cohen</value>
+  </data>
+  <data name="String386" xml:space="preserve">
+    <value>Cancer Ward|Aleksandr Isayevich Solzhenitsyn</value>
+  </data>
+  <data name="String387" xml:space="preserve">
+    <value>The First Circle|Aleksandr Isayevich Solzhenitsyn</value>
+  </data>
+  <data name="String388" xml:space="preserve">
+    <value>2001: A Space Odyssey|Arthur C. Clarke</value>
+  </data>
+  <data name="String389" xml:space="preserve">
+    <value>Do Androids Dream of Electric Sheep?|Philip K. Dick</value>
+  </data>
+  <data name="String39" xml:space="preserve">
+    <value>Platform|Michael Houellebecq</value>
+  </data>
+  <data name="String390" xml:space="preserve">
+    <value>Dark as the Grave Wherein My Friend is Laid|Malcolm Lowry</value>
+  </data>
+  <data name="String391" xml:space="preserve">
+    <value>The German Lesson|Siegfried Lenz</value>
+  </data>
+  <data name="String392" xml:space="preserve">
+    <value>In Watermelon Sugar|Richard Brautigan</value>
+  </data>
+  <data name="String393" xml:space="preserve">
+    <value>A Kestrel for a Knave|Barry Hines</value>
+  </data>
+  <data name="String394" xml:space="preserve">
+    <value>The Quest for Christa T.|Christa Wolf</value>
+  </data>
+  <data name="String395" xml:space="preserve">
+    <value>Chocky|John Wyndham</value>
+  </data>
+  <data name="String396" xml:space="preserve">
+    <value>The Electric Kool-Aid Acid Test|Tom Wolfe</value>
+  </data>
+  <data name="String397" xml:space="preserve">
+    <value>The Cubs and Other Stories|Mario Vargas Llosa</value>
+  </data>
+  <data name="String398" xml:space="preserve">
+    <value>One Hundred Years of Solitude - Gabriel García Márquez</value>
+  </data>
+  <data name="String399" xml:space="preserve">
+    <value>The Master and Margarita|Mikhail Bulgakov</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>Adjunct: An Undigest|Peter Manson</value>
+  </data>
+  <data name="String40" xml:space="preserve">
+    <value>Schooling|Heather McGowan</value>
+  </data>
+  <data name="String400" xml:space="preserve">
+    <value>Pilgrimage|Dorothy Richardson</value>
+  </data>
+  <data name="String401" xml:space="preserve">
+    <value>The Joke|Milan Kundera</value>
+  </data>
+  <data name="String402" xml:space="preserve">
+    <value>No Laughing Matter|Angus Wilson</value>
+  </data>
+  <data name="String403" xml:space="preserve">
+    <value>The Third Policeman|Flann O’Brien</value>
+  </data>
+  <data name="String404" xml:space="preserve">
+    <value>A Man Asleep|Georges Perec</value>
+  </data>
+  <data name="String405" xml:space="preserve">
+    <value>The Birds Fall Down|Rebecca West</value>
+  </data>
+  <data name="String406" xml:space="preserve">
+    <value>Trawl|B.S. Johnson</value>
+  </data>
+  <data name="String407" xml:space="preserve">
+    <value>In Cold Blood|Truman Capote</value>
+  </data>
+  <data name="String408" xml:space="preserve">
+    <value>The Magus|John Fowles</value>
+  </data>
+  <data name="String409" xml:space="preserve">
+    <value>The Vice-Consul|Marguerite Duras</value>
+  </data>
+  <data name="String41" xml:space="preserve">
+    <value>Atonement|Ian McEwan</value>
+  </data>
+  <data name="String410" xml:space="preserve">
+    <value>Wide Sargasso Sea|Jean Rhys</value>
+  </data>
+  <data name="String411" xml:space="preserve">
+    <value>Giles Goat-Boy|John Barth</value>
+  </data>
+  <data name="String412" xml:space="preserve">
+    <value>The Crying of Lot 49|Thomas Pynchon</value>
+  </data>
+  <data name="String413" xml:space="preserve">
+    <value>Things|Georges Perec</value>
+  </data>
+  <data name="String414" xml:space="preserve">
+    <value>The River Between|Ngugi wa Thiong’o</value>
+  </data>
+  <data name="String415" xml:space="preserve">
+    <value>August is a Wicked Month|Edna O’Brien</value>
+  </data>
+  <data name="String416" xml:space="preserve">
+    <value>God Bless You, Mr. Rosewater|Kurt Vonnegut</value>
+  </data>
+  <data name="String417" xml:space="preserve">
+    <value>Everything That Rises Must Converge|Flannery O’Connor</value>
+  </data>
+  <data name="String418" xml:space="preserve">
+    <value>The Passion According to G.H.|Clarice Lispector</value>
+  </data>
+  <data name="String419" xml:space="preserve">
+    <value>Sometimes a Great Notion|Ken Kesey</value>
+  </data>
+  <data name="String42" xml:space="preserve">
+    <value>The Corrections|Jonathan Franzen</value>
+  </data>
+  <data name="String420" xml:space="preserve">
+    <value>Come Back, Dr. Caligari|Donald Bartholme</value>
+  </data>
+  <data name="String421" xml:space="preserve">
+    <value>Albert Angelo|B.S. Johnson</value>
+  </data>
+  <data name="String422" xml:space="preserve">
+    <value>Arrow of God|Chinua Achebe</value>
+  </data>
+  <data name="String423" xml:space="preserve">
+    <value>The Ravishing of Lol V. Stein|Marguerite Duras</value>
+  </data>
+  <data name="String424" xml:space="preserve">
+    <value>Herzog|Saul Bellow</value>
+  </data>
+  <data name="String425" xml:space="preserve">
+    <value>V.|Thomas Pynchon</value>
+  </data>
+  <data name="String426" xml:space="preserve">
+    <value>Cat’s Cradle|Kurt Vonnegut</value>
+  </data>
+  <data name="String427" xml:space="preserve">
+    <value>The Graduate|Charles Webb</value>
+  </data>
+  <data name="String428" xml:space="preserve">
+    <value>Manon des Sources|Marcel Pagnol</value>
+  </data>
+  <data name="String429" xml:space="preserve">
+    <value>The Spy Who Came in from the Cold|John Le Carré</value>
+  </data>
+  <data name="String43" xml:space="preserve">
+    <value>Don’t Move|Margaret Mazzantini</value>
+  </data>
+  <data name="String430" xml:space="preserve">
+    <value>The Girls of Slender Means|Muriel Spark</value>
+  </data>
+  <data name="String431" xml:space="preserve">
+    <value>Inside Mr. Enderby|Anthony Burgess</value>
+  </data>
+  <data name="String432" xml:space="preserve">
+    <value>The Bell Jar|Sylvia Plath</value>
+  </data>
+  <data name="String433" xml:space="preserve">
+    <value>One Day in the Life of Ivan Denisovich|Aleksandr Isayevich Solzhenitsyn</value>
+  </data>
+  <data name="String434" xml:space="preserve">
+    <value>The Collector|John Fowles</value>
+  </data>
+  <data name="String435" xml:space="preserve">
+    <value>One Flew Over the Cuckoo’s Nest|Ken Kesey</value>
+  </data>
+  <data name="String436" xml:space="preserve">
+    <value>A Clockwork Orange|Anthony Burgess</value>
+  </data>
+  <data name="String437" xml:space="preserve">
+    <value>Pale Fire|Vladimir Nabokov</value>
+  </data>
+  <data name="String438" xml:space="preserve">
+    <value>The Drowned World|J.G. Ballard</value>
+  </data>
+  <data name="String439" xml:space="preserve">
+    <value>The Golden Notebook|Doris Lessing</value>
+  </data>
+  <data name="String44" xml:space="preserve">
+    <value>The Body Artist|Don DeLillo</value>
+  </data>
+  <data name="String440" xml:space="preserve">
+    <value>Labyrinths|Jorg Luis Borges</value>
+  </data>
+  <data name="String441" xml:space="preserve">
+    <value>Girl With Green Eyes|Edna O’Brien</value>
+  </data>
+  <data name="String442" xml:space="preserve">
+    <value>The Garden of the Finzi-Continis|Giorgio Bassani</value>
+  </data>
+  <data name="String443" xml:space="preserve">
+    <value>Stranger in a Strange Land|Robert Heinlein</value>
+  </data>
+  <data name="String444" xml:space="preserve">
+    <value>Franny and Zooey|J.D. Salinger</value>
+  </data>
+  <data name="String445" xml:space="preserve">
+    <value>A Severed Head|Iris Murdoch</value>
+  </data>
+  <data name="String446" xml:space="preserve">
+    <value>Faces in the Water|Janet Frame</value>
+  </data>
+  <data name="String447" xml:space="preserve">
+    <value>Solaris|Stanislaw Lem</value>
+  </data>
+  <data name="String448" xml:space="preserve">
+    <value>Cat and Mouse|Günter Grass</value>
+  </data>
+  <data name="String449" xml:space="preserve">
+    <value>The Prime of Miss Jean Brodie|Muriel Spark</value>
+  </data>
+  <data name="String45" xml:space="preserve">
+    <value>Fury|Salman Rushdie</value>
+  </data>
+  <data name="String450" xml:space="preserve">
+    <value>Catch-22|Joseph Heller</value>
+  </data>
+  <data name="String451" xml:space="preserve">
+    <value>The Violent Bear it Away|Flannery O’Connor</value>
+  </data>
+  <data name="String452" xml:space="preserve">
+    <value>How It Is|Samuel Beckett</value>
+  </data>
+  <data name="String453" xml:space="preserve">
+    <value>Our Ancestors|Italo Calvino</value>
+  </data>
+  <data name="String454" xml:space="preserve">
+    <value>The Country Girls|Edna O’Brien</value>
+  </data>
+  <data name="String455" xml:space="preserve">
+    <value>To Kill a Mockingbird|Harper Lee</value>
+  </data>
+  <data name="String456" xml:space="preserve">
+    <value>Rabbit, Run|John Updike</value>
+  </data>
+  <data name="String457" xml:space="preserve">
+    <value>Promise at Dawn|Romain Gary</value>
+  </data>
+  <data name="String458" xml:space="preserve">
+    <value>Cider With Rosie|Laurie Lee</value>
+  </data>
+  <data name="String459" xml:space="preserve">
+    <value>Billy Liar|Keith Waterhouse</value>
+  </data>
+  <data name="String46" xml:space="preserve">
+    <value>At Swim, Two Boys|Jamie O’Neill</value>
+  </data>
+  <data name="String460" xml:space="preserve">
+    <value>Naked Lunch|William Burroughs</value>
+  </data>
+  <data name="String461" xml:space="preserve">
+    <value>The Tin Drum|Günter Grass</value>
+  </data>
+  <data name="String462" xml:space="preserve">
+    <value>Absolute Beginners|Colin MacInnes</value>
+  </data>
+  <data name="String463" xml:space="preserve">
+    <value>Henderson the Rain King|Saul Bellow</value>
+  </data>
+  <data name="String464" xml:space="preserve">
+    <value>Memento Mori|Muriel Spark</value>
+  </data>
+  <data name="String465" xml:space="preserve">
+    <value>Billiards at Half-Past Nine|Heinrich Böll</value>
+  </data>
+  <data name="String466" xml:space="preserve">
+    <value>Breakfast at Tiffany’s|Truman Capote</value>
+  </data>
+  <data name="String467" xml:space="preserve">
+    <value>The Leopard|Giuseppe Tomasi di Lampedusa</value>
+  </data>
+  <data name="String468" xml:space="preserve">
+    <value>Pluck the Bud and Destroy the Offspring|Kenzaburo Oe</value>
+  </data>
+  <data name="String469" xml:space="preserve">
+    <value>A Town Like Alice|Nevil Shute</value>
+  </data>
+  <data name="String47" xml:space="preserve">
+    <value>Choke|Chuck Palahniuk</value>
+  </data>
+  <data name="String470" xml:space="preserve">
+    <value>The Bitter Glass|Eilís Dillon</value>
+  </data>
+  <data name="String471" xml:space="preserve">
+    <value>Things Fall Apart|Chinua Achebe</value>
+  </data>
+  <data name="String472" xml:space="preserve">
+    <value>Saturday Night and Sunday Morning|Alan Sillitoe</value>
+  </data>
+  <data name="String473" xml:space="preserve">
+    <value>Mrs. ‘Arris Goes to Paris|Paul Gallico</value>
+  </data>
+  <data name="String474" xml:space="preserve">
+    <value>Borstal Boy|Brendan Behan</value>
+  </data>
+  <data name="String475" xml:space="preserve">
+    <value>The End of the Road|John Barth</value>
+  </data>
+  <data name="String476" xml:space="preserve">
+    <value>The Once and Future King|T.H. White</value>
+  </data>
+  <data name="String477" xml:space="preserve">
+    <value>The Bell|Iris Murdoch</value>
+  </data>
+  <data name="String478" xml:space="preserve">
+    <value>Jealousy|Alain Robbe-Grillet</value>
+  </data>
+  <data name="String479" xml:space="preserve">
+    <value>Voss|Patrick White</value>
+  </data>
+  <data name="String48" xml:space="preserve">
+    <value>Life of Pi|Yann Martel</value>
+  </data>
+  <data name="String480" xml:space="preserve">
+    <value>The Midwich Cuckoos|John Wyndham</value>
+  </data>
+  <data name="String481" xml:space="preserve">
+    <value>Blue Noon|Georges Bataille</value>
+  </data>
+  <data name="String482" xml:space="preserve">
+    <value>Homo Faber|Max Frisch</value>
+  </data>
+  <data name="String483" xml:space="preserve">
+    <value>On the Road|Jack Kerouac</value>
+  </data>
+  <data name="String484" xml:space="preserve">
+    <value>Pnin|Vladimir Nabokov</value>
+  </data>
+  <data name="String485" xml:space="preserve">
+    <value>Doctor Zhivago|Boris Pasternak</value>
+  </data>
+  <data name="String486" xml:space="preserve">
+    <value>The Wonderful “O”|James Thurber</value>
+  </data>
+  <data name="String487" xml:space="preserve">
+    <value>Justine|Lawrence Durrell</value>
+  </data>
+  <data name="String488" xml:space="preserve">
+    <value>Giovanni’s Room|James Baldwin</value>
+  </data>
+  <data name="String489" xml:space="preserve">
+    <value>The Lonely Londoners|Sam Selvon</value>
+  </data>
+  <data name="String49" xml:space="preserve">
+    <value>The Feast of the Goat|Mario Vargos Llosa</value>
+  </data>
+  <data name="String490" xml:space="preserve">
+    <value>The Roots of Heaven|Romain Gary</value>
+  </data>
+  <data name="String491" xml:space="preserve">
+    <value>Seize the Day|Saul Bellow</value>
+  </data>
+  <data name="String492" xml:space="preserve">
+    <value>The Floating Opera|John Barth</value>
+  </data>
+  <data name="String493" xml:space="preserve">
+    <value>The Lord of the Rings|J.R.R. Tolkien</value>
+  </data>
+  <data name="String494" xml:space="preserve">
+    <value>The Talented Mr. Ripley|Patricia Highsmith</value>
+  </data>
+  <data name="String495" xml:space="preserve">
+    <value>Lolita|Vladimir Nabokov</value>
+  </data>
+  <data name="String496" xml:space="preserve">
+    <value>A World of Love|Elizabeth Bowen</value>
+  </data>
+  <data name="String497" xml:space="preserve">
+    <value>The Trusting and the Maimed|James Plunkett</value>
+  </data>
+  <data name="String498" xml:space="preserve">
+    <value>The Quiet American|Graham Greene</value>
+  </data>
+  <data name="String499" xml:space="preserve">
+    <value>The Last Temptation of Christ|Nikos Kazantzákis</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>The Sea|John Banville</value>
+  </data>
+  <data name="String50" xml:space="preserve">
+    <value>An Obedient Father|Akhil Sharma</value>
+  </data>
+  <data name="String500" xml:space="preserve">
+    <value>The Recognitions|William Gaddis</value>
+  </data>
+  <data name="String501" xml:space="preserve">
+    <value>The Ragazzi|Pier Paulo Pasolini</value>
+  </data>
+  <data name="String502" xml:space="preserve">
+    <value>Bonjour Tristesse|Françoise Sagan</value>
+  </data>
+  <data name="String503" xml:space="preserve">
+    <value>I’m Not Stiller|Max Frisch</value>
+  </data>
+  <data name="String504" xml:space="preserve">
+    <value>Self Condemned|Wyndham Lewis</value>
+  </data>
+  <data name="String505" xml:space="preserve">
+    <value>The Story of O|Pauline Réage</value>
+  </data>
+  <data name="String506" xml:space="preserve">
+    <value>A Ghost at Noon|Alberto Moravia</value>
+  </data>
+  <data name="String507" xml:space="preserve">
+    <value>Lord of the Flies|William Golding</value>
+  </data>
+  <data name="String508" xml:space="preserve">
+    <value>Under the Net|Iris Murdoch</value>
+  </data>
+  <data name="String509" xml:space="preserve">
+    <value>The Go-Between|L.P. Hartley</value>
+  </data>
+  <data name="String51" xml:space="preserve">
+    <value>The Devil and Miss Prym|Paulo Coelho</value>
+  </data>
+  <data name="String510" xml:space="preserve">
+    <value>The Long Goodbye|Raymond Chandler</value>
+  </data>
+  <data name="String511" xml:space="preserve">
+    <value>The Unnamable|Samuel Beckett</value>
+  </data>
+  <data name="String512" xml:space="preserve">
+    <value>Watt|Samuel Beckett</value>
+  </data>
+  <data name="String513" xml:space="preserve">
+    <value>Lucky Jim|Kingsley Amis</value>
+  </data>
+  <data name="String514" xml:space="preserve">
+    <value>Junkie|William Burroughs</value>
+  </data>
+  <data name="String515" xml:space="preserve">
+    <value>The Adventures of Augie March|Saul Bellow</value>
+  </data>
+  <data name="String516" xml:space="preserve">
+    <value>Go Tell It on the Mountain|James Baldwin</value>
+  </data>
+  <data name="String517" xml:space="preserve">
+    <value>Casino Royale|Ian Fleming</value>
+  </data>
+  <data name="String518" xml:space="preserve">
+    <value>The Judge and His Hangman|Friedrich Dürrenmatt</value>
+  </data>
+  <data name="String519" xml:space="preserve">
+    <value>Invisible Man|Ralph Ellison</value>
+  </data>
+  <data name="String52" xml:space="preserve">
+    <value>Spring Flowers, Spring Frost|Ismail Kadare</value>
+  </data>
+  <data name="String520" xml:space="preserve">
+    <value>The Old Man and the Sea|Ernest Hemingway</value>
+  </data>
+  <data name="String521" xml:space="preserve">
+    <value>Wise Blood|Flannery O’Connor</value>
+  </data>
+  <data name="String522" xml:space="preserve">
+    <value>The Killer Inside Me|Jim Thompson</value>
+  </data>
+  <data name="String523" xml:space="preserve">
+    <value>Memoirs of Hadrian|Marguerite Yourcenar</value>
+  </data>
+  <data name="String524" xml:space="preserve">
+    <value>Malone Dies|Samuel Beckett</value>
+  </data>
+  <data name="String525" xml:space="preserve">
+    <value>Day of the Triffids|John Wyndham</value>
+  </data>
+  <data name="String526" xml:space="preserve">
+    <value>Foundation|Isaac Asimov</value>
+  </data>
+  <data name="String527" xml:space="preserve">
+    <value>The Opposing Shore|Julien Gracq</value>
+  </data>
+  <data name="String528" xml:space="preserve">
+    <value>The Catcher in the Rye|J.D. Salinger</value>
+  </data>
+  <data name="String529" xml:space="preserve">
+    <value>The Rebel|Albert Camus</value>
+  </data>
+  <data name="String53" xml:space="preserve">
+    <value>White Teeth|Zadie Smith</value>
+  </data>
+  <data name="String530" xml:space="preserve">
+    <value>Molloy|Samuel Beckett</value>
+  </data>
+  <data name="String531" xml:space="preserve">
+    <value>The End of the Affair|Graham Greene</value>
+  </data>
+  <data name="String532" xml:space="preserve">
+    <value>The Abbot C|Georges Bataille</value>
+  </data>
+  <data name="String533" xml:space="preserve">
+    <value>The Labyrinth of Solitude|Octavio Paz</value>
+  </data>
+  <data name="String534" xml:space="preserve">
+    <value>The Third Man|Graham Greene</value>
+  </data>
+  <data name="String535" xml:space="preserve">
+    <value>The 13 Clocks|James Thurber</value>
+  </data>
+  <data name="String536" xml:space="preserve">
+    <value>Gormenghast|Mervyn Peake</value>
+  </data>
+  <data name="String537" xml:space="preserve">
+    <value>The Grass is Singing|Doris Lessing</value>
+  </data>
+  <data name="String538" xml:space="preserve">
+    <value>I, Robot|Isaac Asimov</value>
+  </data>
+  <data name="String539" xml:space="preserve">
+    <value>The Moon and the Bonfires|Cesare Pavese</value>
+  </data>
+  <data name="String54" xml:space="preserve">
+    <value>The Heart of Redness|Zakes Mda</value>
+  </data>
+  <data name="String540" xml:space="preserve">
+    <value>The Garden Where the Brass Band Played|Simon Vestdijk</value>
+  </data>
+  <data name="String541" xml:space="preserve">
+    <value>Love in a Cold Climate|Nancy Mitford</value>
+  </data>
+  <data name="String542" xml:space="preserve">
+    <value>The Case of Comrade Tulayev|Victor Serge</value>
+  </data>
+  <data name="String543" xml:space="preserve">
+    <value>The Heat of the Day|Elizabeth Bowen</value>
+  </data>
+  <data name="String544" xml:space="preserve">
+    <value>Kingdom of This World|Alejo Carpentier</value>
+  </data>
+  <data name="String545" xml:space="preserve">
+    <value>The Man With the Golden Arm|Nelson Algren</value>
+  </data>
+  <data name="String546" xml:space="preserve">
+    <value>Nineteen Eighty-Four|George Orwell</value>
+  </data>
+  <data name="String547" xml:space="preserve">
+    <value>All About H. Hatterr|G.V. Desani</value>
+  </data>
+  <data name="String548" xml:space="preserve">
+    <value>Disobedience|Alberto Moravia</value>
+  </data>
+  <data name="String549" xml:space="preserve">
+    <value>Death Sentence|Maurice Blanchot</value>
+  </data>
+  <data name="String55" xml:space="preserve">
+    <value>Under the Skin|Michel Faber</value>
+  </data>
+  <data name="String550" xml:space="preserve">
+    <value>The Heart of the Matter|Graham Greene</value>
+  </data>
+  <data name="String551" xml:space="preserve">
+    <value>Cry, the Beloved Country|Alan Paton</value>
+  </data>
+  <data name="String552" xml:space="preserve">
+    <value>Doctor Faustus|Thomas Mann</value>
+  </data>
+  <data name="String553" xml:space="preserve">
+    <value>The Victim|Saul Bellow</value>
+  </data>
+  <data name="String554" xml:space="preserve">
+    <value>Exercises in Style|Raymond Queneau</value>
+  </data>
+  <data name="String555" xml:space="preserve">
+    <value>If This Is a Man|Primo Levi</value>
+  </data>
+  <data name="String556" xml:space="preserve">
+    <value>Under the Volcano|Malcolm Lowry</value>
+  </data>
+  <data name="String557" xml:space="preserve">
+    <value>The Path to the Nest of Spiders|Italo Calvino</value>
+  </data>
+  <data name="String558" xml:space="preserve">
+    <value>The Plague|Albert Camus</value>
+  </data>
+  <data name="String559" xml:space="preserve">
+    <value>Back|Henry Green</value>
+  </data>
+  <data name="String56" xml:space="preserve">
+    <value>Ignorance|Milan Kundera</value>
+  </data>
+  <data name="String560" xml:space="preserve">
+    <value>Titus Groan|Mervyn Peake</value>
+  </data>
+  <data name="String561" xml:space="preserve">
+    <value>The Bridge on the Drina|Ivo Andri?</value>
+  </data>
+  <data name="String562" xml:space="preserve">
+    <value>Brideshead Revisited|Evelyn Waugh</value>
+  </data>
+  <data name="String563" xml:space="preserve">
+    <value>Animal Farm|George Orwell</value>
+  </data>
+  <data name="String564" xml:space="preserve">
+    <value>Cannery Row|John Steinbeck</value>
+  </data>
+  <data name="String565" xml:space="preserve">
+    <value>The Pursuit of Love|Nancy Mitford</value>
+  </data>
+  <data name="String566" xml:space="preserve">
+    <value>Loving|Henry Green</value>
+  </data>
+  <data name="String567" xml:space="preserve">
+    <value>Arcanum 17|André Breton</value>
+  </data>
+  <data name="String568" xml:space="preserve">
+    <value>Christ Stopped at Eboli|Carlo Levi</value>
+  </data>
+  <data name="String569" xml:space="preserve">
+    <value>The Razor’s Edge|William Somerset Maugham</value>
+  </data>
+  <data name="String57" xml:space="preserve">
+    <value>Nineteen Seventy Seven|David Peace</value>
+  </data>
+  <data name="String570" xml:space="preserve">
+    <value>Transit|Anna Seghers</value>
+  </data>
+  <data name="String571" xml:space="preserve">
+    <value>Ficciones|Jorge Luis Borges</value>
+  </data>
+  <data name="String572" xml:space="preserve">
+    <value>Dangling Man|Saul Bellow</value>
+  </data>
+  <data name="String573" xml:space="preserve">
+    <value>The Little Prince|Antoine de Saint-Exupéry</value>
+  </data>
+  <data name="String574" xml:space="preserve">
+    <value>Caught|Henry Green</value>
+  </data>
+  <data name="String575" xml:space="preserve">
+    <value>The Glass Bead Game|Herman Hesse</value>
+  </data>
+  <data name="String576" xml:space="preserve">
+    <value>Embers|Sandor Marai</value>
+  </data>
+  <data name="String577" xml:space="preserve">
+    <value>Go Down, Moses|William Faulkner</value>
+  </data>
+  <data name="String578" xml:space="preserve">
+    <value>The Outsider|Albert Camus</value>
+  </data>
+  <data name="String579" xml:space="preserve">
+    <value>In Sicily|Elio Vittorini</value>
+  </data>
+  <data name="String58" xml:space="preserve">
+    <value>Celestial Harmonies|Péter Esterházy</value>
+  </data>
+  <data name="String580" xml:space="preserve">
+    <value>The Poor Mouth|Flann O’Brien</value>
+  </data>
+  <data name="String581" xml:space="preserve">
+    <value>The Living and the Dead|Patrick White</value>
+  </data>
+  <data name="String582" xml:space="preserve">
+    <value>Hangover Square|Patrick Hamilton</value>
+  </data>
+  <data name="String583" xml:space="preserve">
+    <value>Between the Acts|Virginia Woolf</value>
+  </data>
+  <data name="String584" xml:space="preserve">
+    <value>The Hamlet|William Faulkner</value>
+  </data>
+  <data name="String585" xml:space="preserve">
+    <value>Farewell My Lovely|Raymond Chandler</value>
+  </data>
+  <data name="String586" xml:space="preserve">
+    <value>For Whom the Bell Tolls|Ernest Hemingway</value>
+  </data>
+  <data name="String587" xml:space="preserve">
+    <value>Native Son|Richard Wright</value>
+  </data>
+  <data name="String588" xml:space="preserve">
+    <value>The Power and the Glory|Graham Greene</value>
+  </data>
+  <data name="String589" xml:space="preserve">
+    <value>The Tartar Steppe|Dino Buzzati</value>
+  </data>
+  <data name="String59" xml:space="preserve">
+    <value>City of God|E.L. Doctorow</value>
+  </data>
+  <data name="String590" xml:space="preserve">
+    <value>Party Going|Henry Green</value>
+  </data>
+  <data name="String591" xml:space="preserve">
+    <value>The Grapes of Wrath|John Steinbeck</value>
+  </data>
+  <data name="String592" xml:space="preserve">
+    <value>Finnegans Wake|James Joyce</value>
+  </data>
+  <data name="String593" xml:space="preserve">
+    <value>At Swim-Two-Birds|Flann O’Brien</value>
+  </data>
+  <data name="String594" xml:space="preserve">
+    <value>Coming Up for Air|George Orwell</value>
+  </data>
+  <data name="String595" xml:space="preserve">
+    <value>Goodbye to Berlin|Christopher Isherwood</value>
+  </data>
+  <data name="String596" xml:space="preserve">
+    <value>Tropic of Capricorn|Henry Miller</value>
+  </data>
+  <data name="String597" xml:space="preserve">
+    <value>Good Morning, Midnight|Jean Rhys</value>
+  </data>
+  <data name="String598" xml:space="preserve">
+    <value>The Big Sleep|Raymond Chandler</value>
+  </data>
+  <data name="String599" xml:space="preserve">
+    <value>After the Death of Don Juan|Sylvie Townsend Warner</value>
+  </data>
+  <data name="String6" xml:space="preserve">
+    <value>The Red Queen|Margaret Drabble</value>
+  </data>
+  <data name="String60" xml:space="preserve">
+    <value>How the Dead Live|Will Self</value>
+  </data>
+  <data name="String600" xml:space="preserve">
+    <value>Miss Pettigrew Lives for a Day|Winifred Watson</value>
+  </data>
+  <data name="String601" xml:space="preserve">
+    <value>Nausea|Jean-Paul Sartre</value>
+  </data>
+  <data name="String602" xml:space="preserve">
+    <value>Rebecca|Daphne du Maurier</value>
+  </data>
+  <data name="String603" xml:space="preserve">
+    <value>Cause for Alarm|Eric Ambler</value>
+  </data>
+  <data name="String604" xml:space="preserve">
+    <value>Brighton Rock|Graham Greene</value>
+  </data>
+  <data name="String605" xml:space="preserve">
+    <value>U.S.A.|John Dos Passos</value>
+  </data>
+  <data name="String606" xml:space="preserve">
+    <value>Murphy|Samuel Beckett</value>
+  </data>
+  <data name="String607" xml:space="preserve">
+    <value>Of Mice and Men|John Steinbeck</value>
+  </data>
+  <data name="String608" xml:space="preserve">
+    <value>Their Eyes Were Watching God|Zora Neale Hurston</value>
+  </data>
+  <data name="String609" xml:space="preserve">
+    <value>The Hobbit|J.R.R. Tolkien</value>
+  </data>
+  <data name="String61" xml:space="preserve">
+    <value>The Human Stain|Philip Roth</value>
+  </data>
+  <data name="String610" xml:space="preserve">
+    <value>The Years|Virginia Woolf</value>
+  </data>
+  <data name="String611" xml:space="preserve">
+    <value>In Parenthesis|David Jones</value>
+  </data>
+  <data name="String612" xml:space="preserve">
+    <value>The Revenge for Love|Wyndham Lewis</value>
+  </data>
+  <data name="String613" xml:space="preserve">
+    <value>Out of Africa|Isak Dineson (Karen Blixen)</value>
+  </data>
+  <data name="String614" xml:space="preserve">
+    <value>To Have and Have Not|Ernest Hemingway</value>
+  </data>
+  <data name="String615" xml:space="preserve">
+    <value>Summer Will Show|Sylvia Townsend Warner</value>
+  </data>
+  <data name="String616" xml:space="preserve">
+    <value>Eyeless in Gaza|Aldous Huxley</value>
+  </data>
+  <data name="String617" xml:space="preserve">
+    <value>The Thinking Reed|Rebecca West</value>
+  </data>
+  <data name="String618" xml:space="preserve">
+    <value>Gone With the Wind|Margaret Mitchell</value>
+  </data>
+  <data name="String619" xml:space="preserve">
+    <value>Keep the Aspidistra Flying|George Orwell</value>
+  </data>
+  <data name="String62" xml:space="preserve">
+    <value>The Blind Assassin|Margaret Atwood</value>
+  </data>
+  <data name="String620" xml:space="preserve">
+    <value>Wild Harbour|Ian MacPherson</value>
+  </data>
+  <data name="String621" xml:space="preserve">
+    <value>Absalom, Absalom!|William Faulkner</value>
+  </data>
+  <data name="String622" xml:space="preserve">
+    <value>At the Mountains of Madness|H.P. Lovecraft</value>
+  </data>
+  <data name="String623" xml:space="preserve">
+    <value>Nightwood|Djuna Barnes</value>
+  </data>
+  <data name="String624" xml:space="preserve">
+    <value>Independent People|Halldór Laxness</value>
+  </data>
+  <data name="String625" xml:space="preserve">
+    <value>Auto-da-Fé|Elias Canetti</value>
+  </data>
+  <data name="String626" xml:space="preserve">
+    <value>The Last of Mr. Norris|Christopher Isherwood</value>
+  </data>
+  <data name="String627" xml:space="preserve">
+    <value>They Shoot Horses, Don’t They?|Horace McCoy</value>
+  </data>
+  <data name="String628" xml:space="preserve">
+    <value>The House in Paris|Elizabeth Bowen</value>
+  </data>
+  <data name="String629" xml:space="preserve">
+    <value>England Made Me|Graham Greene</value>
+  </data>
+  <data name="String63" xml:space="preserve">
+    <value>After the Quake|Haruki Murakami</value>
+  </data>
+  <data name="String630" xml:space="preserve">
+    <value>Burmese Days|George Orwell</value>
+  </data>
+  <data name="String631" xml:space="preserve">
+    <value>The Nine Tailors|Dorothy L. Sayers</value>
+  </data>
+  <data name="String632" xml:space="preserve">
+    <value>Threepenny Novel|Bertolt Brecht</value>
+  </data>
+  <data name="String633" xml:space="preserve">
+    <value>Novel With Cocaine|M. Ageyev</value>
+  </data>
+  <data name="String634" xml:space="preserve">
+    <value>The Postman Always Rings Twice|James M. Cain</value>
+  </data>
+  <data name="String635" xml:space="preserve">
+    <value>Tropic of Cancer|Henry Miller</value>
+  </data>
+  <data name="String636" xml:space="preserve">
+    <value>A Handful of Dust|Evelyn Waugh</value>
+  </data>
+  <data name="String637" xml:space="preserve">
+    <value>Tender is the Night|F. Scott Fitzgerald</value>
+  </data>
+  <data name="String638" xml:space="preserve">
+    <value>Thank You, Jeeves|P.G. Wodehouse</value>
+  </data>
+  <data name="String639" xml:space="preserve">
+    <value>Call it Sleep|Henry Roth</value>
+  </data>
+  <data name="String64" xml:space="preserve">
+    <value>Small Remedies|Shashi Deshpande</value>
+  </data>
+  <data name="String640" xml:space="preserve">
+    <value>Miss Lonelyhearts|Nathanael West</value>
+  </data>
+  <data name="String641" xml:space="preserve">
+    <value>Murder Must Advertise|Dorothy L. Sayers</value>
+  </data>
+  <data name="String642" xml:space="preserve">
+    <value>The Autobiography of Alice B. Toklas|Gertrude Stein</value>
+  </data>
+  <data name="String643" xml:space="preserve">
+    <value>Testament of Youth|Vera Brittain</value>
+  </data>
+  <data name="String644" xml:space="preserve">
+    <value>A Day Off|Storm Jameson</value>
+  </data>
+  <data name="String645" xml:space="preserve">
+    <value>The Man Without Qualities|Robert Musil</value>
+  </data>
+  <data name="String646" xml:space="preserve">
+    <value>A Scots Quair (Sunset Song)|Lewis Grassic Gibbon</value>
+  </data>
+  <data name="String647" xml:space="preserve">
+    <value>Journey to the End of the Night|Louis-Ferdinand Céline</value>
+  </data>
+  <data name="String648" xml:space="preserve">
+    <value>Brave New World|Aldous Huxley</value>
+  </data>
+  <data name="String649" xml:space="preserve">
+    <value>Cold Comfort Farm|Stella Gibbons</value>
+  </data>
+  <data name="String65" xml:space="preserve">
+    <value>Super-Cannes|J.G. Ballard</value>
+  </data>
+  <data name="String650" xml:space="preserve">
+    <value>To the North|Elizabeth Bowen</value>
+  </data>
+  <data name="String651" xml:space="preserve">
+    <value>The Thin Man|Dashiell Hammett</value>
+  </data>
+  <data name="String652" xml:space="preserve">
+    <value>The Radetzky March|Joseph Roth</value>
+  </data>
+  <data name="String653" xml:space="preserve">
+    <value>The Waves|Virginia Woolf</value>
+  </data>
+  <data name="String654" xml:space="preserve">
+    <value>The Glass Key|Dashiell Hammett</value>
+  </data>
+  <data name="String655" xml:space="preserve">
+    <value>Cakes and Ale|W. Somerset Maugham</value>
+  </data>
+  <data name="String656" xml:space="preserve">
+    <value>The Apes of God|Wyndham Lewis</value>
+  </data>
+  <data name="String657" xml:space="preserve">
+    <value>Her Privates We|Frederic Manning</value>
+  </data>
+  <data name="String658" xml:space="preserve">
+    <value>Vile Bodies|Evelyn Waugh</value>
+  </data>
+  <data name="String659" xml:space="preserve">
+    <value>The Maltese Falcon|Dashiell Hammett</value>
+  </data>
+  <data name="String66" xml:space="preserve">
+    <value>House of Leaves|Mark Z. Danielewski</value>
+  </data>
+  <data name="String660" xml:space="preserve">
+    <value>Hebdomeros|Giorgio de Chirico</value>
+  </data>
+  <data name="String661" xml:space="preserve">
+    <value>Passing|Nella Larsen</value>
+  </data>
+  <data name="String662" xml:space="preserve">
+    <value>A Farewell to Arms|Ernest Hemingway</value>
+  </data>
+  <data name="String663" xml:space="preserve">
+    <value>Red Harvest|Dashiell Hammett</value>
+  </data>
+  <data name="String664" xml:space="preserve">
+    <value>Living|Henry Green</value>
+  </data>
+  <data name="String665" xml:space="preserve">
+    <value>The Time of Indifference|Alberto Moravia</value>
+  </data>
+  <data name="String666" xml:space="preserve">
+    <value>All Quiet on the Western Front|Erich Maria Remarque</value>
+  </data>
+  <data name="String667" xml:space="preserve">
+    <value>Berlin Alexanderplatz|Alfred Döblin</value>
+  </data>
+  <data name="String668" xml:space="preserve">
+    <value>The Last September|Elizabeth Bowen</value>
+  </data>
+  <data name="String669" xml:space="preserve">
+    <value>Harriet Hume|Rebecca West</value>
+  </data>
+  <data name="String67" xml:space="preserve">
+    <value>Blonde|Joyce Carol Oates</value>
+  </data>
+  <data name="String670" xml:space="preserve">
+    <value>The Sound and the Fury|William Faulkner</value>
+  </data>
+  <data name="String671" xml:space="preserve">
+    <value>Les Enfants Terribles|Jean Cocteau</value>
+  </data>
+  <data name="String672" xml:space="preserve">
+    <value>Look Homeward, Angel|Thomas Wolfe</value>
+  </data>
+  <data name="String673" xml:space="preserve">
+    <value>Story of the Eye|Georges Bataille</value>
+  </data>
+  <data name="String674" xml:space="preserve">
+    <value>Orlando|Virginia Woolf</value>
+  </data>
+  <data name="String675" xml:space="preserve">
+    <value>Lady Chatterley’s Lover|D.H. Lawrence</value>
+  </data>
+  <data name="String676" xml:space="preserve">
+    <value>The Well of Loneliness|Radclyffe Hall</value>
+  </data>
+  <data name="String677" xml:space="preserve">
+    <value>The Childermass|Wyndham Lewis</value>
+  </data>
+  <data name="String678" xml:space="preserve">
+    <value>Quartet|Jean Rhys</value>
+  </data>
+  <data name="String679" xml:space="preserve">
+    <value>Decline and Fall|Evelyn Waugh</value>
+  </data>
+  <data name="String68" xml:space="preserve">
+    <value>Pastoralia|George Saunders</value>
+  </data>
+  <data name="String680" xml:space="preserve">
+    <value>Quicksand|Nella Larsen</value>
+  </data>
+  <data name="String681" xml:space="preserve">
+    <value>Parade’s End|Ford Madox Ford</value>
+  </data>
+  <data name="String682" xml:space="preserve">
+    <value>Nadja|André Breton</value>
+  </data>
+  <data name="String683" xml:space="preserve">
+    <value>Steppenwolf|Herman Hesse</value>
+  </data>
+  <data name="String684" xml:space="preserve">
+    <value>Remembrance of Things Past|Marcel Proust</value>
+  </data>
+  <data name="String685" xml:space="preserve">
+    <value>To The Lighthouse|Virginia Woolf</value>
+  </data>
+  <data name="String686" xml:space="preserve">
+    <value>Tarka the Otter|Henry Williamson</value>
+  </data>
+  <data name="String687" xml:space="preserve">
+    <value>Amerika|Franz Kafka</value>
+  </data>
+  <data name="String688" xml:space="preserve">
+    <value>The Sun Also Rises|Ernest Hemingway</value>
+  </data>
+  <data name="String689" xml:space="preserve">
+    <value>Blindness|Henry Green</value>
+  </data>
+  <data name="String69" xml:space="preserve">
+    <value>Timbuktu|Paul Auster</value>
+  </data>
+  <data name="String690" xml:space="preserve">
+    <value>The Castle|Franz Kafka</value>
+  </data>
+  <data name="String691" xml:space="preserve">
+    <value>The Good Soldier Švejk|Jaroslav Hašek</value>
+  </data>
+  <data name="String692" xml:space="preserve">
+    <value>The Plumed Serpent|D.H. Lawrence</value>
+  </data>
+  <data name="String693" xml:space="preserve">
+    <value>One, None and a Hundred Thousand|Luigi Pirandello</value>
+  </data>
+  <data name="String694" xml:space="preserve">
+    <value>The Murder of Roger Ackroyd|Agatha Christie</value>
+  </data>
+  <data name="String695" xml:space="preserve">
+    <value>The Making of Americans|Gertrude Stein</value>
+  </data>
+  <data name="String696" xml:space="preserve">
+    <value>Manhattan Transfer|John Dos Passos</value>
+  </data>
+  <data name="String697" xml:space="preserve">
+    <value>Mrs. Dalloway|Virginia Woolf</value>
+  </data>
+  <data name="String698" xml:space="preserve">
+    <value>The Great Gatsby|F. Scott Fitzgerald</value>
+  </data>
+  <data name="String699" xml:space="preserve">
+    <value>The Counterfeiters|André Gide</value>
+  </data>
+  <data name="String7" xml:space="preserve">
+    <value>The Plot Against America|Philip Roth</value>
+  </data>
+  <data name="String70" xml:space="preserve">
+    <value>The Romantics|Pankaj Mishra</value>
+  </data>
+  <data name="String700" xml:space="preserve">
+    <value>The Trial|Franz Kafka</value>
+  </data>
+  <data name="String701" xml:space="preserve">
+    <value>The Artamonov Business|Maxim Gorky</value>
+  </data>
+  <data name="String702" xml:space="preserve">
+    <value>The Professor’s House|Willa Cather</value>
+  </data>
+  <data name="String703" xml:space="preserve">
+    <value>Billy Budd, Foretopman|Herman Melville</value>
+  </data>
+  <data name="String704" xml:space="preserve">
+    <value>The Green Hat|Michael Arlen</value>
+  </data>
+  <data name="String705" xml:space="preserve">
+    <value>The Magic Mountain|Thomas Mann</value>
+  </data>
+  <data name="String706" xml:space="preserve">
+    <value>We|Yevgeny Zamyatin</value>
+  </data>
+  <data name="String707" xml:space="preserve">
+    <value>A Passage to India|E.M. Forster</value>
+  </data>
+  <data name="String708" xml:space="preserve">
+    <value>The Devil in the Flesh|Raymond Radiguet</value>
+  </data>
+  <data name="String709" xml:space="preserve">
+    <value>Zeno’s Conscience|Italo Svevo</value>
+  </data>
+  <data name="String71" xml:space="preserve">
+    <value>Cryptonomicon|Neal Stephenson</value>
+  </data>
+  <data name="String710" xml:space="preserve">
+    <value>Cane|Jean Toomer</value>
+  </data>
+  <data name="String711" xml:space="preserve">
+    <value>Antic Hay|Aldous Huxley</value>
+  </data>
+  <data name="String712" xml:space="preserve">
+    <value>Amok|Stefan Zweig</value>
+  </data>
+  <data name="String713" xml:space="preserve">
+    <value>The Garden Party|Katherine Mansfield</value>
+  </data>
+  <data name="String714" xml:space="preserve">
+    <value>The Enormous Room|E.E. Cummings</value>
+  </data>
+  <data name="String715" xml:space="preserve">
+    <value>Jacob’s Room|Virginia Woolf</value>
+  </data>
+  <data name="String716" xml:space="preserve">
+    <value>Siddhartha|Herman Hesse</value>
+  </data>
+  <data name="String717" xml:space="preserve">
+    <value>The Glimpses of the Moon|Edith Wharton</value>
+  </data>
+  <data name="String718" xml:space="preserve">
+    <value>Life and Death of Harriett Frean|May Sinclair</value>
+  </data>
+  <data name="String719" xml:space="preserve">
+    <value>The Last Days of Humanity|Karl Kraus</value>
+  </data>
+  <data name="String72" xml:space="preserve">
+    <value>As If I Am Not There|Slavenka Drakuli?</value>
+  </data>
+  <data name="String720" xml:space="preserve">
+    <value>Aaron’s Rod|D.H. Lawrence</value>
+  </data>
+  <data name="String721" xml:space="preserve">
+    <value>Babbitt|Sinclair Lewis</value>
+  </data>
+  <data name="String722" xml:space="preserve">
+    <value>Ulysses|James Joyce</value>
+  </data>
+  <data name="String723" xml:space="preserve">
+    <value>The Fox|D.H. Lawrence</value>
+  </data>
+  <data name="String724" xml:space="preserve">
+    <value>Crome Yellow|Aldous Huxley</value>
+  </data>
+  <data name="String725" xml:space="preserve">
+    <value>The Age of Innocence|Edith Wharton</value>
+  </data>
+  <data name="String726" xml:space="preserve">
+    <value>Main Street|Sinclair Lewis</value>
+  </data>
+  <data name="String727" xml:space="preserve">
+    <value>Women in Love|D.H. Lawrence</value>
+  </data>
+  <data name="String728" xml:space="preserve">
+    <value>Night and Day|Virginia Woolf</value>
+  </data>
+  <data name="String729" xml:space="preserve">
+    <value>Tarr|Wyndham Lewis</value>
+  </data>
+  <data name="String73" xml:space="preserve">
+    <value>Everything You Need|A.L. Kennedy</value>
+  </data>
+  <data name="String730" xml:space="preserve">
+    <value>The Return of the Soldier|Rebecca West</value>
+  </data>
+  <data name="String731" xml:space="preserve">
+    <value>The Shadow Line|Joseph Conrad</value>
+  </data>
+  <data name="String732" xml:space="preserve">
+    <value>Summer|Edith Wharton</value>
+  </data>
+  <data name="String733" xml:space="preserve">
+    <value>Growth of the Soil|Knut Hamsen</value>
+  </data>
+  <data name="String734" xml:space="preserve">
+    <value>Bunner Sisters|Edith Wharton</value>
+  </data>
+  <data name="String735" xml:space="preserve">
+    <value>A Portrait of the Artist as a Young Man|James Joyce</value>
+  </data>
+  <data name="String736" xml:space="preserve">
+    <value>Under Fire|Henri Barbusse</value>
+  </data>
+  <data name="String737" xml:space="preserve">
+    <value>Rashomon|Akutagawa Ryunosuke</value>
+  </data>
+  <data name="String738" xml:space="preserve">
+    <value>The Good Soldier|Ford Madox Ford</value>
+  </data>
+  <data name="String739" xml:space="preserve">
+    <value>The Voyage Out|Virginia Woolf</value>
+  </data>
+  <data name="String74" xml:space="preserve">
+    <value>Fear and Trembling|Amélie Nothomb</value>
+  </data>
+  <data name="String740" xml:space="preserve">
+    <value>Of Human Bondage|William Somerset Maugham</value>
+  </data>
+  <data name="String741" xml:space="preserve">
+    <value>The Rainbow|D.H. Lawrence</value>
+  </data>
+  <data name="String742" xml:space="preserve">
+    <value>The Thirty-Nine Steps|John Buchan</value>
+  </data>
+  <data name="String743" xml:space="preserve">
+    <value>Kokoro|Natsume Soseki</value>
+  </data>
+  <data name="String744" xml:space="preserve">
+    <value>Locus Solus|Raymond Roussel</value>
+  </data>
+  <data name="String745" xml:space="preserve">
+    <value>Rosshalde|Herman Hesse</value>
+  </data>
+  <data name="String746" xml:space="preserve">
+    <value>Tarzan of the Apes|Edgar Rice Burroughs</value>
+  </data>
+  <data name="String747" xml:space="preserve">
+    <value>The Ragged Trousered Philanthropists|Robert Tressell</value>
+  </data>
+  <data name="String748" xml:space="preserve">
+    <value>Sons and Lovers|D.H. Lawrence</value>
+  </data>
+  <data name="String749" xml:space="preserve">
+    <value>Death in Venice|Thomas Mann</value>
+  </data>
+  <data name="String75" xml:space="preserve">
+    <value>The Ground Beneath Her Feet|Salman Rushdie</value>
+  </data>
+  <data name="String750" xml:space="preserve">
+    <value>The Charwoman’s Daughter|James Stephens</value>
+  </data>
+  <data name="String751" xml:space="preserve">
+    <value>Ethan Frome|Edith Wharton</value>
+  </data>
+  <data name="String752" xml:space="preserve">
+    <value>Fantômas|Marcel Allain and Pierre Souvestre</value>
+  </data>
+  <data name="String753" xml:space="preserve">
+    <value>Howards End|E.M. Forster</value>
+  </data>
+  <data name="String754" xml:space="preserve">
+    <value>Impressions of Africa|Raymond Roussel</value>
+  </data>
+  <data name="String755" xml:space="preserve">
+    <value>Three Lives|Gertrude Stein</value>
+  </data>
+  <data name="String756" xml:space="preserve">
+    <value>Martin Eden|Jack London</value>
+  </data>
+  <data name="String757" xml:space="preserve">
+    <value>Strait is the Gate|André Gide</value>
+  </data>
+  <data name="String758" xml:space="preserve">
+    <value>Tono-Bungay|H.G. Wells</value>
+  </data>
+  <data name="String759" xml:space="preserve">
+    <value>The Inferno|Henri Barbusse</value>
+  </data>
+  <data name="String76" xml:space="preserve">
+    <value>Disgrace|J.M. Coetzee</value>
+  </data>
+  <data name="String760" xml:space="preserve">
+    <value>A Room With a View|E.M. Forster</value>
+  </data>
+  <data name="String761" xml:space="preserve">
+    <value>The Iron Heel|Jack London</value>
+  </data>
+  <data name="String762" xml:space="preserve">
+    <value>The Old Wives’ Tale|Arnold Bennett</value>
+  </data>
+  <data name="String763" xml:space="preserve">
+    <value>The House on the Borderland|William Hope Hodgson</value>
+  </data>
+  <data name="String764" xml:space="preserve">
+    <value>Mother|Maxim Gorky</value>
+  </data>
+  <data name="String765" xml:space="preserve">
+    <value>The Secret Agent|Joseph Conrad</value>
+  </data>
+  <data name="String766" xml:space="preserve">
+    <value>The Jungle|Upton Sinclair</value>
+  </data>
+  <data name="String767" xml:space="preserve">
+    <value>Young Törless|Robert Musil</value>
+  </data>
+  <data name="String768" xml:space="preserve">
+    <value>The Forsyte Sage|John Galsworthy</value>
+  </data>
+  <data name="String769" xml:space="preserve">
+    <value>The House of Mirth|Edith Wharton</value>
+  </data>
+  <data name="String77" xml:space="preserve">
+    <value>Sputnik Sweetheart|Haruki Murakami</value>
+  </data>
+  <data name="String770" xml:space="preserve">
+    <value>Professor Unrat|Heinrich Mann</value>
+  </data>
+  <data name="String771" xml:space="preserve">
+    <value>Where Angels Fear to Tread|E.M. Forster</value>
+  </data>
+  <data name="String772" xml:space="preserve">
+    <value>Nostromo|Joseph Conrad</value>
+  </data>
+  <data name="String773" xml:space="preserve">
+    <value>Hadrian the Seventh|Frederick Rolfe</value>
+  </data>
+  <data name="String774" xml:space="preserve">
+    <value>The Golden Bowl|Henry James</value>
+  </data>
+  <data name="String775" xml:space="preserve">
+    <value>The Ambassadors|Henry James</value>
+  </data>
+  <data name="String776" xml:space="preserve">
+    <value>The Riddle of the Sands|Erskine Childers</value>
+  </data>
+  <data name="String777" xml:space="preserve">
+    <value>The Immoralist|André Gide</value>
+  </data>
+  <data name="String778" xml:space="preserve">
+    <value>The Wings of the Dove|Henry James</value>
+  </data>
+  <data name="String779" xml:space="preserve">
+    <value>Heart of Darkness|Joseph Conrad</value>
+  </data>
+  <data name="String78" xml:space="preserve">
+    <value>Elementary Particles|Michel Houellebecq</value>
+  </data>
+  <data name="String780" xml:space="preserve">
+    <value>The Hound of the Baskervilles|Sir Arthur Conan Doyle</value>
+  </data>
+  <data name="String781" xml:space="preserve">
+    <value>Buddenbrooks|Thomas Mann</value>
+  </data>
+  <data name="String782" xml:space="preserve">
+    <value>Kim|Rudyard Kipling</value>
+  </data>
+  <data name="String783" xml:space="preserve">
+    <value>Sister Carrie|Theodore Dreiser</value>
+  </data>
+  <data name="String784" xml:space="preserve">
+    <value>Lord Jim|Joseph Conrad</value>
+  </data>
+  <data name="String785" xml:space="preserve">
+    <value>Some Experiences of an Irish R.M.|Somerville and Ross</value>
+  </data>
+  <data name="String786" xml:space="preserve">
+    <value>The Stechlin|Theodore Fontane</value>
+  </data>
+  <data name="String787" xml:space="preserve">
+    <value>The Awakening|Kate Chopin</value>
+  </data>
+  <data name="String788" xml:space="preserve">
+    <value>The Turn of the Screw|Henry James</value>
+  </data>
+  <data name="String789" xml:space="preserve">
+    <value>The War of the Worlds|H.G. Wells</value>
+  </data>
+  <data name="String79" xml:space="preserve">
+    <value>Intimacy|Hanif Kureishi</value>
+  </data>
+  <data name="String790" xml:space="preserve">
+    <value>The Invisible Man|H.G. Wells</value>
+  </data>
+  <data name="String791" xml:space="preserve">
+    <value>What Maisie Knew|Henry James</value>
+  </data>
+  <data name="String792" xml:space="preserve">
+    <value>Fruits of the Earth|André Gide</value>
+  </data>
+  <data name="String793" xml:space="preserve">
+    <value>Dracula|Bram Stoker</value>
+  </data>
+  <data name="String794" xml:space="preserve">
+    <value>Quo Vadis|Henryk Sienkiewicz</value>
+  </data>
+  <data name="String795" xml:space="preserve">
+    <value>The Island of Dr. Moreau|H.G. Wells</value>
+  </data>
+  <data name="String796" xml:space="preserve">
+    <value>The Time Machine|H.G. Wells</value>
+  </data>
+  <data name="String797" xml:space="preserve">
+    <value>Effi Briest|Theodore Fontane</value>
+  </data>
+  <data name="String798" xml:space="preserve">
+    <value>Jude the Obscure|Thomas Hardy</value>
+  </data>
+  <data name="String799" xml:space="preserve">
+    <value>The Real Charlotte|Somerville and Ross</value>
+  </data>
+  <data name="String8" xml:space="preserve">
+    <value>The Master|Colm Tóibín</value>
+  </data>
+  <data name="String80" xml:space="preserve">
+    <value>Amsterdam|Ian McEwan</value>
+  </data>
+  <data name="String800" xml:space="preserve">
+    <value>The Yellow Wallpaper|Charlotte Perkins Gilman</value>
+  </data>
+  <data name="String801" xml:space="preserve">
+    <value>Born in Exile|George Gissing</value>
+  </data>
+  <data name="String802" xml:space="preserve">
+    <value>Diary of a Nobody|George &amp; Weedon Grossmith</value>
+  </data>
+  <data name="String803" xml:space="preserve">
+    <value>The Adventures of Sherlock Holmes|Sir Arthur Conan Doyle</value>
+  </data>
+  <data name="String804" xml:space="preserve">
+    <value>News from Nowhere|William Morris</value>
+  </data>
+  <data name="String805" xml:space="preserve">
+    <value>New Grub Street|George Gissing</value>
+  </data>
+  <data name="String806" xml:space="preserve">
+    <value>Gösta Berling’s Saga|Selma Lagerlöf</value>
+  </data>
+  <data name="String807" xml:space="preserve">
+    <value>Tess of the D’Urbervilles|Thomas Hardy</value>
+  </data>
+  <data name="String808" xml:space="preserve">
+    <value>The Picture of Dorian Gray|Oscar Wilde</value>
+  </data>
+  <data name="String809" xml:space="preserve">
+    <value>The Kreutzer Sonata|Leo Tolstoy</value>
+  </data>
+  <data name="String81" xml:space="preserve">
+    <value>Cloudsplitter|Russell Banks</value>
+  </data>
+  <data name="String810" xml:space="preserve">
+    <value>La Bête Humaine|Émile Zola</value>
+  </data>
+  <data name="String811" xml:space="preserve">
+    <value>By the Open Sea|August Strindberg</value>
+  </data>
+  <data name="String812" xml:space="preserve">
+    <value>Hunger|Knut Hamsun</value>
+  </data>
+  <data name="String813" xml:space="preserve">
+    <value>The Master of Ballantrae|Robert Louis Stevenson</value>
+  </data>
+  <data name="String814" xml:space="preserve">
+    <value>Pierre and Jean|Guy de Maupassant</value>
+  </data>
+  <data name="String815" xml:space="preserve">
+    <value>Fortunata and Jacinta|Benito Pérez Galdés</value>
+  </data>
+  <data name="String816" xml:space="preserve">
+    <value>The People of Hemsö|August Strindberg</value>
+  </data>
+  <data name="String817" xml:space="preserve">
+    <value>The Woodlanders|Thomas Hardy</value>
+  </data>
+  <data name="String818" xml:space="preserve">
+    <value>She|H. Rider Haggard</value>
+  </data>
+  <data name="String819" xml:space="preserve">
+    <value>The Strange Case of Dr. Jekyll and Mr. Hyde|Robert Louis Stevenson</value>
+  </data>
+  <data name="String82" xml:space="preserve">
+    <value>All Souls Day|Cees Nooteboom</value>
+  </data>
+  <data name="String820" xml:space="preserve">
+    <value>The Mayor of Casterbridge|Thomas Hardy</value>
+  </data>
+  <data name="String821" xml:space="preserve">
+    <value>Kidnapped|Robert Louis Stevenson</value>
+  </data>
+  <data name="String822" xml:space="preserve">
+    <value>King Solomon’s Mines|H. Rider Haggard</value>
+  </data>
+  <data name="String823" xml:space="preserve">
+    <value>Germinal|Émile Zola</value>
+  </data>
+  <data name="String824" xml:space="preserve">
+    <value>The Adventures of Huckleberry Finn|Mark Twain</value>
+  </data>
+  <data name="String825" xml:space="preserve">
+    <value>Bel-Ami|Guy de Maupassant</value>
+  </data>
+  <data name="String826" xml:space="preserve">
+    <value>Marius the Epicurean|Walter Pater</value>
+  </data>
+  <data name="String827" xml:space="preserve">
+    <value>Against the Grain|Joris-Karl Huysmans</value>
+  </data>
+  <data name="String828" xml:space="preserve">
+    <value>The Death of Ivan Ilyich|Leo Tolstoy</value>
+  </data>
+  <data name="String829" xml:space="preserve">
+    <value>A Woman’s Life|Guy de Maupassant</value>
+  </data>
+  <data name="String83" xml:space="preserve">
+    <value>The Talk of the Town|Ardal O’Hanlon</value>
+  </data>
+  <data name="String830" xml:space="preserve">
+    <value>Treasure Island|Robert Louis Stevenson</value>
+  </data>
+  <data name="String831" xml:space="preserve">
+    <value>The House by the Medlar Tree|Giovanni Verga</value>
+  </data>
+  <data name="String832" xml:space="preserve">
+    <value>The Portrait of a Lady|Henry James</value>
+  </data>
+  <data name="String833" xml:space="preserve">
+    <value>Bouvard and Pécuchet|Gustave Flaubert</value>
+  </data>
+  <data name="String834" xml:space="preserve">
+    <value>Ben-Hur|Lew Wallace</value>
+  </data>
+  <data name="String835" xml:space="preserve">
+    <value>Nana|Émile Zola</value>
+  </data>
+  <data name="String836" xml:space="preserve">
+    <value>The Brothers Karamazov|Fyodor Dostoevsky</value>
+  </data>
+  <data name="String837" xml:space="preserve">
+    <value>The Red Room|August Strindberg</value>
+  </data>
+  <data name="String838" xml:space="preserve">
+    <value>Return of the Native|Thomas Hardy</value>
+  </data>
+  <data name="String839" xml:space="preserve">
+    <value>Anna Karenina|Leo Tolstoy</value>
+  </data>
+  <data name="String84" xml:space="preserve">
+    <value>Tipping the Velvet|Sarah Waters</value>
+  </data>
+  <data name="String840" xml:space="preserve">
+    <value>Drunkard|Émile Zola</value>
+  </data>
+  <data name="String841" xml:space="preserve">
+    <value>Virgin Soil|Ivan Turgenev</value>
+  </data>
+  <data name="String842" xml:space="preserve">
+    <value>Daniel Deronda|George Eliot</value>
+  </data>
+  <data name="String843" xml:space="preserve">
+    <value>The Hand of Ethelberta|Thomas Hardy</value>
+  </data>
+  <data name="String844" xml:space="preserve">
+    <value>The Temptation of Saint Anthony|Gustave Flaubert</value>
+  </data>
+  <data name="String845" xml:space="preserve">
+    <value>Far from the Madding Crowd|Thomas Hardy</value>
+  </data>
+  <data name="String846" xml:space="preserve">
+    <value>The Enchanted Wanderer|Nicolai Leskov</value>
+  </data>
+  <data name="String847" xml:space="preserve">
+    <value>Around the World in Eighty Days|Jules Verne</value>
+  </data>
+  <data name="String848" xml:space="preserve">
+    <value>In a Glass Darkly|Sheridan Le Fanu</value>
+  </data>
+  <data name="String849" xml:space="preserve">
+    <value>The Devils|Fyodor Dostoevsky</value>
+  </data>
+  <data name="String85" xml:space="preserve">
+    <value>The Poisonwood Bible|Barbara Kingsolver</value>
+  </data>
+  <data name="String850" xml:space="preserve">
+    <value>Erewhon|Samuel Butler</value>
+  </data>
+  <data name="String851" xml:space="preserve">
+    <value>Spring Torrents|Ivan Turgenev</value>
+  </data>
+  <data name="String852" xml:space="preserve">
+    <value>Middlemarch|George Eliot</value>
+  </data>
+  <data name="String853" xml:space="preserve">
+    <value>Through the Looking Glass, and What Alice Found There|Lewis Carroll</value>
+  </data>
+  <data name="String854" xml:space="preserve">
+    <value>King Lear of the Steppes|Ivan Turgenev</value>
+  </data>
+  <data name="String855" xml:space="preserve">
+    <value>He Knew He Was Right|Anthony Trollope</value>
+  </data>
+  <data name="String856" xml:space="preserve">
+    <value>War and Peace|Leo Tolstoy</value>
+  </data>
+  <data name="String857" xml:space="preserve">
+    <value>Sentimental Education|Gustave Flaubert</value>
+  </data>
+  <data name="String858" xml:space="preserve">
+    <value>Phineas Finn|Anthony Trollope</value>
+  </data>
+  <data name="String859" xml:space="preserve">
+    <value>Maldoror|Comte de Lautréaumont</value>
+  </data>
+  <data name="String86" xml:space="preserve">
+    <value>Glamorama|Bret Easton Ellis</value>
+  </data>
+  <data name="String860" xml:space="preserve">
+    <value>The Idiot|Fyodor Dostoevsky</value>
+  </data>
+  <data name="String861" xml:space="preserve">
+    <value>The Moonstone|Wilkie Collins</value>
+  </data>
+  <data name="String862" xml:space="preserve">
+    <value>Little Women|Louisa May Alcott</value>
+  </data>
+  <data name="String863" xml:space="preserve">
+    <value>Thérèse Raquin|Émile Zola</value>
+  </data>
+  <data name="String864" xml:space="preserve">
+    <value>The Last Chronicle of Barset|Anthony Trollope</value>
+  </data>
+  <data name="String865" xml:space="preserve">
+    <value>Journey to the Centre of the Earth|Jules Verne</value>
+  </data>
+  <data name="String866" xml:space="preserve">
+    <value>Crime and Punishment|Fyodor Dostoevsky</value>
+  </data>
+  <data name="String867" xml:space="preserve">
+    <value>Alice’s Adventures in Wonderland|Lewis Carroll</value>
+  </data>
+  <data name="String868" xml:space="preserve">
+    <value>Our Mutual Friend|Charles Dickens</value>
+  </data>
+  <data name="String869" xml:space="preserve">
+    <value>Uncle Silas|Sheridan Le Fanu</value>
+  </data>
+  <data name="String87" xml:space="preserve">
+    <value>Another World|Pat Barker</value>
+  </data>
+  <data name="String870" xml:space="preserve">
+    <value>Notes from the Underground|Fyodor Dostoevsky</value>
+  </data>
+  <data name="String871" xml:space="preserve">
+    <value>The Water-Babies|Charles Kingsley</value>
+  </data>
+  <data name="String872" xml:space="preserve">
+    <value>Les Misérables|Victor Hugo</value>
+  </data>
+  <data name="String873" xml:space="preserve">
+    <value>Fathers and Sons|Ivan Turgenev</value>
+  </data>
+  <data name="String874" xml:space="preserve">
+    <value>Silas Marner|George Eliot</value>
+  </data>
+  <data name="String875" xml:space="preserve">
+    <value>Great Expectations|Charles Dickens</value>
+  </data>
+  <data name="String876" xml:space="preserve">
+    <value>On the Eve|Ivan Turgenev</value>
+  </data>
+  <data name="String877" xml:space="preserve">
+    <value>Castle Richmond|Anthony Trollope</value>
+  </data>
+  <data name="String878" xml:space="preserve">
+    <value>The Mill on the Floss|George Eliot</value>
+  </data>
+  <data name="String879" xml:space="preserve">
+    <value>The Woman in White|Wilkie Collins</value>
+  </data>
+  <data name="String88" xml:space="preserve">
+    <value>The Hours|Michael Cunningham</value>
+  </data>
+  <data name="String880" xml:space="preserve">
+    <value>The Marble Faun|Nathaniel Hawthorne</value>
+  </data>
+  <data name="String881" xml:space="preserve">
+    <value>Max Havelaar|Multatuli</value>
+  </data>
+  <data name="String882" xml:space="preserve">
+    <value>A Tale of Two Cities|Charles Dickens</value>
+  </data>
+  <data name="String883" xml:space="preserve">
+    <value>Oblomovka|Ivan Goncharov</value>
+  </data>
+  <data name="String884" xml:space="preserve">
+    <value>Adam Bede|George Eliot</value>
+  </data>
+  <data name="String885" xml:space="preserve">
+    <value>Madame Bovary|Gustave Flaubert</value>
+  </data>
+  <data name="String886" xml:space="preserve">
+    <value>North and South|Elizabeth Gaskell</value>
+  </data>
+  <data name="String887" xml:space="preserve">
+    <value>Hard Times|Charles Dickens</value>
+  </data>
+  <data name="String888" xml:space="preserve">
+    <value>Walden|Henry David Thoreau</value>
+  </data>
+  <data name="String889" xml:space="preserve">
+    <value>Bleak House|Charles Dickens</value>
+  </data>
+  <data name="String89" xml:space="preserve">
+    <value>Veronika Decides to Die|Paulo Coelho</value>
+  </data>
+  <data name="String890" xml:space="preserve">
+    <value>Villette|Charlotte Brontë</value>
+  </data>
+  <data name="String891" xml:space="preserve">
+    <value>Cranford|Elizabeth Gaskell</value>
+  </data>
+  <data name="String892" xml:space="preserve">
+    <value>Uncle Tom’s Cabin; or, Life Among the Lonely|Harriet Beecher Stowe</value>
+  </data>
+  <data name="String893" xml:space="preserve">
+    <value>The Blithedale Romance|Nathaniel Hawthorne</value>
+  </data>
+  <data name="String894" xml:space="preserve">
+    <value>The House of the Seven Gables|Nathaniel Hawthorne</value>
+  </data>
+  <data name="String895" xml:space="preserve">
+    <value>Moby-Dick|Herman Melville</value>
+  </data>
+  <data name="String896" xml:space="preserve">
+    <value>The Scarlet Letter|Nathaniel Hawthorne</value>
+  </data>
+  <data name="String897" xml:space="preserve">
+    <value>David Copperfield|Charles Dickens</value>
+  </data>
+  <data name="String898" xml:space="preserve">
+    <value>Shirley|Charlotte Brontë</value>
+  </data>
+  <data name="String899" xml:space="preserve">
+    <value>Mary Barton|Elizabeth Gaskell</value>
+  </data>
+  <data name="String9" xml:space="preserve">
+    <value>Vanishing Point|David Markson</value>
+  </data>
+  <data name="String90" xml:space="preserve">
+    <value>Mason &amp; Dixon|Thomas Pynchon</value>
+  </data>
+  <data name="String900" xml:space="preserve">
+    <value>The Tenant of Wildfell Hall|Anne Brontë</value>
+  </data>
+  <data name="String901" xml:space="preserve">
+    <value>Wuthering Heights|Emily Brontë</value>
+  </data>
+  <data name="String902" xml:space="preserve">
+    <value>Agnes Grey|Anne Brontë</value>
+  </data>
+  <data name="String903" xml:space="preserve">
+    <value>Jane Eyre|Charlotte Brontë</value>
+  </data>
+  <data name="String904" xml:space="preserve">
+    <value>Vanity Fair|William Makepeace Thackeray</value>
+  </data>
+  <data name="String905" xml:space="preserve">
+    <value>The Count of Monte-Cristo|Alexandre Dumas</value>
+  </data>
+  <data name="String906" xml:space="preserve">
+    <value>La Reine Margot|Alexandre Dumas</value>
+  </data>
+  <data name="String907" xml:space="preserve">
+    <value>The Three Musketeers|Alexandre Dumas</value>
+  </data>
+  <data name="String908" xml:space="preserve">
+    <value>The Purloined Letter|Edgar Allan Poe</value>
+  </data>
+  <data name="String909" xml:space="preserve">
+    <value>Martin Chuzzlewit|Charles Dickens</value>
+  </data>
+  <data name="String91" xml:space="preserve">
+    <value>The God of Small Things|Arundhati Roy</value>
+  </data>
+  <data name="String910" xml:space="preserve">
+    <value>The Pit and the Pendulum|Edgar Allan Poe</value>
+  </data>
+  <data name="String911" xml:space="preserve">
+    <value>Lost Illusions|Honoré de Balzac</value>
+  </data>
+  <data name="String912" xml:space="preserve">
+    <value>A Christmas Carol|Charles Dickens</value>
+  </data>
+  <data name="String913" xml:space="preserve">
+    <value>Dead Souls|Nikolay Gogol</value>
+  </data>
+  <data name="String914" xml:space="preserve">
+    <value>The Charterhouse of Parma|Stendhal</value>
+  </data>
+  <data name="String915" xml:space="preserve">
+    <value>The Fall of the House of Usher|Edgar Allan Poe</value>
+  </data>
+  <data name="String916" xml:space="preserve">
+    <value>The Life and Adventures of Nicholas Nickleby|Charles Dickens</value>
+  </data>
+  <data name="String917" xml:space="preserve">
+    <value>Oliver Twist|Charles Dickens</value>
+  </data>
+  <data name="String918" xml:space="preserve">
+    <value>The Nose|Nikolay Gogol</value>
+  </data>
+  <data name="String919" xml:space="preserve">
+    <value>Le Père Goriot|Honoré de Balzac</value>
+  </data>
+  <data name="String92" xml:space="preserve">
+    <value>Memoirs of a Geisha|Arthur Golden</value>
+  </data>
+  <data name="String920" xml:space="preserve">
+    <value>Eugénie Grandet|Honoré de Balzac</value>
+  </data>
+  <data name="String921" xml:space="preserve">
+    <value>The Hunchback of Notre Dame|Victor Hugo</value>
+  </data>
+  <data name="String922" xml:space="preserve">
+    <value>The Red and the Black|Stendhal</value>
+  </data>
+  <data name="String923" xml:space="preserve">
+    <value>The Betrothed|Alessandro Manzoni</value>
+  </data>
+  <data name="String924" xml:space="preserve">
+    <value>Last of the Mohicans|James Fenimore Cooper</value>
+  </data>
+  <data name="String925" xml:space="preserve">
+    <value>The Private Memoirs and Confessions of a Justified Sinner|James Hogg</value>
+  </data>
+  <data name="String926" xml:space="preserve">
+    <value>The Albigenses|Charles Robert Maturin</value>
+  </data>
+  <data name="String927" xml:space="preserve">
+    <value>Melmoth the Wanderer|Charles Robert Maturin</value>
+  </data>
+  <data name="String928" xml:space="preserve">
+    <value>The Monastery|Sir Walter Scott</value>
+  </data>
+  <data name="String929" xml:space="preserve">
+    <value>Ivanhoe|Sir Walter Scott</value>
+  </data>
+  <data name="String93" xml:space="preserve">
+    <value>Great Apes|Will Self</value>
+  </data>
+  <data name="String930" xml:space="preserve">
+    <value>Frankenstein|Mary Wollstonecraft Shelley</value>
+  </data>
+  <data name="String931" xml:space="preserve">
+    <value>Northanger Abbey|Jane Austen</value>
+  </data>
+  <data name="String932" xml:space="preserve">
+    <value>Persuasion|Jane Austen</value>
+  </data>
+  <data name="String933" xml:space="preserve">
+    <value>Ormond|Maria Edgeworth</value>
+  </data>
+  <data name="String934" xml:space="preserve">
+    <value>Rob Roy|Sir Walter Scott</value>
+  </data>
+  <data name="String935" xml:space="preserve">
+    <value>Emma|Jane Austen</value>
+  </data>
+  <data name="String936" xml:space="preserve">
+    <value>Mansfield Park|Jane Austen</value>
+  </data>
+  <data name="String937" xml:space="preserve">
+    <value>Pride and Prejudice|Jane Austen</value>
+  </data>
+  <data name="String938" xml:space="preserve">
+    <value>The Absentee|Maria Edgeworth</value>
+  </data>
+  <data name="String939" xml:space="preserve">
+    <value>Sense and Sensibility|Jane Austen</value>
+  </data>
+  <data name="String94" xml:space="preserve">
+    <value>Enduring Love|Ian McEwan</value>
+  </data>
+  <data name="String940" xml:space="preserve">
+    <value>Elective Affinities|Johann Wolfgang von Goethe</value>
+  </data>
+  <data name="String941" xml:space="preserve">
+    <value>Castle Rackrent|Maria Edgeworth</value>
+  </data>
+  <data name="String942" xml:space="preserve">
+    <value>Hyperion|Friedrich Hölderlin</value>
+  </data>
+  <data name="String943" xml:space="preserve">
+    <value>The Nun|Denis Diderot</value>
+  </data>
+  <data name="String944" xml:space="preserve">
+    <value>Camilla|Fanny Burney</value>
+  </data>
+  <data name="String945" xml:space="preserve">
+    <value>The Monk|M.G. Lewis</value>
+  </data>
+  <data name="String946" xml:space="preserve">
+    <value>Wilhelm Meister’s Apprenticeship|Johann Wolfgang von Goethe</value>
+  </data>
+  <data name="String947" xml:space="preserve">
+    <value>The Mysteries of Udolpho|Ann Radcliffe</value>
+  </data>
+  <data name="String948" xml:space="preserve">
+    <value>The Interesting Narrative|Olaudah Equiano</value>
+  </data>
+  <data name="String949" xml:space="preserve">
+    <value>The Adventures of Caleb Williams|William Godwin</value>
+  </data>
+  <data name="String95" xml:space="preserve">
+    <value>Underworld|Don DeLillo</value>
+  </data>
+  <data name="String950" xml:space="preserve">
+    <value>Justine|Marquis de Sade</value>
+  </data>
+  <data name="String951" xml:space="preserve">
+    <value>Vathek|William Beckford</value>
+  </data>
+  <data name="String952" xml:space="preserve">
+    <value>The 120 Days of Sodom|Marquis de Sade</value>
+  </data>
+  <data name="String953" xml:space="preserve">
+    <value>Cecilia|Fanny Burney</value>
+  </data>
+  <data name="String954" xml:space="preserve">
+    <value>Confessions|Jean-Jacques Rousseau</value>
+  </data>
+  <data name="String955" xml:space="preserve">
+    <value>Dangerous Liaisons|Pierre Choderlos de Laclos</value>
+  </data>
+  <data name="String956" xml:space="preserve">
+    <value>Reveries of a Solitary Walker|Jean-Jacques Rousseau</value>
+  </data>
+  <data name="String957" xml:space="preserve">
+    <value>Evelina|Fanny Burney</value>
+  </data>
+  <data name="String958" xml:space="preserve">
+    <value>The Sorrows of Young Werther|Johann Wolfgang von Goethe</value>
+  </data>
+  <data name="String959" xml:space="preserve">
+    <value>Humphrey Clinker|Tobias George Smollett</value>
+  </data>
+  <data name="String96" xml:space="preserve">
+    <value>Jack Maggs|Peter Carey</value>
+  </data>
+  <data name="String960" xml:space="preserve">
+    <value>The Man of Feeling|Henry Mackenzie</value>
+  </data>
+  <data name="String961" xml:space="preserve">
+    <value>A Sentimental Journey|Laurence Sterne</value>
+  </data>
+  <data name="String962" xml:space="preserve">
+    <value>Tristram Shandy|Laurence Sterne</value>
+  </data>
+  <data name="String963" xml:space="preserve">
+    <value>The Vicar of Wakefield|Oliver Goldsmith</value>
+  </data>
+  <data name="String964" xml:space="preserve">
+    <value>The Castle of Otranto|Horace Walpole</value>
+  </data>
+  <data name="String965" xml:space="preserve">
+    <value>Émile; or, On Education|Jean-Jacques Rousseau</value>
+  </data>
+  <data name="String966" xml:space="preserve">
+    <value>Rameau’s Nephew|Denis Diderot</value>
+  </data>
+  <data name="String967" xml:space="preserve">
+    <value>Julie; or, the New Eloise|Jean-Jacques Rousseau</value>
+  </data>
+  <data name="String968" xml:space="preserve">
+    <value>Rasselas|Samuel Johnson</value>
+  </data>
+  <data name="String969" xml:space="preserve">
+    <value>Candide|Voltaire</value>
+  </data>
+  <data name="String97" xml:space="preserve">
+    <value>The Life of Insects|Victor Pelevin</value>
+  </data>
+  <data name="String970" xml:space="preserve">
+    <value>The Female Quixote|Charlotte Lennox</value>
+  </data>
+  <data name="String971" xml:space="preserve">
+    <value>Amelia|Henry Fielding</value>
+  </data>
+  <data name="String972" xml:space="preserve">
+    <value>Peregrine Pickle|Tobias George Smollett</value>
+  </data>
+  <data name="String973" xml:space="preserve">
+    <value>Fanny Hill|John Cleland</value>
+  </data>
+  <data name="String974" xml:space="preserve">
+    <value>Tom Jones|Henry Fielding</value>
+  </data>
+  <data name="String975" xml:space="preserve">
+    <value>Roderick Random|Tobias George Smollett</value>
+  </data>
+  <data name="String976" xml:space="preserve">
+    <value>Clarissa|Samuel Richardson</value>
+  </data>
+  <data name="String977" xml:space="preserve">
+    <value>Pamela|Samuel Richardson</value>
+  </data>
+  <data name="String978" xml:space="preserve">
+    <value>Jacques the Fatalist|Denis Diderot</value>
+  </data>
+  <data name="String979" xml:space="preserve">
+    <value>Memoirs of Martinus Scriblerus|J. Arbuthnot, J. Gay, T. Parnell, A. Pope, J. Swift</value>
+  </data>
+  <data name="String98" xml:space="preserve">
+    <value>American Pastoral|Philip Roth</value>
+  </data>
+  <data name="String980" xml:space="preserve">
+    <value>Joseph Andrews|Henry Fielding</value>
+  </data>
+  <data name="String981" xml:space="preserve">
+    <value>A Modest Proposal|Jonathan Swift</value>
+  </data>
+  <data name="String982" xml:space="preserve">
+    <value>Gulliver’s Travels|Jonathan Swift</value>
+  </data>
+  <data name="String983" xml:space="preserve">
+    <value>Roxana|Daniel Defoe</value>
+  </data>
+  <data name="String984" xml:space="preserve">
+    <value>Moll Flanders|Daniel Defoe</value>
+  </data>
+  <data name="String985" xml:space="preserve">
+    <value>Love in Excess|Eliza Haywood</value>
+  </data>
+  <data name="String986" xml:space="preserve">
+    <value>Robinson Crusoe|Daniel Defoe</value>
+  </data>
+  <data name="String987" xml:space="preserve">
+    <value>A Tale of a Tub|Jonathan Swift</value>
+  </data>
+  <data name="String988" xml:space="preserve">
+    <value>Oroonoko|Aphra Behn</value>
+  </data>
+  <data name="String989" xml:space="preserve">
+    <value>The Princess of Clèves|Marie-Madelaine Pioche de Lavergne, Comtesse de La Fayette</value>
+  </data>
+  <data name="String99" xml:space="preserve">
+    <value>The Untouchable|John Banville</value>
+  </data>
+  <data name="String990" xml:space="preserve">
+    <value>The Pilgrim’s Progress|John Bunyan</value>
+  </data>
+  <data name="String991" xml:space="preserve">
+    <value>Don Quixote|Miguel de Cervantes Saavedra</value>
+  </data>
+  <data name="String992" xml:space="preserve">
+    <value>The Unfortunate Traveller|Thomas Nashe</value>
+  </data>
+  <data name="String993" xml:space="preserve">
+    <value>Euphues: The Anatomy of Wit|John Lyly</value>
+  </data>
+  <data name="String994" xml:space="preserve">
+    <value>Gargantua and Pantagruel|Françoise Rabelais</value>
+  </data>
+  <data name="String995" xml:space="preserve">
+    <value>The Thousand and One Nights|Anonymous</value>
+  </data>
+  <data name="String996" xml:space="preserve">
+    <value>The Golden Ass|Lucius Apuleius</value>
+  </data>
+  <data name="String997" xml:space="preserve">
+    <value>Aithiopika|Heliodorus</value>
+  </data>
+  <data name="String998" xml:space="preserve">
+    <value>Chaireas and Kallirhoe|Chariton</value>
+  </data>
+  <data name="String999" xml:space="preserve">
+    <value>Metamorphoses|Ovid</value>
+  </data>
+</root>

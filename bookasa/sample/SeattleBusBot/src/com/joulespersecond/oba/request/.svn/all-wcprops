@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/360/trunk/src/com/joulespersecond/oba/request
+END
+ObaRouteResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/295/trunk/src/com/joulespersecond/oba/request/ObaRouteResponse.java
+END
+ObaStopsForRouteResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/307/trunk/src/com/joulespersecond/oba/request/ObaStopsForRouteResponse.java
+END
+ObaShapeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/request/ObaShapeResponse.java
+END
+ObaAgencyRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaAgencyRequest.java
+END
+ObaTripsForLocationResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/308/trunk/src/com/joulespersecond/oba/request/ObaTripsForLocationResponse.java
+END
+ObaStopsForLocationRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/313/trunk/src/com/joulespersecond/oba/request/ObaStopsForLocationRequest.java
+END
+ObaArrivalInfoRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/315/trunk/src/com/joulespersecond/oba/request/ObaArrivalInfoRequest.java
+END
+ObaAgencyResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/294/trunk/src/com/joulespersecond/oba/request/ObaAgencyResponse.java
+END
+ObaTripRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaTripRequest.java
+END
+ObaStopsForLocationResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/307/trunk/src/com/joulespersecond/oba/request/ObaStopsForLocationResponse.java
+END
+ObaScheduleForStopResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/308/trunk/src/com/joulespersecond/oba/request/ObaScheduleForStopResponse.java
+END
+ObaRoutesForLocationRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/313/trunk/src/com/joulespersecond/oba/request/ObaRoutesForLocationRequest.java
+END
+ObaArrivalInfoResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/360/trunk/src/com/joulespersecond/oba/request/ObaArrivalInfoResponse.java
+END
+ObaStopIdsForAgencyRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaStopIdsForAgencyRequest.java
+END
+ObaTripResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/request/ObaTripResponse.java
+END
+ObaAgenciesWithCoverageRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaAgenciesWithCoverageRequest.java
+END
+ObaStopResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/295/trunk/src/com/joulespersecond/oba/request/ObaStopResponse.java
+END
+ObaAgenciesWithCoverageResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/295/trunk/src/com/joulespersecond/oba/request/ObaAgenciesWithCoverageResponse.java
+END
+ObaRouteIdsForAgencyRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaRouteIdsForAgencyRequest.java
+END
+ObaTripsForLocationRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaTripsForLocationRequest.java
+END
+ObaRouteIdsForAgencyResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/request/ObaRouteIdsForAgencyResponse.java
+END
+ObaCurrentTimeResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/request/ObaCurrentTimeResponse.java
+END
+ObaScheduleForStopRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaScheduleForStopRequest.java
+END
+ObaTripDetailsRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaTripDetailsRequest.java
+END
+ObaStopRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaStopRequest.java
+END
+ObaResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaResponse.java
+END
+ObaRoutesForLocationResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/request/ObaRoutesForLocationResponse.java
+END
+RequestBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/360/trunk/src/com/joulespersecond/oba/request/RequestBase.java
+END
+ObaStopIdsForAgencyResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/307/trunk/src/com/joulespersecond/oba/request/ObaStopIdsForAgencyResponse.java
+END
+ObaTripDetailsResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/358/trunk/src/com/joulespersecond/oba/request/ObaTripDetailsResponse.java
+END
+ObaStopsForRouteRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaStopsForRouteRequest.java
+END
+ObaRouteRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaRouteRequest.java
+END
+ObaShapeRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaShapeRequest.java
+END
+ObaCurrentTimeRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/311/trunk/src/com/joulespersecond/oba/request/ObaCurrentTimeRequest.java
+END
+ObaResponseWithRefs.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/360/trunk/src/com/joulespersecond/oba/request/ObaResponseWithRefs.java
+END

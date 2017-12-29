@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="DataSource" EntityNamespace="Crimson.Catalog" Class="DataRepository" BaseType="Crimson.Catalog.DublinCoreBase" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=sql399.mysite4now.com;Persist Security Info=True;User ID=CrimsonEditor_42237" SettingsObjectName="Crimson.Catalog.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="DublinCore.Agent" Member="Agents">
+    <Type Name="Agent">
+      <Column Name="AgentId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Standard" Member="Standards">
+    <Type Name="Standard">
+      <Column Name="StandardId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.AgentClass" Member="AgentClasses">
+    <Type Name="AgentClass">
+      <Column Name="AgentClassId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MARCRelator" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.BibliographicResource" Member="BibliographicResources">
+    <Type Name="BibliographicResource">
+      <Column Name="BibliographicResourceId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BibliographicCitation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Collection" Member="Collections">
+    <Type Name="Collection">
+      <Column Name="CollectionId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccrualMethod" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccrualPeriodicity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="accrualPolicy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.FileFormat" Member="FileFormats">
+    <Type Name="FileFormat">
+      <Column Name="FileFormatId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Frequency" Member="Frequencies">
+    <Type Name="Frequency">
+      <Column Name="FrequencyId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Jurisdiction" Member="Jurisdictions">
+    <Type Name="Jurisdiction">
+      <Column Name="JurisdictionId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.LicenseDocument" Member="LicenseDocuments">
+    <Type Name="LicenseDocument">
+      <Column Name="LicenseDocumentId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.LinguisticSystem" Member="LinguisticSystems">
+    <Type Name="LinguisticSystem">
+      <Column Name="LinguisticSystemId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Location" Member="Locations">
+    <Type Name="Location">
+      <Column Name="LocationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.LocationPeriodOrJurisdictioncation" Member="LocationPeriodOrJurisdictioncations">
+    <Type Name="LocationPeriodOrJurisdictioncation">
+      <Column Name="LocationPeriodOrJurisdictioncationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.MARCRelator" Member="MARCRelators">
+    <Type Name="MARCRelator">
+      <Column Name="MARCRealtorId" Type="System.String" DbType="NVarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.MediaType" Member="MediaTypes">
+    <Type Name="MediaType">
+      <Column Name="MediaTypeId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.MediaTypeOrExtent" Member="MediaTypeOrExtents">
+    <Type Name="MediaTypeOrExtent">
+      <Column Name="MediaTypeOrExtentId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.MethodOfAccrual" Member="MethodOfAccruals">
+    <Type Name="MethodOfAccrual">
+      <Column Name="MethodOfAccrualId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.MethodOfInstruction" Member="MethodOfInstructions">
+    <Type Name="MethodOfInstruction">
+      <Column Name="MethodOfInstructionId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.PeriodOfTime" Member="PeriodOfTimes">
+    <Type Name="PeriodOfTime">
+      <Column Name="PeriodOfTimeId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Start" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[End]" Member="End" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Scheme" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.PhysicalMedium" Member="PhysicalMediums">
+    <Type Name="PhysicalMedium">
+      <Column Name="PhysicalMediumId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.PhysicalResource" Member="PhysicalResources">
+    <Type Name="PhysicalResource">
+      <Column Name="PhysicalResourceId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Policy" Member="Policies">
+    <Type Name="Policy">
+      <Column Name="PolicyId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.ProvenanceStatement" Member="ProvenanceStatements">
+    <Type Name="ProvenanceStatement">
+      <Column Name="ProvenanceStatementId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Relation" Member="Relations">
+    <Type Name="Relation">
+      <Column Name="RelationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ConformsTo" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Resource" Member="Resources">
+    <Type Name="Resource">
+      <Column Name="ResourceId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FileAs" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Abstract" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Alternative" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Audience" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="Available" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.ResourceAgent" Member="ResourceAgents">
+    <Type Name="ResourceAgent">
+      <Column Name="ResourceId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AgentId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.RightsStatement" Member="RightsStatements">
+    <Type Name="RightsStatement">
+      <Column Name="RightsStatementId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccessRights" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.SizeOrDuration" Member="SizeOrDurations">
+    <Type Name="SizeOrDuration">
+      <Column Name="SizeOrDurationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

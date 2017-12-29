@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26AD5222-64D9-4AD5-BB86-EC40B6A92015}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crimson.Catalog</RootNamespace>
+    <AssemblyName>Crimson.Catalog</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkSubset>Full</TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DataRepository.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataRepository.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DCMIType.cs" />
+    <Compile Include="DublinCoreBase.cs" />
+    <Compile Include="Resources\Exception.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Exception.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\1000NovelsEveryOneMustRead1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>1000NovelsEveryOneMustRead.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\12BooksThatChangedTheWorld.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>12BooksThatChangedTheWorld.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\FileFormats.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileFormats.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\NorweignBookClubTop100.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorweignBookClubTop100.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataRepository.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataRepository.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SQLScripts\Agent.sql" />
+    <None Include="SQLScripts\AgentClass.sql" />
+    <None Include="SQLScripts\APIKey.sql" />
+    <None Include="SQLScripts\BibliographicResource.sql" />
+    <None Include="SQLScripts\Binding.sql" />
+    <None Include="SQLScripts\Book.sql" />
+    <None Include="SQLScripts\BookCreator.sql" />
+    <None Include="SQLScripts\BookList.sql" />
+    <None Include="SQLScripts\BookListMember.sql" />
+    <None Include="SQLScripts\BookReview.sql" />
+    <None Include="SQLScripts\BookSeries.sql" />
+    <None Include="SQLScripts\BookSubject.sql" />
+    <None Include="SQLScripts\Catalog.sql" />
+    <None Include="SQLScripts\Collection.sql" />
+    <None Include="SQLScripts\CreateBook.sql" />
+    <None Include="SQLScripts\CreateCatalog.sql" />
+    <None Include="SQLScripts\Creator.sql" />
+    <None Include="SQLScripts\DeleteBook.sql" />
+    <None Include="SQLScripts\DeleteCatalog.sql" />
+    <None Include="SQLScripts\DublinCore.sql" />
+    <None Include="SQLScripts\Edition.sql" />
+    <None Include="SQLScripts\EditionBinding.sql" />
+    <None Include="SQLScripts\FileFormat.sql" />
+    <None Include="SQLScripts\Frequency.sql" />
+    <None Include="SQLScripts\GetAPIKey.sql" />
+    <None Include="SQLScripts\GetBindingType.sql" />
+    <None Include="SQLScripts\GetBook.sql" />
+    <None Include="SQLScripts\GetBookCreator.sql" />
+    <None Include="SQLScripts\GetBooksByCreator.sql" />
+    <None Include="SQLScripts\GetBooksByTitle.sql" />
+    <None Include="SQLScripts\GetCatalog.sql" />
+    <None Include="SQLScripts\GetCreator.sql" />
+    <None Include="SQLScripts\Jurisdiction.sql" />
+    <None Include="SQLScripts\LibrarySubject.sql" />
+    <None Include="SQLScripts\LicenseDocument.sql" />
+    <None Include="SQLScripts\LinguisticSystem.sql" />
+    <None Include="SQLScripts\Location.sql" />
+    <None Include="SQLScripts\LocationPeriodOrJurisdictioncation.sql" />
+    <None Include="SQLScripts\MARCRelators.sql" />
+    <None Include="SQLScripts\MediaType.sql" />
+    <None Include="SQLScripts\MediaTypeOrExtent.sql" />
+    <None Include="SQLScripts\MethodOfAccrual.sql" />
+    <None Include="SQLScripts\MethodOfInstruction.sql" />
+    <None Include="SQLScripts\PeriodOfTime.sql" />
+    <None Include="SQLScripts\Permissions.sql" />
+    <None Include="SQLScripts\PhysicalMedium.sql" />
+    <None Include="SQLScripts\PhysicalResource.sql" />
+    <None Include="SQLScripts\Policy.sql" />
+    <None Include="SQLScripts\ProvenanceStatement.sql" />
+    <None Include="SQLScripts\Relation.sql" />
+    <None Include="SQLScripts\Resource.sql" />
+    <None Include="SQLScripts\ResourceAgent.sql" />
+    <None Include="SQLScripts\ResourcePeriodOfTime.sql" />
+    <None Include="SQLScripts\Review.sql" />
+    <None Include="SQLScripts\RightsStatement.sql" />
+    <None Include="SQLScripts\Series.sql" />
+    <None Include="SQLScripts\SizeOrDuration.sql" />
+    <None Include="SQLScripts\Standard.sql" />
+    <None Include="SQLScripts\UpdateCatalog.sql" />
+    <Content Include="Resources\dcterms.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataRepository.dbml.layout">
+      <DependentUpon>DataRepository.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Resources\1000NovelsEveryOneMustRead.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>1000NovelsEveryOneMustRead1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\12BooksThatChangedTheWorld.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>12BooksThatChangedTheWorld.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Exception.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Exception.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FileFormats.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FileFormats.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\NorweignBookClubTop100.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>NorweignBookClubTop100.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

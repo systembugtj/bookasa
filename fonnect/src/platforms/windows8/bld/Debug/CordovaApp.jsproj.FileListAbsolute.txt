@@ -1,0 +1,17 @@
+C:\workspace\project\fonnect\src\platforms\windows8\bin\Debug\resources.pri
+C:\workspace\project\fonnect\src\platforms\windows8\bin\Debug\AppxManifest.xml
+C:\workspace\project\fonnect\src\platforms\windows8\bin\Debug\CordovaApp.build.appxrecipe
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\priconfig.xml
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\priconfig.xml.intermediate
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\layout.resfiles
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\layout.resfiles.intermediate
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\resources.resfiles
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\resources.resfiles.intermediate
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\pri.resfiles
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\pri.resfiles.intermediate
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\qualifiers.txt
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\qualifiers.txt.intermediate
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\ProjectArchitectures.txt
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\package.map.txt
+C:\workspace\project\fonnect\src\platforms\windows8\bld\Debug\_pkginfo.txt

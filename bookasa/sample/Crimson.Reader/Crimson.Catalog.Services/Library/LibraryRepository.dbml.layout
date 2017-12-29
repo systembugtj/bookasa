@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LibraryRepository">
+  <DataContextMoniker Name="/LibraryRepositoryDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3b66356e-b054-4752-9c3e-feba6635e673" absoluteBounds="0.75, 3.875, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/LibraryRepositoryDataContext/Book" />
+      <nestedChildShapes>
+        <elementListCompartment Id="602b3fb9-6de9-41d9-b349-fe0a24c0d3ad" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="409b03a3-ce9f-460f-bf51-974458641939" absoluteBounds="3.5, 1.375, 2, 1.2605004882812503">
+      <DataClassMoniker Name="/LibraryRepositoryDataContext/BookCreator" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4d450e3-8fbe-46e9-9869-cdedb4f63f1d" absoluteBounds="3.515, 1.835, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.91611857096354); (4.5 : 4.91611857096354); (4.5 : 2.63550048828125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LibraryRepositoryDataContext/Book/Book_BookCreator" />
+      <nodes>
+        <classShapeMoniker Id="3b66356e-b054-4752-9c3e-feba6635e673" />
+        <classShapeMoniker Id="409b03a3-ce9f-460f-bf51-974458641939" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a5a3dece-c2df-4786-961e-c953f5f14b34" absoluteBounds="0.75, 0.875, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/LibraryRepositoryDataContext/Creator" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbdc3740-5c93-4820-ab88-22f471b46a6a" absoluteBounds="0.76499999999999968, 1.335, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.00525024414063); (3.5 : 2.00525024414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LibraryRepositoryDataContext/Creator/Creator_BookCreator" />
+      <nodes>
+        <classShapeMoniker Id="a5a3dece-c2df-4786-961e-c953f5f14b34" />
+        <classShapeMoniker Id="409b03a3-ce9f-460f-bf51-974458641939" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="DataSource" EntityNamespace="Crimson.Catalog.Services.LibraryRepository" ContextNamespace="Crimson.Catalog.Services" Class="LibraryRepositoryDataContext" AccessModifier="Internal" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=sql399.mysite4now.com;Persist Security Info=True;User ID=CrimsonEditor_42237" SettingsObjectName="Crimson.Catalog.Services.Properties.Settings" SettingsPropertyName="DataSourceConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="CrimsonReader.Book" Member="Books">
+    <Type Name="Book">
+      <Column Name="BookId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CatalogId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BookCatalogId" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="AlternateTitle" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="FriendlyTitle" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Created" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modified" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Book_BookCreator" Member="BookCreators" ThisKey="BookId" OtherKey="BookId" Type="BookCreator" />
+    </Type>
+  </Table>
+  <Table Name="CrimsonReader.BookCreator" Member="BookCreators">
+    <Type Name="BookCreator">
+      <Column Name="BookId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CreatorId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Contributor" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Book_BookCreator" Member="Book" ThisKey="BookId" OtherKey="BookId" Type="Book" IsForeignKey="true" />
+      <Association Name="Creator_BookCreator" Member="Creator" ThisKey="CreatorId" OtherKey="CreatorId" Type="Creator" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="CrimsonReader.Creator" Member="Creators">
+    <Type Name="Creator">
+      <Column Name="CreatorId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GivenName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Born" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Died" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WikiPediaUri" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Association Name="Creator_BookCreator" Member="BookCreators" ThisKey="CreatorId" OtherKey="CreatorId" Type="BookCreator" />
+    </Type>
+  </Table>
+  <Function Name="CrimsonReader.CreateCatalog" Method="CreateCatalog">
+    <Parameter Name="CatalogId" Parameter="catalogId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Uri" Parameter="uri" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="Created" Parameter="created" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CatalogUri" Parameter="catalogUri" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CatalogType" Parameter="catalogType" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="CrimsonReader.UpdateCatalog" Method="UpdateCatalog">
+    <Parameter Name="CatalogId" Parameter="catalogId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Uri" Parameter="uri" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="Created" Parameter="created" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CatalogUri" Parameter="catalogUri" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CatalogType" Parameter="catalogType" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="CrimsonReader.DeleteCatalog" Method="DeleteCatalog">
+    <Parameter Name="CatalogId" Parameter="catalogId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="CrimsonReader.GetCreator" Method="GetCreator" IsComposable="true">
+    <Parameter Name="CreatorId" Parameter="creatorId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="GetCreatorResult">
+      <Column Name="CreatorId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GivenName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Born" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Died" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WikiPediaUri" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="CrimsonReader.GetBookCreator" Method="GetBookCreator" IsComposable="true">
+    <Parameter Name="BookId" Parameter="bookId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="GetBookCreatorResult">
+      <Column Name="CreatorId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GivenName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Born" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Died" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WikiPediaUri" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="CrimsonReader.GetCatalog" Method="GetCatalog" IsComposable="true">
+    <ElementType Name="GetCatalogResult">
+      <Column Name="CatalogId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Uri" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogUri" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="CrimsonReader.CreateBook" Method="CreateBook">
+    <Parameter Name="BookId" Parameter="bookId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CatalogId" Parameter="catalogId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="BookCatalogId" Parameter="bookCatalogId" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="AlternateTitle" Parameter="alternateTitle" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="FriendlyTitle" Parameter="friendlyTitle" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="Created" Parameter="created" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Modified" Parameter="modified" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="CrimsonReader.DeleteBook" Method="DeleteBook">
+    <Parameter Name="BookId" Parameter="bookId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="CrimsonReader.GetBooksByCreator" Method="GetBooksByCreator" IsComposable="true">
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="GetBooksByCreatorResult">
+      <Column Name="BookId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BookCatalogId" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="AlternateTitle" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="FriendlyTitle" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Created" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modified" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CreatorId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GivenName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Born" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Died" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WikiPediaUri" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="CrimsonReader.GetBook" Method="GetBook" IsComposable="true">
+    <Parameter Name="BookId" Parameter="bookId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="GetBookResult">
+      <Column Name="BookId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BookCatalogId" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="AlternateTitle" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="FriendlyTitle" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Created" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modified" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="CrimsonReader.GetBooksByTitle" Method="GetBooksByTitle" IsComposable="true">
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="NVarChar(512)" />
+    <ElementType Name="GetBooksByTitleResult">
+      <Column Name="BookId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CatalogId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BookCatalogId" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="AlternateTitle" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="FriendlyTitle" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Created" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modified" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CreatorId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GivenName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Born" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Died" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WikiPediaUri" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="CrimsonReader.GetAPIKey" Method="GetAPIKey" IsComposable="true">
+    <ElementType Name="GetAPIKeyResult">
+      <Column Name="ApplicationID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ApiKey" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Uri" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 Paul Watts (paulcwatts@gmail.com)
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.joulespersecond.seattlebusbot"
+      android:versionCode="11"
+      android:versionName="1.2.0">
+    <application
+        android:name=".Application"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.BusBot"
+        android:debuggable="true">
+        <activity android:name=".MapViewActivity"
+                  android:label="@string/app_name"
+                  android:theme="@style/Theme.BusBot.NoBackground">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".StopInfoActivity"
+                  android:label="@string/stop_info_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RouteInfoActivity"
+                  android:label="@string/route_info_title"
+                  android:process=":routeinfo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TripInfoActivity"
+                  android:label="@string/trip_info_title">
+        </activity>
+        <activity android:name=".TripListActivity"
+                  android:label="@string/trip_list_title">
+        </activity>
+
+        <activity android:name=".MyStopsActivity"
+                  android:label="@string/stop_shortcut">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyRecentStopsActivity"
+                  android:label="@string/recent_stops_shortcut">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyStarredStopsActivity"
+                  android:label="@string/starred_stops_shortcut">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MySearchStopsActivity" />
+
+        <activity android:name=".MyRoutesActivity"
+                  android:label="@string/route_shortcut">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyRecentRoutesActivity"
+                  android:label="@string/recent_routes_shortcut">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyStarredRoutesActivity" />
+        <activity android:name=".MySearchRoutesActivity" />
+
+        <activity android:name=".MultiChoiceActivity"
+                  android:theme="@android:style/Theme.Dialog">
+        </activity>
+        <activity android:name=".EditPreferencesActivity"/>
+
+        <provider
+            android:name="com.joulespersecond.oba.provider.ObaProvider"
+            android:authorities="com.joulespersecond.oba"/>
+
+        <service android:name=".TripService">
+            <intent-filter>
+                <action android:name="com.joulespersecond.seattlebusbot.AlarmReceiver" />
+                <action android:name="com.joulespersecond.seattlebusbot.BootstrapService" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.joulespersecond.seattlebusbot.action.SCHEDULE_ALL" />
+                <action android:name="com.joulespersecond.seattlebusbot.action.SCHEDULE_TRIP" />
+                <action android:name="com.joulespersecond.seattlebusbot.action.POLL_TRIP" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BootstrapService">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <uses-library android:name="com.google.android.maps" />
+    </application>
+    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+</manifest>

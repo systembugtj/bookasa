@@ -1,0 +1,28 @@
+﻿<navigation:PhoneApplicationPage 
+    x:Class="Orientation.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:navigation="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    SupportedOrientations="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--This is the name of the application and page title-->
+        <Grid Grid.Row="0" x:Name="TitleGrid">
+            <TextBlock x:Name="ApplicationName" Text="ORIENTATION DEMO" Style="{StaticResource PhoneTextPageTitle1Style}"/>
+            <TextBlock x:Name="ListName" Text="Portrait Page" Style="{StaticResource PhoneTextPageTitle2Style}"/>
+        </Grid>
+
+        <!--This section is empty. Place new content here Grid.Row="1"-->
+        <Grid Grid.Row="1" x:Name="ContentGrid">
+            <TextBlock Height="342" HorizontalAlignment="Left" Margin="41,64,0,0" Name="textBlock1" Text="This is a Portrait page. It will remain in portrait mode regardless of how the device is turned. Click the Back button to return to the main page." VerticalAlignment="Top" Width="397" Foreground="White" TextWrapping="Wrap" FontSize="36" />
+        </Grid>
+    </Grid>
+</navigation:PhoneApplicationPage>

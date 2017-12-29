@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A9A8C38-EF8D-4775-9347-EB1A1C63D6F5}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpZipLib.Silverlight.Tests_Silverlight4</RootNamespace>
+    <AssemblyName>SharpZipLib.Silverlight.Tests_Silverlight4</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures />
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SharpZipLib.Silverlight.Tests_Silverlight4.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SharpZipLib.Silverlight.Tests_Silverlight4.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject />
+  </PropertyGroup>
+  <!--
+  //
+  // Silverlight Code Coverage Instrumentation
+  // List any libraries or assemblies that you would like to instrument during
+  // a code coverage pass. An example, for ClassLibrary1, is provided, and
+  // commented out below as a starting point:
+  //
+  -->
+  <!--
+  <ItemGroup>
+    <InstrumentSilverlightAssemblies Include="SilverlightClassLibrary1">
+      <Visible>false</Visible>
+    </InstrumentSilverlightAssemblies>
+  </ItemGroup>
+  -->
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Silverlight.Testing">
+      <HintPath>$(MSBuildExtensionsPath)\..\Microsoft SDKs\Silverlight\v4.0\Toolkit\Apr10\Testing\Microsoft.Silverlight.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight">
+      <HintPath>$(MSBuildExtensionsPath)\..\Microsoft SDKs\Silverlight\v4.0\Toolkit\Apr10\Testing\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\Base\InflaterDeflaterTests.cs">
+      <Link>Base\InflaterDeflaterTests.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\BZip2\Bzip2Tests.cs">
+      <Link>BZip2\Bzip2Tests.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\Core\Core.cs">
+      <Link>Core\Core.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\GZip\GZipTests.cs">
+      <Link>GZip\GZipTests.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Base\InflaterDeflaterTestSuite_FileSystem.cs">
+      <Link>IsolatedStorage\Base\InflaterDeflaterTestSuite_FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\FastZipHandling_FileSystem.cs">
+      <Link>IsolatedStorage\Zip\FastZipHandling_FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\GeneralHandling_FileSystem.cs">
+      <Link>IsolatedStorage\Zip\GeneralHandling_FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\IsolatedStorageZipEntryFactoryFixture.cs">
+      <Link>IsolatedStorage\Zip\IsolatedStorageZipEntryFactoryFixture.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\MemoryDataSource.cs">
+      <Link>IsolatedStorage\Zip\MemoryDataSource.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\RuntimeInfo.cs">
+      <Link>IsolatedStorage\Zip\RuntimeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\StringMemoryDataSource.cs">
+      <Link>IsolatedStorage\Zip\StringMemoryDataSource.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\TransformBase.cs">
+      <Link>IsolatedStorage\Zip\TransformBase.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\WindowsNameTransformHandling_FileSystem.cs">
+      <Link>IsolatedStorage\Zip\WindowsNameTransformHandling_FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\ZipBase.cs">
+      <Link>IsolatedStorage\Zip\ZipBase.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\ZipEntryHandling_FileSystem.cs">
+      <Link>IsolatedStorage\Zip\ZipEntryHandling_FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\IsolatedStorage\Zip\ZipFileHandling_FileSystem.cs">
+      <Link>IsolatedStorage\Zip\ZipFileHandling_FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\Lzw\LzwTests.cs">
+      <Link>Lzw\LzwTests.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\Tar\TarTests.cs">
+      <Link>Tar\TarTests.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\TestSupport\RingBuffer.cs">
+      <Link>TestSupport\RingBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\TestSupport\Streams.cs">
+      <Link>TestSupport\Streams.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\TestSupport\Utils.cs">
+      <Link>TestSupport\Utils.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\TestSupport\ZipTesting.cs">
+      <Link>TestSupport\ZipTesting.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpZipLib.Silverlight.Tests_Silverlight3\Zip\ZipTests.cs">
+      <Link>Zip\ZipTests.cs</Link>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpZipLib.Silverlight\SharpZipLib.Silverlight4.csproj">
+      <Project>{8B7CF854-73A1-4882-B317-07625C13A425}</Project>
+      <Name>SharpZipLib.Silverlight4</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <Import Condition="$(SilverlightVersion)=='v3.0'" Project="$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SilverlightToolkit\Tools\v3.0)Microsoft.Silverlight.Toolkit.Build.targets" />
+  <Import Condition="$(SilverlightVersion)=='v4.0'" Project="$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SilverlightToolkit\Tools\v4.0)Microsoft.Silverlight.Toolkit.Build.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

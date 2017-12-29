@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" 
+    Factory="Crimson.Catalog.Services.CustomHostFactory" 
+    Service="Crimson.Catalog.Services.NewYorkTimes.NewYorkTimes"  %>

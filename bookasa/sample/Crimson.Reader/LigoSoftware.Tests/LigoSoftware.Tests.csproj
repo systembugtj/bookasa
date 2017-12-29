@@ -1,0 +1,224 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FD82D5F-07D2-4271-979E-1532AFE75D38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crimson.Catalog.WebSite.Tests</RootNamespace>
+    <AssemblyName>Crimson.Catalog.WebSite.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Epub\EPubBaseTest.cs" />
+    <Compile Include="Models\Epub\ContainerTest.cs" />
+    <Compile Include="Models\Repository\DublinCoreRepositoryTest.cs" />
+    <Compile Include="Data\Library\GlobalBookLists.cs" />
+    <Compile Include="Data\Resources\1001NovelsToReadeBeforeYouDie.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>1001NovelsToReadeBeforeYouDie.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Resources\TheHarvardClassicsFiction.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TheHarvardClassicsFiction.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ID3\ID3v1Test.cs" />
+    <Compile Include="Models\ID3\ID3v2Test.cs" />
+    <Compile Include="Models\Library\BookListTest.cs" />
+    <Compile Include="Data\Resources\1000NovelsEveryOneMustRead1.Designer.cs">
+      <DependentUpon>1000NovelsEveryOneMustRead.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Models\Epub\OpenPackagingFormatTest.cs" />
+    <Compile Include="OPFTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Controllers\AccountControllerTest.cs" />
+    <Compile Include="Models\Epub\ZipOCFTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
+    <Content Include="Data\AudioBooks\AndreNorton\01 Perfumed Planet.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\02 Rivals.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\03 Contact at Last.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\04 Gorp Hunt.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\05 The Perilous Seas.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\06 Duellist%27s Challenge.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\07 Barring Accident.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\08 Headaches.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\09 Plague!.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\10 E Stat Landing.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\11 Desperate Measures.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\12 Strange Behavior of a Hoobat.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\13 Off the Map.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\14 Special Mission.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\15 Medic Hovan Reports.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\16 The Battle of the Video.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\17 In Custody.mp3" />
+    <Content Include="Data\AudioBooks\AndreNorton\18 Bargain Concluded.mp3" />
+    <Content Include="Data\EPub\1023.epub\1023\0.html" />
+    <Content Include="Data\EPub\1023.epub\1023\1.html" />
+    <Content Include="Data\EPub\1023.epub\1023\10.html" />
+    <Content Include="Data\EPub\1023.epub\1023\11.html" />
+    <Content Include="Data\EPub\1023.epub\1023\12.html" />
+    <Content Include="Data\EPub\1023.epub\1023\13.html" />
+    <Content Include="Data\EPub\1023.epub\1023\2.html" />
+    <Content Include="Data\EPub\1023.epub\1023\3.html" />
+    <Content Include="Data\EPub\1023.epub\1023\4.html" />
+    <Content Include="Data\EPub\1023.epub\1023\5.html" />
+    <Content Include="Data\EPub\1023.epub\1023\6.html" />
+    <Content Include="Data\EPub\1023.epub\1023\7.html" />
+    <Content Include="Data\EPub\1023.epub\1023\8.html" />
+    <Content Include="Data\EPub\1023.epub\1023\9.html" />
+    <Content Include="Data\EPub\1023.epub\META-INF\container.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\sharpziplib\SharpZipLib\src\ICSharpCode.SharpZLib.csproj">
+      <Project>{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}</Project>
+      <Name>ICSharpCode.SharpZLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Crimson.Catalog.ID3\Crimson.Catalog.ID3.csproj">
+      <Project>{5D66099A-A8C5-47AB-B230-C9B60DFC1B40}</Project>
+      <Name>Crimson.Catalog.ID3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Crimson.Catalog.Services\Crimson.Catalog.Services.csproj">
+      <Project>{87B4897F-861A-475C-9E4E-0709FB779529}</Project>
+      <Name>Crimson.Catalog.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Crimson.Catalog\Crimson.Catalog.csproj">
+      <Project>{26AD5222-64D9-4AD5-BB86-EC40B6A92015}</Project>
+      <Name>Crimson.Catalog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Crimson.Reader.EPub\Crimson.Reader.EPub.csproj">
+      <Project>{8F1B6D26-CDDF-4471-BCAC-921DE0EAE1DA}</Project>
+      <Name>Crimson.Reader.EPub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LigoSoftware\LigoSoftware\LigoSoftware.csproj">
+      <Project>{70FE3AEA-F8E3-4CF8-B309-0A7A4ED6263C}</Project>
+      <Name>LigoSoftware</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Resources\1000NovelsEveryOneMustRead.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>1000NovelsEveryOneMustRead1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Resources\1001NovelsToReadeBeforeYouDie.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>1001NovelsToReadeBeforeYouDie.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Resources\TheHarvardClassicsFiction.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TheHarvardClassicsFiction.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Shadow Include="Test References\Crimson.Catalog.ID3.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\EPub\1023.epub\1023\content.opf">
+      <CustomToolNamespace>Crimson.Catalog.WebSite.Tests</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="Data\EPub\1023.epub\1023\toc.ncx" />
+    <None Include="Data\EPub\1023.epub\mimetype" />
+    <None Include="Data\EPub\pg1023.epub" />
+    <None Include="Data\EPub\pg106.epub" />
+    <None Include="Data\EPub\pg1153.epub" />
+    <None Include="Data\EPub\pg149.epub" />
+    <None Include="Data\EPub\pg20802.epub" />
+    <None Include="Data\EPub\pg20869-images.epub" />
+    <None Include="Data\EPub\pg21647-images.epub" />
+    <None Include="Data\EPub\pg22216.epub" />
+    <None Include="Data\EPub\pg22218-images.epub" />
+    <None Include="Data\EPub\pg27013-images.epub" />
+    <None Include="Data\EPub\pg28215-images.epub" />
+    <None Include="Data\EPub\pg3475.epub" />
+    <None Include="Data\EPub\pg545.epub" />
+    <None Include="Data\EPub\pg551.epub" />
+    <None Include="Data\EPub\pg62-images.epub" />
+    <None Include="Data\EPub\pg64.epub" />
+    <None Include="Data\EPub\pg74-images.epub" />
+    <None Include="Data\EPub\pg78.epub" />
+    <None Include="Data\EPub\pg85.epub" />
+    <None Include="Data\EPub\pg90.epub" />
+    <Shadow Include="Test References\Crimson.Catalog.accessor" />
+    <Shadow Include="Test References\Crimson.Reader.EPub.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\NewYorkTimes\" />
+    <Folder Include="Data\PinkFloyd\" />
+    <Folder Include="Models\NewYorkTimes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

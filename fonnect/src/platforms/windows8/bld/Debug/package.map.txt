@@ -1,0 +1,13 @@
+[Files]
+"C:\workspace\project\fonnect\src\platforms\windows8\bin\Debug\AppxManifest.xml" "AppxManifest.xml"
+"C:\workspace\project\fonnect\src\platforms\windows8\images\logo.png" "images\logo.png"
+"C:\workspace\project\fonnect\src\platforms\windows8\images\smalllogo.png" "images\smalllogo.png"
+"C:\workspace\project\fonnect\src\platforms\windows8\images\splashscreen.png" "images\splashscreen.png"
+"C:\workspace\project\fonnect\src\platforms\windows8\images\storelogo.png" "images\storelogo.png"
+"C:\workspace\project\fonnect\src\platforms\windows8\www\img\logo.png" "www\img\logo.png"
+"C:\workspace\project\fonnect\src\platforms\windows8\www\cordova.js" "www\cordova.js"
+"C:\workspace\project\fonnect\src\platforms\windows8\www\cordova_plugins.js" "www\cordova_plugins.js"
+"C:\workspace\project\fonnect\src\platforms\windows8\www\js\index.js" "www\js\index.js"
+"C:\workspace\project\fonnect\src\platforms\windows8\www\css\index.css" "www\css\index.css"
+"C:\workspace\project\fonnect\src\platforms\windows8\www\index.html" "www\index.html"
+"C:\workspace\project\fonnect\src\platforms\windows8\bin\Debug\resources.pri" "resources.pri"

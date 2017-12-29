@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\Darrel\Documents\Visual Studio 2008\Projects\CodePlex\Crimson\EBookReader\Crimson.Tests\Crimson.Catalog.Tests.nunit" total="1" failures="0" not-run="0" date="2009-04-22" time="21:21:10">
+  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.3074" os-version="Microsoft Windows NT 6.0.6001 Service Pack 1" platform="Win32NT" cwd="C:\Users\Darrel\Documents\Visual Studio 2008\Projects\CodePlex\Crimson\EBookReader\Crimson.Tests\bin\Debug" machine-name="M90" user="Darrel" user-domain="M90" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="C:\Users\Darrel\Documents\Visual Studio 2008\Projects\CodePlex\Crimson\EBookReader\Crimson.Tests\Crimson.Catalog.Tests.nunit" success="True" time="1.120" asserts="0">
+    <results>
+      <test-suite name="C:\Users\Darrel\Documents\Visual Studio 2008\Projects\CodePlex\Crimson\EBookReader\Crimson.Tests\bin\Debug\Crimson.Catalog.Tests.dll" success="True" time="1.116" asserts="0">
+        <results>
+          <test-suite name="Crimson" success="True" time="1.115" asserts="0">
+            <results>
+              <test-suite name="Catalog" success="True" time="1.113" asserts="0">
+                <results>
+                  <test-suite name="Tests" success="True" time="1.110" asserts="0">
+                    <results>
+                      <test-suite name="AmazonCatalogTest" success="True" time="1.093" asserts="0">
+                        <results>
+                          <test-case name="Crimson.Catalog.Tests.AmazonCatalogTest.AmazonTest" executed="True" success="True" time="1.078" asserts="0" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

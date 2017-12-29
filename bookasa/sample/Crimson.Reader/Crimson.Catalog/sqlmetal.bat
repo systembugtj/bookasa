@@ -1,0 +1,3 @@
+rem "C:\Program Files\Microsoft SDKs\Windows\v6.0A\bin\SqlMetal.exe" /code:MyLibrary.cs /server:sql399.mysite4now.com /Database:Applications_42237  /namespace:Crimson.Catalog.MyLibrary /pluralize /serialization:unidirectional /language:csharp /User:CrimsonReader_42237 /password:CrimsonReader
+"C:\Program Files\Microsoft SDKs\Windows\v6.0A\bin\SqlMetal.exe" /code:Crimson/CrimsonLibrary.cs /server:sql399.mysite4now.com /Database:Applications_42237  /namespace:Crimson.Catalog.CrimsonLibrary /pluralize /serialization:unidirectional /language:csharp /User:CrimsonReader_42237 /password:CrimsonReader /sprocs /views /functions
+pause

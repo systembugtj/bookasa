@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database"
+         xmlns:tx="http://www.springframework.net/tx">
+
+  <tx:attribute-driven/>
+  <!-- Property placeholder configurer for database settings -->
+
+  <object type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+    <property name="ConfigSections" value="databaseSettings"/>
+  </object>
+
+  <db:provider id="DbProvider" provider="SQLite-1.0.72" connectionString="Data Source=.\Data\Bookasa.db3;Version=3"/>
+
+  <!-- NHibernate Configuration Session Factory -->
+  <object id="SessionFactory" type="Spring.Extension.FluentNhibernateLocalSessionFactoryObject, Spring.Extension">
+    <property name="DbProvider" ref="DbProvider"/>
+    <property name="FluentNhibernateMappingAssemblies">
+      <list>
+        <value>Bookasa.Persistence.Mapping</value>
+      </list>
+    </property>
+    <property name="MappingAssemblies">
+      <list>
+        <value>Bookasa.Persistence.Entity</value>
+      </list>
+    </property>
+    <property name="HibernateProperties">
+      <dictionary>
+        <entry key="hibernate.connection.provider"          value="NHibernate.Connection.DriverConnectionProvider"/>
+        <entry key="dialect"                                value="NHibernate.Dialect.SQLiteDialect"/>
+        <entry key="connection.driver_class"                value="NHibernate.Driver.SQLite20Driver"/>
+        <entry key="show_sql" value="false" />
+      </dictionary>
+    </property>
+    <!-- provides integration with Spring's           declarative transaction management features -->
+    <property name="ExposeTransactionAwareSessionFactory" value="true" />
+  </object>
+
+  <object id="transactionManager"
+        type="Spring.Data.NHibernate.HibernateTransactionManager, Spring.Data.NHibernate31">
+    <property name="DbProvider" ref="DbProvider"/>
+    <property name="SessionFactory" ref="SessionFactory"/>
+  </object>
+
+
+  <object type="Arcadia.Bookasa.Persistence.Dao.FoldersDaoImpl, Bookasa.Persistence.Dao" id="FoldersDao">
+    <property name="SessionFactory" ref="SessionFactory"/>
+  </object>
+
+</objects>

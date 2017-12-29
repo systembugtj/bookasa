@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Crimson.Catalog.NewYorkTimes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Crimson.Catalog.NewYorkTimes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://www.ligosoftware.com/services/NewYorkTimes.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfBestSeller">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BestSeller" nillable="true" type="tns:BestSeller" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBestSeller" nillable="true" type="tns:ArrayOfBestSeller" />
+  <xs:complexType name="BestSeller">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ISBN" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Publisher" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Reviews" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BestSeller" nillable="true" type="tns:BestSeller" />
+  <xs:complexType name="ArrayOfNewsWire">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NewsWire" nillable="true" type="tns:NewsWire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNewsWire" nillable="true" type="tns:ArrayOfNewsWire" />
+  <xs:complexType name="NewsWire">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlogName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ByLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoriesTags" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyRight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Headline" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndexingTerms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kicker" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Locations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MediaItems" nillable="true" type="tns:ArrayOfMedia" />
+      <xs:element minOccurs="0" name="Organizations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="People" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Platform" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PubDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RelatedUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Section" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubHeadline" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubSection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Summary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Terms" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Updated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Uri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewsWire" nillable="true" type="tns:NewsWire" />
+  <xs:complexType name="ArrayOfMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Media" nillable="true" type="tns:Media" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedia" nillable="true" type="tns:ArrayOfMedia" />
+  <xs:complexType name="Media">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyRight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Uri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Media" nillable="true" type="tns:Media" />
+</xs:schema>

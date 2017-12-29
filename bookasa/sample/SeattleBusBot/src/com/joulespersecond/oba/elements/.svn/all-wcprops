@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/361/trunk/src/com/joulespersecond/oba/elements
+END
+ObaTrip.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/elements/ObaTrip.java
+END
+ObaAgencyWithCoverage.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/295/trunk/src/com/joulespersecond/oba/elements/ObaAgencyWithCoverage.java
+END
+ObaSituation.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/360/trunk/src/com/joulespersecond/oba/elements/ObaSituation.java
+END
+ObaAgencyElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/294/trunk/src/com/joulespersecond/oba/elements/ObaAgencyElement.java
+END
+ObaReferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/360/trunk/src/com/joulespersecond/oba/elements/ObaReferences.java
+END
+ObaTripStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/359/trunk/src/com/joulespersecond/oba/elements/ObaTripStatus.java
+END
+ObaTripDetails.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/358/trunk/src/com/joulespersecond/oba/elements/ObaTripDetails.java
+END
+ObaStop.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/294/trunk/src/com/joulespersecond/oba/elements/ObaStop.java
+END
+ObaTripElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/elements/ObaTripElement.java
+END
+ObaSituationElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/361/trunk/src/com/joulespersecond/oba/elements/ObaSituationElement.java
+END
+ObaElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/294/trunk/src/com/joulespersecond/oba/elements/ObaElement.java
+END
+ObaReferencesElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/360/trunk/src/com/joulespersecond/oba/elements/ObaReferencesElement.java
+END
+ObaTripSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/308/trunk/src/com/joulespersecond/oba/elements/ObaTripSchedule.java
+END
+ObaTripStatusElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/359/trunk/src/com/joulespersecond/oba/elements/ObaTripStatusElement.java
+END
+ObaRoute.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/294/trunk/src/com/joulespersecond/oba/elements/ObaRoute.java
+END
+ObaTripDetailsElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/358/trunk/src/com/joulespersecond/oba/elements/ObaTripDetailsElement.java
+END
+ObaStopElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/294/trunk/src/com/joulespersecond/oba/elements/ObaStopElement.java
+END
+ObaStopGrouping.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/307/trunk/src/com/joulespersecond/oba/elements/ObaStopGrouping.java
+END
+ObaShape.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/elements/ObaShape.java
+END
+ObaStopSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/308/trunk/src/com/joulespersecond/oba/elements/ObaStopSchedule.java
+END
+ObaStopGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/307/trunk/src/com/joulespersecond/oba/elements/ObaStopGroup.java
+END
+ObaAgency.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/294/trunk/src/com/joulespersecond/oba/elements/ObaAgency.java
+END
+ObaRouteElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/295/trunk/src/com/joulespersecond/oba/elements/ObaRouteElement.java
+END
+ObaShapeElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/297/trunk/src/com/joulespersecond/oba/elements/ObaShapeElement.java
+END
+ObaRouteSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/308/trunk/src/com/joulespersecond/oba/elements/ObaRouteSchedule.java
+END
+ObaArrivalInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/361/trunk/src/com/joulespersecond/oba/elements/ObaArrivalInfo.java
+END
+ObaStopScheduleElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/308/trunk/src/com/joulespersecond/oba/elements/ObaStopScheduleElement.java
+END

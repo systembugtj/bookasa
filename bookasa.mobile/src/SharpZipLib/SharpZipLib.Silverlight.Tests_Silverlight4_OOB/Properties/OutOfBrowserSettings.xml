@@ -1,0 +1,7 @@
+<OutOfBrowserSettings ShortName="SharpZipLib.Silverlight.Tests_Silverlight4_OOB Application" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>SharpZipLib.Silverlight.Tests_Silverlight4_OOB Application on your desktop; at home, at work or on the go.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="SharpZipLib.Silverlight.Tests_Silverlight4_OOB Application" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.Icons />
+</OutOfBrowserSettings>

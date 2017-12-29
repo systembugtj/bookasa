@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 Paul Watts (paulcwatts@gmail.com)
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string-array name="main_help_options">
+        <item>User Guide</item>
+        <item>Twitter Feed</item>
+        <item>What\'s New?</item>
+        <item>I found a bug!</item>
+        <item>Preferences</item>
+    </string-array>
+    <string-array name="stop_item_options">
+        <item>Set a reminder</item>
+        <item>Show route information</item>
+        <item>Show only this route</item>
+        <item>Show route schedule</item>
+    </string-array>
+    <string-array name="stop_item_options_edit">
+        <item>Edit this reminder</item>
+        <item>Show route information</item>
+        <item>Show only this route</item>
+        <item>Show route schedule</item>
+    </string-array>
+    <string-array name="stop_item_options_noschedule">
+        <item>Set a reminder</item>
+        <item>Show route information</item>
+        <item>Show only this route</item>
+    </string-array>
+    <string-array name="stop_item_options_edit_noschedule">
+        <item>Edit this reminder</item>
+        <item>Show route information</item>
+        <item>Show only this route</item>
+    </string-array>
+    <string-array name="reminder_time">
+        <item>No reminder</item>
+        <item>1 minute</item>
+        <item>3 minutes</item>
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>15 minutes</item>
+        <item>20 minutes</item>
+        <item>25 minutes</item>
+        <item>30 minutes</item>
+    </string-array>
+    <string-array name="reminder_days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+    <string-array name="agency_locations">
+        <item>Seattle, WA</item>
+        <item>Tacoma, WA</item>
+        <item>Everett, WA</item>
+        <item>Stay where I am</item>
+    </string-array>
+</resources>

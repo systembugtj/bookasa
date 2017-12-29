@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1252" />
+<title>Release Notes for DTBook-2005-3.dtd January 16, 2008</title>
+<meta name="author" content="George Kerscher" />
+<meta name="copyright" content="DAISY Consortium" />
+<style type="text/css">
+/* CSS last edit kk 20071201, mg 20030905 */
+body {font-style: normal; font-weight: normal; font-family: arial, verdana, sans-serif; margin-right: 15%; margin-left: 10%;}
+h6 {font-weight: bold; font-size:  75%; color: #000099; margin-top: 1.2em; margin-bottom: 0.2em;}
+h5 {font-weight: bold; font-size:  80%; color: #000099; margin-top: 1.2em; margin-bottom: 0.2em;}
+h4 {font-weight: bold; font-size:  88%; color: #000099; margin-top: 2.0em; margin-bottom: 0.4em;}
+h3 {font-weight: bold; font-size: 100%; color: #000099; margin-top: 2.0em; margin-bottom: 0.5em; letter-spacing: 0.04em;}
+h2 {font-weight: bold; font-size: 115%; color: #000099; margin-top: 2.5em; margin-bottom: 0.5em; letter-spacing: 0.15em;}
+h1 {font-weight: bold; font-size: 130%; color: #000099; margin-top: 3.0em; margin-bottom: 0.5em; letter-spacing: 0.20em;}
+ul.linklist {list-style: none; margin-left: 0em;}
+ul.linklist ul {list-style: none; margin-left: 2em;}
+.top {font-size: 80%; display: block;}
+img {border:inherit none; float: right}
+*.box {font-size:95%; border: 1px solid rgb(100,100,100); padding:0.3em}
+*.author {color:#000099; font-size:80%;}
+*.comment {color:#000099; font-size:80%;}
+*.alert {border: 1px solid red; padding: 0.2em; font-size:95%; font-weight:bold;}
+*.action {color: rgb(0,0,153); font-size:90%; border: 1px solid rgb(0,0,50); padding: 0.2em; background-color: rgb(240,240,240); font-weight:bold;}
+span.bullet {font-family:"Courier New", sans-serif;}
+span.padding {font:.3em "Courier New", sans-serif;}
+code {font: 80% "Courier New", sans-serif;}
+span.indent {margin-left:1em;text-indent:-1em;}
+span.indent2 {text-indent:1.5em;}
+ol.indent3 {margin-top:0em;}
+dt {font-weight:bold;}
+pre {margin-left:10px;}
+.diff-ins {background:yellow;}
+.diff-del {text-decoration: line-through; background:pink; }
+.hidden { position:absolute; left:0px; top:-100px; width:0px; height:0px; overflow: hidden; }
+.center { text-align:center;}
+</style>
+</head>
+<body>
+<a href="http://www.daisy.org/"><img src="http://www.daisy.org/images/daisylogo-w.gif" alt="DAISY Consortium Logo - Link to Home Page" width="150" height="110" border="0" /></a>
+<h1>Release Notes for DTBook-2005-3.dtd January 16, 2008</h1>
+
+<p>The DAISY/NISO Standards Advisory Committee receives issues submitted
+  through the issues tracking database at: http://www.daisy.org/z3986/issues/.
+  The Advisory Committee has reviewed a set of issues and addressed problems
+  with this second maintenance release to the DTBook DTD. The detailed information
+  on each issue can be reviewed in the issues tracking database.</p>
+
+<p>The issues were reviewed and the DTD was tested prior to this release. Please submit any problems you may have through the issues tracking system.</p>
+
+<p><a href="#dtd2_3">Issues corrected in dtbook-2005-3.dtd since dtbook-2005-2.dtd</a>
+  was released, are included as comments in the DTD on lines 663 through
+    671. They are listed below.</p>
+<p><a href="#dtd1_2">Issues corrected in dtbook-2005-2.dtd
+    since dtbook-2005-1.dtd</a>  was released,
+  are also reproduced below for your convenence. This earlier set of issues are
+    included as comments in the dtbook-2005-3.dtd on lines 643 through 662.</p>
+<a name="dtd2_3" id="dtd2_3"></a>
+<h2>Changes from dtbook-2005-2.dtd to dtbook-2005-3.dtd</h2>
+<pre>
+--  Changed pid, sid, version, and filename for 2005-3 throughout, including documentary comments
+--  (Issue 194) Removed superfluous %dtbookblock entity
+--  (Issue 191) Updated RFC reference from 3066 to 4646
+--  (Issue 148) Updated comments regarding caption/@imgrefs to reflect type of IDREFS, not %URI;
+--  (Issue 156) Changed attlist for title to %attrs;
+--  (Issue 157) Added @smilref and @showin to bdo
+--  (Issue 195) Expanded title content model to include inlines
+--  (Issue 200) Added pagenum to imggroup content model
+--  (Issue 199) Added pagenum to table and tbody content models
+</pre>
+
+<a name="dtd1_2" id="dtd1_2"></a>
+<h2>Changes from dtbook-2005-1.dtd to dtbook-2005-2.dtd</h2>
+<pre>
+--  Changed pid, sid, version, and filename for 2005-2 throughout 
+--  (Issue 45)  Changed div model to %docblockorinline to include bridgehead 
+--  (Issue 51)  Changed content model for frontmatter.  doctitle now required, order of doctitle, covertitle, docauthor fixed. 
+--  (Issue 129) Removed @style from %coreattrs and %attrsrqd 
+--  Removed definition of %StyleSheet, since it is no longer needed 
+--  (Issues 50/68)  Added xml:space to %coreattrs and %attrsrqd 
+--  (Issue 52)  Added %coreattrs (id, class, title, xml:space) to title attribute list 
+--  (Issue 102) Changed @idref type for noteref/annoref to %URI to clarify usage 
+--  (Issue 102) Modified comments in noteref/annoref ATTLISTs to clarify @idref usage 
+--  (Issue 119) Changed @lang to @xml:lang in bdo 
+--  (Issue 48)  Corrected reference to RFC2046 in comments regarding @type for a, annoref, noteref 
+--  (Issue 65)  Corrected usage comment for meta 
+--  (Issue 120) Corrected terminology in section 2 of general documentation comment 
+--  (Issue 92)  Added comment deprecating @showin 
+--  (Issue 113) Created new entity %externalFlow; for extension elements that are both block and inline 
+--  (Issue 113) Added %externalFlow to %flow;, %flownopagenum;, %inlines;, %inlinew;, %dtbookblock;, %block; 
+--  (Issue 117) Created new entity %externalNamespaces; for extension namespace attributes 
+--  (Issue 117) Added %externalNamespaces; to %coreattrs;, %attrsrqd;, and dtbook 
+--  (Issue 113) Added %externalFlow; to %dtbookinline; 
+--  (Issues 50/68) Rewrote attribute lists of code and samp to prevent duplication of @xml:space
+
+</pre>
+</body>
+</html>

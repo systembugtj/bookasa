@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/361/trunk/tests/src/com/joulespersecond/oba/request/test
+END
+ShapeTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/312/trunk/tests/src/com/joulespersecond/oba/request/test/ShapeTest.java
+END
+TripsForLocationTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/311/trunk/tests/src/com/joulespersecond/oba/request/test/TripsForLocationTest.java
+END
+RouteIdsForAgencyRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/311/trunk/tests/src/com/joulespersecond/oba/request/test/RouteIdsForAgencyRequestTest.java
+END
+RouteRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/312/trunk/tests/src/com/joulespersecond/oba/request/test/RouteRequestTest.java
+END
+StopsForRouteRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/312/trunk/tests/src/com/joulespersecond/oba/request/test/StopsForRouteRequestTest.java
+END
+StopsForLocationTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/337/trunk/tests/src/com/joulespersecond/oba/request/test/StopsForLocationTest.java
+END
+ScheduleForStopTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/337/trunk/tests/src/com/joulespersecond/oba/request/test/ScheduleForStopTest.java
+END
+ShapeRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/311/trunk/tests/src/com/joulespersecond/oba/request/test/ShapeRequestTest.java
+END
+CurrentTimeRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/311/trunk/tests/src/com/joulespersecond/oba/request/test/CurrentTimeRequestTest.java
+END
+FailTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/312/trunk/tests/src/com/joulespersecond/oba/request/test/FailTest.java
+END
+AgencyRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/312/trunk/tests/src/com/joulespersecond/oba/request/test/AgencyRequestTest.java
+END
+RoutesForLocationTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/312/trunk/tests/src/com/joulespersecond/oba/request/test/RoutesForLocationTest.java
+END
+ArrivalInfoRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/361/trunk/tests/src/com/joulespersecond/oba/request/test/ArrivalInfoRequestTest.java
+END
+AgenciesWithCoverageTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/311/trunk/tests/src/com/joulespersecond/oba/request/test/AgenciesWithCoverageTest.java
+END
+TripRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/312/trunk/tests/src/com/joulespersecond/oba/request/test/TripRequestTest.java
+END
+AllTests.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/294/trunk/tests/src/com/joulespersecond/oba/request/test/AllTests.java
+END
+StopIdsForAgencyRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/311/trunk/tests/src/com/joulespersecond/oba/request/test/StopIdsForAgencyRequestTest.java
+END
+ObaTestCase.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/314/trunk/tests/src/com/joulespersecond/oba/request/test/ObaTestCase.java
+END
+TripDetailsRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/358/trunk/tests/src/com/joulespersecond/oba/request/test/TripDetailsRequest.java
+END
+StopRequestTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/312/trunk/tests/src/com/joulespersecond/oba/request/test/StopRequestTest.java
+END

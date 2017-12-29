@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1000]C:\Users\Darrel\Documents\Visual Studio 2008\Projects\CodePlex\Crimson\EBookReader\Crimson.Tests\Crimson.Catalog.Tests.nunit</TopNode>
+  <SelectedNode>[0-1028]Crimson.Catalog.Tests.AmazonCatalogTest.AmazonTest</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]C:\Users\Darrel\Documents\Visual Studio 2008\Projects\CodePlex\Crimson\EBookReader\Crimson.Tests\Crimson.Catalog.Tests.nunit" Expanded="true">
+      <Nodes>
+        <Node UniqueName="[0-1029]C:\Users\Darrel\Documents\Visual Studio 2008\Projects\CodePlex\Crimson\EBookReader\Crimson.Tests\bin\Debug\Crimson.Catalog.Tests.dll" Expanded="true">
+          <Nodes>
+            <Node UniqueName="[0-1030]Crimson" Expanded="true">
+              <Nodes>
+                <Node UniqueName="[0-1031]Crimson.Catalog" Expanded="true">
+                  <Nodes>
+                    <Node UniqueName="[0-1032]Crimson.Catalog.Tests" Expanded="true">
+                      <Nodes>
+                        <Node UniqueName="[0-1027]Crimson.Catalog.Tests.AmazonCatalogTest" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1028]Crimson.Catalog.Tests.AmazonCatalogTest.AmazonTest" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1011]Crimson.Catalog.Tests.CreateCatalogTests" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1012]Crimson.Catalog.Tests.CreateCatalogTests.CreateCatalogTest" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1025]Crimson.Catalog.Tests.CreateGlobalCatalogTests" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1026]Crimson.Catalog.Tests.CreateGlobalCatalogTests.CreateCatalogTest" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1013]Crimson.Catalog.Tests.NewYoirkTimesTest" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1014]Crimson.Catalog.Tests.NewYoirkTimesTest.BestSellerListsTest" />
+                            <Node UniqueName="[0-1016]Crimson.Catalog.Tests.NewYoirkTimesTest.MovieReviewsTest" />
+                            <Node UniqueName="[0-1015]Crimson.Catalog.Tests.NewYoirkTimesTest.NewsWireTest" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1001]Crimson.Catalog.Tests.RssFeedTests" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1002]Crimson.Catalog.Tests.RssFeedTests.WallStreeJournalRssTest" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1017]Crimson.Catalog.Tests.UpdateCatalogTests" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1018]Crimson.Catalog.Tests.UpdateCatalogTests.AUpdateCatalogTests" />
+                            <Node UniqueName="[0-1019]Crimson.Catalog.Tests.UpdateCatalogTests.AuthorSearchTest" />
+                            <Node UniqueName="[0-1021]Crimson.Catalog.Tests.UpdateCatalogTests.AuthorTitleSearchTest" />
+                            <Node UniqueName="[0-1022]Crimson.Catalog.Tests.UpdateCatalogTests.CreatedIn2007Test" />
+                            <Node UniqueName="[0-1020]Crimson.Catalog.Tests.UpdateCatalogTests.TitleSearchTest" />
+                          </Nodes>
+                        </Node>
+                        <Node UniqueName="[0-1005]Crimson.Catalog.Tests.UpdateGlobalCatalogTests" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1006]Crimson.Catalog.Tests.UpdateGlobalCatalogTests.AUpdateCatalogTests" />
+                            <Node UniqueName="[0-1007]Crimson.Catalog.Tests.UpdateGlobalCatalogTests.AuthorSearchTest" />
+                            <Node UniqueName="[0-1009]Crimson.Catalog.Tests.UpdateGlobalCatalogTests.AuthorTitleSearchTest" />
+                            <Node UniqueName="[0-1010]Crimson.Catalog.Tests.UpdateGlobalCatalogTests.CreatedIn2007Test" />
+                            <Node UniqueName="[0-1008]Crimson.Catalog.Tests.UpdateGlobalCatalogTests.TitleSearchTest" />
+                          </Nodes>
+                        </Node>
+                      </Nodes>
+                    </Node>
+                  </Nodes>
+                </Node>
+              </Nodes>
+            </Node>
+            <Node UniqueName="[0-1036]Silver" Expanded="true">
+              <Nodes>
+                <Node UniqueName="[0-1037]Silver.Catalog" Expanded="true">
+                  <Nodes>
+                    <Node UniqueName="[0-1038]Silver.Catalog.Tests" Expanded="true">
+                      <Nodes>
+                        <Node UniqueName="[0-1023]Silver.Catalog.Tests.ImportHTMLTests" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1024]Silver.Catalog.Tests.ImportHTMLTests.ParagraphTest" />
+                          </Nodes>
+                        </Node>
+                      </Nodes>
+                    </Node>
+                  </Nodes>
+                </Node>
+              </Nodes>
+            </Node>
+            <Node UniqueName="[0-1033]Sliver" Expanded="true">
+              <Nodes>
+                <Node UniqueName="[0-1034]Sliver.Catalog" Expanded="true">
+                  <Nodes>
+                    <Node UniqueName="[0-1035]Sliver.Catalog.Tests" Expanded="true">
+                      <Nodes>
+                        <Node UniqueName="[0-1003]Sliver.Catalog.Tests.ImportDocumentTest" Expanded="true">
+                          <Nodes>
+                            <Node UniqueName="[0-1004]Sliver.Catalog.Tests.ImportDocumentTest.ImportRTFDocumentTest" />
+                          </Nodes>
+                        </Node>
+                      </Nodes>
+                    </Node>
+                  </Nodes>
+                </Node>
+              </Nodes>
+            </Node>
+          </Nodes>
+        </Node>
+      </Nodes>
+    </Node>
+  </Nodes>
+</VisualState>

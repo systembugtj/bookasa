@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/!svn/ver/374/trunk
+END
+default.properties
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/292/trunk/default.properties
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/365/trunk/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/9/trunk/.project
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/208/trunk/.gitignore
+END
+AndroidManifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/328/trunk/AndroidManifest.xml
+END

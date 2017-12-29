@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DublinCore">
+  <DataContextMoniker Name="/DublinCoreDataContext" />
+  <nestedChildShapes>
+    <classShape Id="07907c44-5534-4ea2-bfef-bc15219a4723" absoluteBounds="0.75, 0.875, 2, 1.5891951497395833">
+      <DataClassMoniker Name="/DublinCoreDataContext/PeriodOfTime" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0f37737-e4e9-40bd-9455-303a5c52cf5e" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c9f7680-7b3a-4643-8c39-4f0a7c1e8cf1" absoluteBounds="3.5, 1.125, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/DublinCoreDataContext/ResourceDate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05aefbb2-e2a1-4933-aa87-391a97b6a3c7" absoluteBounds="3.515, 1.585, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="714b8c5a-efac-4a14-92af-647714269c96" absoluteBounds="0.75, 3.875, 2, 1.5891951497395827">
+      <DataClassMoniker Name="/DublinCoreDataContext/Resource" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8739200b-ceb6-4b6f-af11-f6e589656be0" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.67307657877604); (3.5 : 1.67307657877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DublinCoreDataContext/PeriodOfTime/PeriodOfTime_ResourceDate" />
+      <nodes>
+        <classShapeMoniker Id="07907c44-5534-4ea2-bfef-bc15219a4723" />
+        <classShapeMoniker Id="7c9f7680-7b3a-4643-8c39-4f0a7c1e8cf1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.66959757486979); (4.5 : 4.66959757486979); (4.5 : 2.22115315755208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DublinCoreDataContext/Resource/Resource_ResourceDate" />
+      <nodes>
+        <classShapeMoniker Id="714b8c5a-efac-4a14-92af-647714269c96" />
+        <classShapeMoniker Id="7c9f7680-7b3a-4643-8c39-4f0a7c1e8cf1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

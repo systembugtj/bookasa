@@ -1,0 +1,1 @@
+C:\workspace\project\fonnect\src\platforms\windows8\CordovaApp.jsproj;neutral

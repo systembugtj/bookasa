@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/374/trunk/src/com/joulespersecond/seattlebusbot
+END
+TripService.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/352/trunk/src/com/joulespersecond/seattlebusbot/TripService.java
+END
+RouteOverlay.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/315/trunk/src/com/joulespersecond/seattlebusbot/RouteOverlay.java
+END
+Application.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/365/trunk/src/com/joulespersecond/seattlebusbot/Application.java
+END
+Adapters.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/315/trunk/src/com/joulespersecond/seattlebusbot/Adapters.java
+END
+MyRoutesActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/225/trunk/src/com/joulespersecond/seattlebusbot/MyRoutesActivity.java
+END
+MyTextUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/351/trunk/src/com/joulespersecond/seattlebusbot/MyTextUtils.java
+END
+MyRouteListActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/339/trunk/src/com/joulespersecond/seattlebusbot/MyRouteListActivity.java
+END
+AlarmReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/222/trunk/src/com/joulespersecond/seattlebusbot/AlarmReceiver.java
+END
+MyTabActivityBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/285/trunk/src/com/joulespersecond/seattlebusbot/MyTabActivityBase.java
+END
+RouteInfoActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/339/trunk/src/com/joulespersecond/seattlebusbot/RouteInfoActivity.java
+END
+MyStarredRoutesActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/225/trunk/src/com/joulespersecond/seattlebusbot/MyStarredRoutesActivity.java
+END
+MyFixedLocationOverlay.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/222/trunk/src/com/joulespersecond/seattlebusbot/MyFixedLocationOverlay.java
+END
+StopInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/364/trunk/src/com/joulespersecond/seattlebusbot/StopInfo.java
+END
+MyStopListActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/331/trunk/src/com/joulespersecond/seattlebusbot/MyStopListActivity.java
+END
+MyRecentRoutesActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/225/trunk/src/com/joulespersecond/seattlebusbot/MyRecentRoutesActivity.java
+END
+TripInfoActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/350/trunk/src/com/joulespersecond/seattlebusbot/TripInfoActivity.java
+END
+StopsController.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/326/trunk/src/com/joulespersecond/seattlebusbot/StopsController.java
+END
+StopInfoActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/339/trunk/src/com/joulespersecond/seattlebusbot/StopInfoActivity.java
+END
+MyStarredStopsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/225/trunk/src/com/joulespersecond/seattlebusbot/MyStarredStopsActivity.java
+END
+MySearchStopsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/315/trunk/src/com/joulespersecond/seattlebusbot/MySearchStopsActivity.java
+END
+MultiChoiceActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/222/trunk/src/com/joulespersecond/seattlebusbot/MultiChoiceActivity.java
+END
+AsyncTasks.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/315/trunk/src/com/joulespersecond/seattlebusbot/AsyncTasks.java
+END
+EditPreferencesActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/222/trunk/src/com/joulespersecond/seattlebusbot/EditPreferencesActivity.java
+END
+MapViewActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/374/trunk/src/com/joulespersecond/seattlebusbot/MapViewActivity.java
+END
+UIHelp.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/352/trunk/src/com/joulespersecond/seattlebusbot/UIHelp.java
+END
+StopOverlay.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/329/trunk/src/com/joulespersecond/seattlebusbot/StopOverlay.java
+END
+TripListActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/353/trunk/src/com/joulespersecond/seattlebusbot/TripListActivity.java
+END
+MySearchActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/315/trunk/src/com/joulespersecond/seattlebusbot/MySearchActivity.java
+END
+MyBaseListActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/225/trunk/src/com/joulespersecond/seattlebusbot/MyBaseListActivity.java
+END
+MySearchRoutesActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/339/trunk/src/com/joulespersecond/seattlebusbot/MySearchRoutesActivity.java
+END
+MyStopsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/225/trunk/src/com/joulespersecond/seattlebusbot/MyStopsActivity.java
+END
+MapWatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/237/trunk/src/com/joulespersecond/seattlebusbot/MapWatcher.java
+END
+MyRecentStopsActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/225/trunk/src/com/joulespersecond/seattlebusbot/MyRecentStopsActivity.java
+END
+BootstrapService.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/352/trunk/src/com/joulespersecond/seattlebusbot/BootstrapService.java
+END

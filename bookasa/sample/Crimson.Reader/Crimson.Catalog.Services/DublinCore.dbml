@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="DataSource" Class="DublinCoreDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=sql399.mysite4now.com;Persist Security Info=True;User ID=CrimsonEditor_42237" SettingsObjectName="Crimson.Catalog.Services.Properties.Settings" SettingsPropertyName="DataSourceConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="DublinCore.PeriodOfTime" Member="PeriodOfTimes">
+    <Type Name="PeriodOfTime">
+      <Column Name="PeriodOfTimeId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Start" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[End]" Member="End" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Scheme" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="PeriodOfTime_ResourceDate" Member="ResourceDates" ThisKey="PeriodOfTimeId" OtherKey="ResourceId" Type="ResourceDate" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.ResourceDate" Member="ResourceDates">
+    <Type Name="ResourceDate">
+      <Column Name="ResourceId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PeriodOfTimeId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="PeriodOfTime_ResourceDate" Member="PeriodOfTime" ThisKey="ResourceId" OtherKey="PeriodOfTimeId" Type="PeriodOfTime" IsForeignKey="true" />
+      <Association Name="Resource_ResourceDate" Member="Resource" ThisKey="ResourceId" OtherKey="ResourceId" Type="Resource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="DublinCore.Resource" Member="Resources">
+    <Type Name="Resource">
+      <Column Name="ResourceId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Abstract" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Alternative" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Available" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Association Name="Resource_ResourceDate" Member="ResourceDates" ThisKey="ResourceId" OtherKey="ResourceId" Type="ResourceDate" />
+    </Type>
+  </Table>
+</Database>

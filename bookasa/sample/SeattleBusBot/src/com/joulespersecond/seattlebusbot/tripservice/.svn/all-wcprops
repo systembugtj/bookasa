@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/357/trunk/src/com/joulespersecond/seattlebusbot/tripservice
+END
+PollerTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/352/trunk/src/com/joulespersecond/seattlebusbot/tripservice/PollerTask.java
+END
+SchedulerTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/352/trunk/src/com/joulespersecond/seattlebusbot/tripservice/SchedulerTask.java
+END
+CancelNotifyTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/352/trunk/src/com/joulespersecond/seattlebusbot/tripservice/CancelNotifyTask.java
+END
+NotifierTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/357/trunk/src/com/joulespersecond/seattlebusbot/tripservice/NotifierTask.java
+END
+TaskContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/352/trunk/src/com/joulespersecond/seattlebusbot/tripservice/TaskContext.java
+END

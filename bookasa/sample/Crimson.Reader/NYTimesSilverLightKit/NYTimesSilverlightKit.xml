@@ -1,0 +1,4281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NYTimesSilverlightKit</name>
+    </assembly>
+    <members>
+        <member name="T:NYTimes.TimesTags">
+            <summary>
+            Silverlight Times Tag Search object
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/timestags_api</remarks>
+            <example>
+            <![CDATA[
+            <UserControl x:Class="DemoNYTimes.TimesTagsPage"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+               xmlns:inputToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"  
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+               xmlns:nyt="clr-namespace:NYTimes;assembly=NYTimesSilverlightKit"             
+               xmlns:nytvc="clr-namespace:NYTimes.ValueConverters;assembly=NYTimesSilverlightKit"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+               mc:Ignorable="d">
+               <UserControl.Resources>
+                   <nyt:TimesTags x:Key="Tags" d:IsDataSource="true"/>
+                   <nytvc:DictionaryWebdingConverter x:Key="DictionaryWebdingConverter"/>
+                   <DataTemplate x:Key="TagResultTemplate">
+                       <Grid>
+                           <Grid.ColumnDefinitions>
+                               <ColumnDefinition Width="16"/>
+                               <ColumnDefinition Width="Auto"/>
+                           </Grid.ColumnDefinitions>
+                           <TextBlock VerticalAlignment="Center" FontSize="16" FontFamily="Webdings" 
+                                Text="{Binding Dictionary, Converter={StaticResource DictionaryWebdingConverter}}" />
+                           <TextBlock Margin="4,0,0,0" VerticalAlignment="Center" 
+                                FontFamily="Times New Roman" FontSize="12" Grid.Column="1" 
+                                Text="{Binding Mode=OneWay, Path=Value}" 
+                                TextWrapping="NoWrap"/>
+                       </Grid>
+                   </DataTemplate>
+               </UserControl.Resources>
+               <Grid x:Name="LayoutRoot">
+                   <inputToolkit:AutoCompleteBox x:Name="Query" 
+                               Width="300"                      
+                               VerticalAlignment="Center"
+                               DataContext="{StaticResource Tags}" 
+                               SearchMode="None" 
+                               IsTextCompletionEnabled="False" 
+                               ItemsSource="{Binding Path=Tags}"
+                               ItemTemplate="{StaticResource TagResultTemplate}" 
+                               ValueMemberBinding="{Binding Path=Value}"
+                               nyt:TimesTags.Service="{StaticResource Tags}"/>
+               </Grid>
+            </UserControl>
+            ]]>
+            </example>
+        </member>
+        <member name="F:NYTimes.TimesTags.NYTTagsKey">
+            <summary>
+            the Resource key in the Application Resources for the API Key
+            </summary>
+        </member>
+        <member name="F:NYTimes.TimesTags.BaseUri">
+            <summary>
+            The Base URI
+            </summary>
+        </member>
+        <member name="F:NYTimes.TimesTags.ServiceProperty">
+            <summary>
+            AutoComplete Dependency Property
+            </summary>
+        </member>
+        <member name="F:NYTimes.TimesTags.limiting">
+            <summary>
+            40 QPS rate limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.TimesTags.query">
+            <summary>
+            the query text
+            </summary>
+        </member>
+        <member name="F:NYTimes.TimesTags.client">
+            <summary>
+            the running web client
+            </summary>
+        </member>
+        <member name="F:NYTimes.TimesTags.max">
+            <summary>
+            the maximum number of tags to return
+            </summary>
+        </member>
+        <member name="F:NYTimes.TimesTags.isLoading">
+            <summary>
+            Are the results loading
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesTags.#ctor">
+            <summary>
+            Initializes a new instance of the TimesTags class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesTags.SetService(System.Windows.DependencyObject,NYTimes.TimesTags)">
+            <summary>
+            Set the AutoComplete Data source
+            </summary>
+            <param name="element">a Silverlight Toolkit AutoComplete box</param>
+            <param name="value">a TimesTag object</param>
+        </member>
+        <member name="M:NYTimes.TimesTags.GetService(System.Windows.DependencyObject)">
+            <summary>
+            Get the AutoComplete data source
+            </summary>
+            <param name="element">a Silverlight Toolkit AutoComplete box</param>
+            <returns>a TimesTag object</returns>
+        </member>
+        <member name="M:NYTimes.TimesTags.FetchTags(System.String)">
+            <summary>
+            Make a query on the tags API
+            </summary>
+            <param name="queryString">the query to the tags API</param>
+        </member>
+        <member name="M:NYTimes.TimesTags.OnServiceChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Event handler triggered when the star column changes
+            </summary>
+            <param name="depObject">a Silverlight Toolkit AutoComplete Text Box</param>
+            <param name="args">the dependency property changed event arguments</param>
+            <remarks>We do late binding here to avoid the dependency on the Silverlight Toolkit</remarks>
+        </member>
+        <member name="M:NYTimes.TimesTags.GetDictionary(System.String)">
+            <summary>
+            Get the dictionary from the tag
+            </summary>
+            <param name="value">the full tag</param>
+            <returns>the dictionary acronym</returns>
+        </member>
+        <member name="M:NYTimes.TimesTags.GetValue(System.String)">
+            <summary>
+            Gets the tag value from the tag
+            </summary>
+            <param name="value">the full tag with dictionary and quotes</param>
+            <returns>the tag value</returns>
+        </member>
+        <member name="M:NYTimes.TimesTags.OnTagsReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Event handler when tags are returned
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.TimesTags.ParseTags(System.String)">
+            <summary>
+            Parse the JSON results
+            </summary>
+            <param name="result">JSON results from the Tag services</param>
+        </member>
+        <member name="E:NYTimes.TimesTags.PropertyChanged">
+            <summary>
+            The property changed event handler
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesTags.Logo">
+            <summary>
+            Gets the logo for the New York Times
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesTags.IsLoading">
+            <summary>
+            Gets a value indicating whether the results are loading
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesTags.Filter">
+            <summary>
+            Gets or sets the comma-delimited list to limit the results to the specified Times 
+            dictionaries : (Des), (Geo), (Org), (Per)
+            </summary>
+            <remarks>You must include parentheses around each dictionary abbreviation.</remarks>
+        </member>
+        <member name="P:NYTimes.TimesTags.Max">
+            <summary>
+            Gets or sets the maximum number of results to return
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the value is less than 1.</exception>
+        </member>
+        <member name="P:NYTimes.TimesTags.ApiKey">
+            <summary>
+            Gets or sets the API Key
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesTags.Query">
+            <summary>
+            Gets or sets the query
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesTags.Tags">
+            <summary>
+            Gets the tags returned as an enumerable collection of <see cref="T:NYTimes.Data.Tag"/> objects
+            </summary>
+        </member>
+        <member name="T:NYTimes.TimesTags.Populator">
+            <summary>
+            Internal populator class for the Service Attached property
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesTags.Populator.Populating(System.Object,System.EventArgs)">
+            <summary>
+            Popuplate the Autocomplete box
+            </summary>
+            <param name="sender">a Silverlight Toolkit AutoCompleteBox</param>
+            <param name="args">a PopluatingEventArgs object</param>
+        </member>
+        <member name="T:NYTimes.Data.Review">
+            <summary>
+            Review Links
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Review.ToString">
+            <summary>
+            gets the string representation of the review
+            </summary>
+            <returns>string value pairs of non-null values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Review.BookReview">
+            <summary>
+            Gets or sets the book review link
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Review.FirstChapter">
+            <summary>
+            Gets or sets the first chapter link
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Review.SundayReview">
+            <summary>
+            Gets or sets the Sunday review link
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Review.ArticleChapter">
+            <summary>
+            Gets or sets the article chapter link
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.DictionaryWebdingConverter">
+            <summary>
+            Converts the dictionary name to a webding symbol
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.DictionaryWebdingConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a <see cref="T:NYTimes.Data.Tag"/>.Dictionary to a Webdings character
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.DictionaryWebdingConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not Implemented
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.MovieReviewsByReviewer">
+            <summary>
+            New York Times Movie Reviews By Reviewer API
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/movie_reviews_api#h3-reviews-reviewers</remarks>
+        </member>
+        <member name="T:NYTimes.Core.MovieReviewBase">
+            <summary>
+            New York Times Movie Review API Base class
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/movie_reviews_api</remarks>
+        </member>
+        <member name="F:NYTimes.Core.MovieReviewBase.Key">
+            <summary>
+            the Application resource key where the API Key is stored
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.MovieReviewBase.limiting">
+            <summary>
+            8 QPS rate limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.MovieReviewBase.reviewOrderMap">
+            <summary>
+            the map of review order enums to string
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.MovieReviewBase.offset">
+            <summary>
+            The offset
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.MovieReviewBase.isLoading">
+            <summary>
+            Are the results loading
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.MovieReviewBase.totalResults">
+            <summary>
+            the total results
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.MovieReviewBase.copyright">
+            <summary>
+            the copyright text
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.MovieReviewBase.client">
+            <summary>
+            the web client
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.#ctor">
+            <summary>
+            Initializes a new instance of the MovieReviewBase class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.GenerateUri">
+            <summary>
+            Generate the REST URI
+            </summary>
+            <returns>the REST URI or null</returns>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.UpdateResults">
+            <summary>
+            Update the results
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.AppendLimiter(System.Text.StringBuilder,System.Nullable{System.Boolean},System.String)">
+            <summary>
+            append a limiter variable
+            </summary>
+            <param name="builder">the string builder</param>
+            <param name="field">the field to query</param>
+            <param name="parameterName">the parameter name</param>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.AppendOffset(System.Text.StringBuilder)">
+            <summary>
+            Appends the offset to a the string builder
+            </summary>
+            <param name="builder">the string builder</param>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.ParseDate(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            parse an element for a DateTime
+            </summary>
+            <param name="element">the XML Element</param>
+            <param name="name">the name of the child element</param>
+            <returns>a Nullable DateTime</returns>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.CreateLink(System.Xml.Linq.XElement)">
+            <summary>
+            Create a Link
+            </summary>
+            <param name="element">the XML Element</param>
+            <returns>a Link object</returns>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.FetchResults">
+            <summary>
+            Fetch the results
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.OnResultsReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            results are returned
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.Core.MovieReviewBase.ParseXml(System.String)">
+            <summary>
+            Parse the XML 
+            </summary>
+            <param name="xml">the XML returned from the service call</param>
+        </member>
+        <member name="E:NYTimes.Core.MovieReviewBase.PropertyChanged">
+            <summary>
+            Property changed event handler
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.ApiKey">
+            <summary>
+            Gets or sets the API Key
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.ResultsToGet">
+            <summary>
+            Gets or sets the number of results to get
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.IsLoading">
+            <summary>
+            Gets a value indicating whether the results are loading
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.Offset">
+            <summary>
+            Gets the offset
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.Results">
+            <summary>
+            Gets the results
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.Copyright">
+            <summary>
+            Gets the copyright message
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.TotalResults">
+            <summary>
+            Gets the total number of results
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.Logo">
+            <summary>
+            Gets the logo for the New York Times
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.MovieReviewBase.ReviewOrderMap">
+            <summary>
+            Gets the review order map
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewsByReviewer.reviewerName">
+            <summary>
+            the reviewer name
+            </summary>
+        </member>
+        <member name="M:NYTimes.MovieReviewsByReviewer.#ctor">
+            <summary>
+            Initializes a new instance of the MovieReviewsByReviewer class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.MovieReviewsByReviewer.GenerateUri">
+            <summary>
+            Generate the REST URI
+            </summary>
+            <returns>the rest URI or null</returns>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByReviewer.ReviewerName">
+            <summary>
+            Gets or sets the reviewer name
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByReviewer.CriticsPick">
+            <summary>
+            Gets or sets the critics picks
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByReviewer.Order">
+            <summary>
+            Gets or sets the order
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.VisibleIfTrueConverter">
+            <summary>
+            converter to return visible if the value is true, collapsed if false.
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.VisibleIfTrueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            if value = true, then visible, otherwise collapsed
+            </summary>
+            <param name="value">true or false</param>
+            <param name="targetType">Visibility enumeration</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>Visibility.Visible or Visibilty.Collapsed</returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.VisibleIfTrueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object. This method is called only in TwoWay bindings. 
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.Data.Multimedia">
+            <summary>
+            New York Times Multimedia element
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Multimedia.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Multimedia.Headline">
+            <summary>
+            Gets or sets the headline
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Multimedia.Height">
+            <summary>
+            Gets or sets the height in pixels
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Multimedia.Summary">
+            <summary>
+            Gets or sets the summary
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Multimedia.MediaType">
+            <summary>
+            Gets or sets the media type
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Multimedia.Url">
+            <summary>
+            Gets or sets the Url
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Multimedia.Width">
+            <summary>
+            Gets or sets the width in pixels
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.FacetNameConverter">
+            <summary>
+            Value converter for Facet dictionaries
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.FacetNameConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert from a dictionary of facets to the facet collection
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.FacetNameConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object. This method is called only in TwoWay bindings. 
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.ValueConverters.CriticToReviewerDetailsConverter">
+            <summary>
+            A Value converter
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.CriticToReviewerDetailsConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a string to a <see cref="T:NYTimes.MovieReviewerDetails"/> object
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.CriticToReviewerDetailsConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.Data.Book">
+            <summary>
+            Book listing
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Book.ToString">
+            <summary>
+            returns a string with all of the non-null properties and values
+            </summary>
+            <returns>a string with all of the non-null properties and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Book.Details">
+            <summary>
+            Gets or sets the book details
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Book.RanksHistory">
+            <summary>
+            Gets or sets the rank history for the book
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Book.Rank">
+            <summary>
+            Gets or sets the current rank for the book
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Book.ISBNs">
+            <summary>
+            Gets or sets the ISBNs
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Book.Reviews">
+            <summary>
+            Gets or sets the reviews
+            </summary>
+        </member>
+        <member name="T:NYTimes.TimesPeopleActivities">
+            <summary>
+            CLR class that implements the New York Times TimesPeople Activity request to get 
+            activities for a specific user.  For more information, see 
+            <a href="http://developer.nytimes.com/docs/timespeople_api">this article</a>.
+            </summary>
+        </member>
+        <member name="T:NYTimes.Core.TimesPeople">
+            <summary>
+            TimesPeople CLR Class.  See 
+            <a href="http://developer.nytimes.com/docs/timespeople_api">this article</a> for more 
+            information.
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.TimesPeople.NYTTimesPeopleKey">
+            <summary>
+            The Application.Resources key for the API Key
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.TimesPeople.Version">
+            <summary>
+            The API Version
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.TimesPeople.BaseApi">
+            <summary>
+            The base API URL
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.TimesPeople.limiting">
+            <summary>
+            8 QPS rate limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.TimesPeople.emailAddress">
+            <summary>
+            the user's email address
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.TimesPeople.userId">
+            <summary>
+            the TimesPeople User ID
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.TimesPeople.isLoading">
+            <summary>
+            are the results loading?
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.TimesPeople.client">
+            <summary>
+            The Web client
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.#ctor">
+            <summary>
+            Initializes a new instance of the TimesPeople class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.ParseResultSet(System.Xml.Linq.XElement)">
+            <summary>
+            Parse the result set
+            </summary>
+            <param name="resultSet">the result_set element</param>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.OnException(System.Exception)">
+            <summary>
+            Error handler
+            </summary>
+            <param name="failure">the error from the web client</param>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.CreateProfile(System.Xml.Linq.XContainer)">
+            <summary>
+            Create a <see cref="T:NYTimes.Data.Profile"/> object
+            </summary>
+            <param name="profileElement">a profile element</param>
+            <returns>a new profile object</returns>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.ParseUsers(System.Xml.Linq.XContainer,System.Collections.ObjectModel.ObservableCollection{NYTimes.Data.Profile})">
+            <summary>
+            Parses the results for a collection of user profiles
+            </summary>
+            <param name="resultSet">the result set</param>
+            <param name="collection">a collection of activities</param>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.ParseActivities(System.Xml.Linq.XContainer,System.Collections.ObjectModel.ObservableCollection{NYTimes.Data.Activity})">
+            <summary>
+            Parses the results for a collection of activities
+            </summary>
+            <param name="resultSet">the result set</param>
+            <param name="collection">a collection of activities</param>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.TriggerPropertyChanged(System.String)">
+            <summary>
+            Trigger a property changed event
+            </summary>
+            <param name="propertyName">the property name</param>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.FetchUserId">
+            <summary>
+            Fetch the user ID
+            </summary>
+            <exception cref="T:NYTimes.Core.MissingApiKeyException">if the API Key is not set.</exception>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.OnUserIdDownloaded(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            User ID has been downloaded
+            </summary>
+            <param name="sender">the user id web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.FetchResults">
+            <summary>
+            Fetch the results
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.OnDownloadCompleted(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Result download completed event handler
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.Core.TimesPeople.GenerateUri">
+            <summary>
+            Generate the URI
+            </summary>
+            <returns>the service URI</returns>
+        </member>
+        <member name="E:NYTimes.Core.TimesPeople.PropertyChanged">
+            <summary>
+            Property changed event
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.TimesPeople.ApiKey">
+            <summary>
+            Gets or sets the TimesPeople API key
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.TimesPeople.IsLoading">
+            <summary>
+            Gets a value indicating whether the results are loading
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.TimesPeople.Logo">
+            <summary>
+            Gets the logo for the New York times
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.TimesPeople.EmailAddress">
+            <summary>
+            Gets or sets the Email Address for the TimesPeople user
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.TimesPeople.UserId">
+            <summary>
+            Gets or sets the User Id
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.TimesPeople.DataType">
+            <summary>
+            Gets the data type
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleActivities.#ctor">
+            <summary>
+            Initializes a new instance of the TimesPeopleActivities class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleActivities.ParseResultSet(System.Xml.Linq.XElement)">
+            <summary>
+            Parse the result set
+            </summary>
+            <param name="resultSet">the XML result set</param>
+        </member>
+        <member name="M:NYTimes.TimesPeopleActivities.OnException(System.Exception)">
+            <summary>
+            Clear the activity list
+            </summary>
+            <param name="failure">the web client exception</param>
+        </member>
+        <member name="P:NYTimes.TimesPeopleActivities.DataType">
+            <summary>
+            Gets the "activities" data type
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesPeopleActivities.Activities">
+            <summary>
+            Gets an observable collection of <see cref="T:NYTimes.Data.Activity"/> objects.
+            </summary>
+        </member>
+        <member name="T:Synergist.Utility">
+            <summary>
+            Silverlight Utilities
+            </summary>
+        </member>
+        <member name="M:Synergist.Utility.#ctor">
+            <summary>
+            Prevents a default instance of the Utility class from being created.
+            </summary>
+        </member>
+        <member name="M:Synergist.Utility.GetProperties(System.Object)">
+            <summary>
+            Gets a string with all of the properties that are not null.
+            </summary>
+            <param name="data">the object to query</param>
+            <returns>a string formatted the property names and values</returns>
+        </member>
+        <member name="M:Synergist.Utility.UnixTimeToDateTime(System.Xml.Linq.XElement)">
+            <summary>
+            Convets the value in an XML element to a nullable DateTime
+            </summary>
+            <param name="element">an XML element</param>
+            <returns>a nullable DateTime</returns>
+        </member>
+        <member name="M:Synergist.Utility.UnixTimeToDateTime(System.Xml.Linq.XAttribute)">
+            <summary>
+            Convert a UNIX time to a DateTime
+            </summary>
+            <param name="attribute">an attribute that has a UNIX time in it.</param>
+            <returns>a DateTime</returns>
+        </member>
+        <member name="T:NYTimes.Data.BookRank">
+            <summary>
+            The NYTimes Bestseller book rank
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.BookRank.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.BookRank.Rank">
+            <summary>
+            Gets or sets the rank
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookRank.ListName">
+            <summary>
+            Gets or sets the list name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookRank.BestsellersDate">
+            <summary>
+            Gets or sets the date of the best seller data
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookRank.PublishedDate">
+            <summary>
+            Gets or sets the date the book ranking was published in the New York Times
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookRank.WeeksOnList">
+            <summary>
+            Gets or sets the weeks on the list
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookRank.RankLastWeek">
+            <summary>
+            Gets or sets the rank last week
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookRank.Asterisk">
+            <summary>
+            Gets or sets a value indicating whether this book's sales are barely distinguishable from those of the book above it on the list.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookRank.Dagger">
+            <summary>
+            Gets or sets a value indicating whether some bookstores have received bulk orders for this book.
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.MovieReview">
+            <summary>
+            New York Times Movie Review
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.MovieReview.ToString">
+            <summary>
+            returns a string with all of the non-null properties and values
+            </summary>
+            <returns>a string with all of the non-null properties and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.Id">
+            <summary>
+            Gets or sets the New York Times ID for the Movie
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.DisplayTitle">
+            <summary>
+            Gets or sets the display title
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.CapsuleReview">
+            <summary>
+            Gets or sets a short review supplied by the Times critic. Example (for the film Code 46): "Insurance investigator's affair disturbs dystopian order. Strenuously inventive future filmed with a logy elegance."
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.PublicationDate">
+            <summary>
+            Gets or sets the publication date for the review
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.OpeningDate">
+            <summary>
+            Gets or sets the opening date
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.DVDReleaseDate">
+            <summary>
+            Gets or sets the DVD Release date
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.Byline">
+            <summary>
+            Gets or sets the byline
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.SummaryShort">
+            <summary>
+            Gets or sets the summary short.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.Thumbnail">
+            <summary>
+            Gets or sets the thumbnail
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.SortName">
+            <summary>
+            Gets or sets the sort name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.MPAARating">
+            <summary>
+            Gets or sets the MPAA Rating
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.CriticsPick">
+            <summary>
+            Gets or sets a value indicating whether this is a critic's picks
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.ThousandBest">
+            <summary>
+            Gets or sets a value indicating whether the movie is included in the Times list of The Best 1,000 Movies Ever Made.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.Headline">
+            <summary>
+            Gets or sets the headline
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.SEOName">
+            <summary>
+            Gets or sets the SEO Name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.Link">
+            <summary>
+            Gets or sets the link
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MovieReview.RelatedUrls">
+            <summary>
+            Gets or sets the related URLs
+            </summary>
+        </member>
+        <member name="T:NYTimes.Core.MissingApiKeyException">
+            <summary>
+            Missing API Key exception
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.MissingApiKeyException.#ctor">
+            <summary>
+            Initializes a new instance of the MissingApiKeyException class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.MissingApiKeyException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MissingApiKeyException class.
+            </summary>
+            <param name="message">the error message</param>
+        </member>
+        <member name="M:NYTimes.Core.MissingApiKeyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the MissingApiKeyException class.
+            </summary>
+            <param name="message">the error message</param>
+            <param name="innerException">the inner exception</param>
+        </member>
+        <member name="M:NYTimes.Core.MissingApiKeyException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the MissingApiKeyException class.
+            </summary>
+            <param name="clrClassName">the CLR Class name</param>
+            <param name="apiKeyName">the API Key name</param>
+        </member>
+        <member name="T:NYTimes.ValueConverters.VisibleIfNotEmptyConverter">
+            <summary>
+            A Value converter
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.VisibleIfNotEmptyConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI. 
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.VisibleIfNotEmptyConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object. This method is called only in TwoWay bindings. 
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.Data.RankOrder">
+            <summary>
+            the rank order
+            </summary>
+        </member>
+        <member name="F:NYTimes.Data.RankOrder.Newest">
+            <summary>
+            Rank by newest
+            </summary>
+        </member>
+        <member name="F:NYTimes.Data.RankOrder.Oldest">
+            <summary>
+            Rank by oldest
+            </summary>
+        </member>
+        <member name="F:NYTimes.Data.RankOrder.Closest">
+            <summary>
+            Rank by closest
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.ISBN">
+            <summary>
+            A book ISBN 
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.ISBN.ToString">
+            <summary>
+            Gets the properties and values
+            </summary>
+            <returns>a string with named value pairs</returns>
+        </member>
+        <member name="P:NYTimes.Data.ISBN.ISBN13">
+            <summary>
+            Gets or sets the ISBN 13 code
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.ISBN.ISBN10">
+            <summary>
+            Gets or sets the ISBN 10 code
+            </summary>
+        </member>
+        <member name="T:NYTimes.Dates">
+            <summary>
+            Dates CLR class.
+            </summary>
+        </member>
+        <member name="F:NYTimes.Dates.BestSellerWeeks">
+            <summary>
+            Key for best sellers weeks in isolated storage
+            </summary>
+        </member>
+        <member name="F:NYTimes.Dates.weeks">
+            <summary>
+            default number of weeks
+            </summary>
+        </member>
+        <member name="M:NYTimes.Dates.#ctor">
+            <summary>
+            Initializes a new instance of the Dates class.
+            </summary>
+        </member>
+        <member name="E:NYTimes.Dates.PropertyChanged">
+            <summary>
+            the property changed event handler
+            </summary>
+        </member>
+        <member name="P:NYTimes.Dates.Now">
+            <summary>
+            Gets the time now
+            </summary>
+        </member>
+        <member name="P:NYTimes.Dates.OffsetDate">
+            <summary>
+            Gets the OffsetDate
+            </summary>
+        </member>
+        <member name="P:NYTimes.Dates.Weeks">
+            <summary>
+            Gets or sets the offset days
+            </summary>
+        </member>
+        <member name="T:NYTimes.BestsellerHistorySort">
+            <summary>
+            Bestseller history sort order
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistorySort.AgeGroup">
+            <summary>
+            Sort by age group
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistorySort.Author">
+            <summary>
+            Sort by author
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistorySort.Contributor">
+            <summary>
+            Sort by contributor
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistorySort.ISBN">
+            <summary>
+            Sort by ISBN
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistorySort.Price">
+            <summary>
+            Sort by price
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistorySort.Publisher">
+            <summary>
+            Sort by publisher
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistorySort.Title">
+            <summary>
+            Sort by title
+            </summary>
+        </member>
+        <member name="T:NYTimes.BestsellerHistory">
+            <summary>
+            New York Times Best Seller History API
+            </summary>
+            <remarks>
+            http://developer.nytimes.com/docs/best_sellers_api#h3-history
+            </remarks>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.NYTBestSellersKey">
+            <summary>
+            the key for the BestSellers API in the app resources
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.limiting">
+            <summary>
+            8 QPS Rate Limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.apiKey">
+            <summary>
+            the API key
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.title">
+            <summary>
+            the title to search for
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.isbn">
+            <summary>
+            the ISBN to search for
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.copyright">
+            <summary>
+            the copyright message
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.sort">
+            <summary>
+            the sort order
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.client">
+            <summary>
+            the web client
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.ageGroupList">
+            <summary>
+            the list of age group names
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.isLoading">
+            <summary>
+            true if the results are loading, false otherwise
+            </summary>
+        </member>
+        <member name="F:NYTimes.BestsellerHistory.result">
+            <summary>
+            the single book results
+            </summary>
+        </member>
+        <member name="M:NYTimes.BestsellerHistory.#ctor">
+            <summary>
+            Initializes a new instance of the BestsellerHistory class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.BestsellerHistory.GetHistory">
+            <summary>
+            Get the history of a book
+            </summary>
+        </member>
+        <member name="M:NYTimes.BestsellerHistory.GenerateUri">
+            <summary>
+            Generate the Uri for the web service call
+            </summary>
+            <returns>the REST URI</returns>
+        </member>
+        <member name="M:NYTimes.BestsellerHistory.OnAgeGroupListDownloaded(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Age group list has been downloaded
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.BestsellerHistory.OnHistoryReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            web client returned the history
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.BestsellerHistory.ParseXml(System.String)">
+            <summary>
+            Parse the XML returned from the BestSellerHistory service
+            </summary>
+            <param name="xml">the Bestseller history XML</param>
+        </member>
+        <member name="E:NYTimes.BestsellerHistory.PropertyChanged">
+            <summary>
+            Property changed event
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.IsLoading">
+            <summary>
+            Gets a value indicating whether the history results are loading
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.ApiKey">
+            <summary>
+            Gets or sets the API Key
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.AgeGroup">
+            <summary>
+            Gets or sets the age group
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.AgeGroupList">
+            <summary>
+            Gets the list of Age Group values
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Author">
+            <summary>
+            Gets or sets the author
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Contributor">
+            <summary>
+            Gets or sets the contributor
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.ISBN">
+            <summary>
+            Gets or sets the ISBN
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Price">
+            <summary>
+            Gets or sets the price
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Publisher">
+            <summary>
+            Gets or sets the publisher
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Title">
+            <summary>
+            Gets or sets the title
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Sort">
+            <summary>
+            Gets or sets the sort order
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Results">
+            <summary>
+            Gets the history
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.RankHistory">
+            <summary>
+            Gets the rank history for the single result
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Result">
+            <summary>
+            Gets the single results when returning a specific book
+            </summary>
+        </member>
+        <member name="P:NYTimes.BestsellerHistory.Copyright">
+            <summary>
+            Gets the copyright message
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.AxisSwapConverter">
+            <summary>
+            Axis swap converter
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.AxisSwapConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert from value to parameter-value
+            </summary>
+            <param name="value">an integer</param>
+            <param name="targetType">the target type</param>
+            <param name="parameter">the conversion parameter</param>
+            <param name="culture">the culture</param>
+            <returns>the integer parameter - value</returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.AxisSwapConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="value">an integer</param>
+            <param name="targetType">the target type</param>
+            <param name="parameter">a value to subtract</param>
+            <param name="culture">the conversion culture</param>
+            <returns>parameter - value</returns>
+        </member>
+        <member name="T:NYTimes.CriticResourceType">
+            <summary>
+            The Critic resource type
+            </summary>
+        </member>
+        <member name="F:NYTimes.CriticResourceType.All">
+            <summary>
+            Return All types of critics
+            </summary>
+        </member>
+        <member name="F:NYTimes.CriticResourceType.Fulltime">
+            <summary>
+            return Full time critics
+            </summary>
+        </member>
+        <member name="F:NYTimes.CriticResourceType.PartTime">
+            <summary>
+            Return Part time critics
+            </summary>
+        </member>
+        <member name="F:NYTimes.CriticResourceType.Reviewer">
+            <summary>
+            Returns Reviewer
+            </summary>
+        </member>
+        <member name="F:NYTimes.CriticResourceType.ReviewerName">
+            <summary>
+            Specify the reviewer's name in the ReviewerName property
+            </summary>
+        </member>
+        <member name="T:NYTimes.MovieReviewerDetails">
+            <summary>
+            Movie Reviewer Details CLR class for Silverlight Data binding
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewerDetails.limiting">
+            <summary>
+            8 QPS rate limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewerDetails.criticCache">
+            <summary>
+            cache of critics by name
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewerDetails.client">
+            <summary>
+            the web client
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewerDetails.critic">
+            <summary>
+            The single critic returned when searching by name
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewerDetails.reviewerName">
+            <summary>
+            the reviewer's name
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewerDetails.copyright">
+            <summary>
+            the copyright text
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewerDetails.resourceType">
+            <summary>
+            the resource type
+            </summary>
+        </member>
+        <member name="M:NYTimes.MovieReviewerDetails.#ctor">
+            <summary>
+            Initializes a new instance of the MovieReviewerDetails class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.MovieReviewerDetails.FetchCritics">
+            <summary>
+            Fetch the critics
+            </summary>
+        </member>
+        <member name="M:NYTimes.MovieReviewerDetails.OnCriticsReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Parse the XML data returned
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.MovieReviewerDetails.GenerateUri">
+            <summary>
+            Generate the URI
+            </summary>
+            <returns>the REST URI</returns>
+        </member>
+        <member name="E:NYTimes.MovieReviewerDetails.PropertyChanged">
+            <summary>
+            The property changed event handler
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewerDetails.ApiKey">
+            <summary>
+            Gets or sets the Movie Review API Key
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewerDetails.Copyright">
+            <summary>
+            Gets the New York Times Copyright Message
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewerDetails.Logo">
+            <summary>
+            Gets the logo for Billboard
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewerDetails.ResourceType">
+            <summary>
+            Gets or sets the resource type to return
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewerDetails.ReviewerName">
+            <summary>
+            Gets or sets the reviewer name to return
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewerDetails.Critic">
+            <summary>
+            Gets the first critic returned
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewerDetails.Critics">
+            <summary>
+            Gets the critics that were returned
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Comment">
+            <summary>
+            Community comment
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Comment.ToString">
+            <summary>
+            Outputs the book detail properties
+            </summary>
+            <returns>a string with named value pairs</returns>
+        </member>
+        <member name="P:NYTimes.Data.Comment.Title">
+            <summary>
+            Gets or sets the title
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.Body">
+            <summary>
+            Gets or sets the body
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.ApproveDate">
+            <summary>
+            Gets or sets the approval date
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.UpdateDate">
+            <summary>
+            Gets or sets the update date
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.CreateDate">
+            <summary>
+            Gets or sets the creation date
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.Recommendations">
+            <summary>
+            Gets or sets the recommendation count
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.Replies">
+            <summary>
+            Gets or sets the replies
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.UserTitle">
+            <summary>
+            Gets or sets the user title
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.UserUrl">
+            <summary>
+            Gets or sets the user url
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.DisplayName">
+            <summary>
+            Gets or sets the display name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.Location">
+            <summary>
+            Gets or sets the location
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.UserComments">
+            <summary>
+            Gets or sets the user comments service URL
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.CommentQuestion">
+            <summary>
+            Gets or sets the comment question
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Comment.ArticleUrl">
+            <summary>
+            Gets or sets the article URL
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Article">
+            <summary>
+            A NYT Article
+            </summary>
+        </member>
+        <member name="F:NYTimes.Data.Article.smallImageWidth">
+            <summary>
+            the small image width
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Article.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Article.Abstract">
+            <summary>
+            Gets or sets the abstract
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.Body">
+            <summary>
+            Gets or sets the body
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.Byline">
+            <summary>
+            Gets or sets the byline
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.DeskFacet">
+            <summary>
+            Gets or sets The Times desk that produced the story (e.g., Business/Financial Desk)
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.Date">
+            <summary>
+            Gets or sets the date
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.Title">
+            <summary>
+            Gets or sets the title
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.Url">
+            <summary>
+            Gets or sets the URL
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.SmallImageHeight">
+            <summary>
+            Gets or sets the small image height
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.SmallImageWidth">
+            <summary>
+            Gets or sets the small image width in pixels
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.SmallImageUrl">
+            <summary>
+            Gets or sets the Small image URL
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.SmallImage">
+            <summary>
+            Gets the small image
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.DescriptionFacet">
+            <summary>
+            Gets or sets the description facet
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.PersonFacet">
+            <summary>
+            Gets or sets the person facet
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.PageFacet">
+            <summary>
+            Gets or sets the page facet
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.GeoFacet">
+            <summary>
+            Gets or sets the Geographic Location facet
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.SourceFacet">
+            <summary>
+            Gets or sets The originating body  (e.g., AP, Dow Jones, The New York Times)
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Article.MultimediaFeatures">
+            <summary>
+            Gets or sets the multimedia features
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Tag">
+            <summary>
+            Tag for the NY Times TagSearch API
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Tag.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Tag.Dictionary">
+            <summary>
+            Gets or sets the dictionary the tag is in
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Tag.Value">
+            <summary>
+            Gets or sets the tag value
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Tag.Query">
+            <summary>
+            Gets the query for the Times Article Search API
+            </summary>
+        </member>
+        <member name="T:NYTimes.MovieReviewsByKeyword">
+            <summary>
+            Silverlight CLR class for querying the New York Times Movie Review Service
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/movie_reviews_api/</remarks>
+        </member>
+        <member name="F:NYTimes.MovieReviewsByKeyword.query">
+            <summary>
+            the keyword query
+            </summary>
+        </member>
+        <member name="M:NYTimes.MovieReviewsByKeyword.GenerateUri">
+            <summary>
+            Generate the REST URI
+            </summary>
+            <returns>a URI for the REST call</returns>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.Query">
+            <summary>
+            Gets or sets the keyword query
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.CriticsPicks">
+            <summary>
+            Gets or sets a value to limit the results to NYT Critics' Picks. 
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.ThousandBest">
+            <summary>
+            Gets or sets the thousand best
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.DVD">
+            <summary>
+            Gets or sets a value indicating whether to get DVD results
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.Reviewer">
+            <summary>
+            Gets or sets the reviewer's name
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.PublicationStartDate">
+            <summary>
+            Gets or sets the publication start date
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.PublicationEndDate">
+            <summary>
+            Gets or sets the publication end date
+            </summary>
+            <remarks>must be used with PublicationStartDate</remarks>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.OpeningDate">
+            <summary>
+            Gets or sets the opening date
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsByKeyword.Order">
+            <summary>
+            Gets or sets the order
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.DateOffsetConverter">
+            <summary>
+            A value converter to convert dates to their offset equivalent
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.DateOffsetConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts from a date to a date with a specific days offset
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.DateOffsetConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.Data.Profile">
+            <summary>
+            TimesPeople Profile
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Profile.UserId">
+            <summary>
+            Gets or sets the user’s unique TimesPeople ID number.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Profile.DisplayName">
+            <summary>
+            Gets or sets the user's display name, as it appears in the TimesPeople toolbar and in news feeds.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Profile.Location">
+            <summary>
+            Gets or sets the user's location, as it appears on his or her profile page. The value of location does not have to be a geographic place name; users can specify any location, such as “my couch,” and can change the location at any time.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Profile.PictureUrl">
+            <summary>
+            Gets or sets the user’s profile image, as it appears on profile pages and in news feeds. Images are in .png, .gif (non-animated) or .jpg format. There is no size restriction for images.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Profile.Picture">
+            <summary>
+            Gets the user’s profile image, as it appears on profile pages and in news feeds. Images are in .png or .jpg format. There is no size restriction for images.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Profile.Following">
+            <summary>
+            Gets or sets the number of people this user is following
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Profile.Followers">
+            <summary>
+            Gets or sets the number of people that are following this user
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.NumericFormatConverter">
+            <summary>
+            Numeric format converter
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.NumericFormatConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            convert a double to a string with the parameter as the format and culture
+            </summary>
+            <param name="value">a double value</param>
+            <param name="targetType">the string type</param>
+            <param name="parameter">the string format</param>
+            <param name="culture">the conversion culture</param>
+            <returns>a formatted string</returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.NumericFormatConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+             Not implemented
+            </summary>
+            <param name="value">The parameter is not used.</param>
+            <param name="targetType">The parameter is not used.</param>
+            <param name="parameter">The parameter is not used.</param>
+            <param name="culture">The parameter is not used.</param>
+            <returns>not implemented</returns>
+        </member>
+        <member name="T:NYTimes.Data.BookDetail">
+            <summary>
+            Book details
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.BookDetail.ToString">
+            <summary>
+            Outputs the book detail properties
+            </summary>
+            <returns>a string with named value pairs</returns>
+        </member>
+        <member name="P:NYTimes.Data.BookDetail.Title">
+            <summary>
+            Gets or sets the Title
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookDetail.Description">
+            <summary>
+            Gets or sets the description
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookDetail.Contributor">
+            <summary>
+            Gets or sets the contributor
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookDetail.Author">
+            <summary>
+            Gets or sets the author
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookDetail.ContributorNote">
+            <summary>
+            Gets or sets the contributor note
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookDetail.Price">
+            <summary>
+            Gets or sets the price
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookDetail.AgeGroup">
+            <summary>
+            Gets or sets the age group
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.BookDetail.Publisher">
+            <summary>
+            Gets or sets the publisher
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.NewsItem">
+            <summary>
+            News Item returned from NewsWire API
+            </summary>
+            <seealso cref="T:NYTimes.Newswire"/>
+        </member>
+        <member name="M:NYTimes.Data.NewsItem.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Url">
+            <summary>
+            Gets or sets the Url of the article
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Section">
+            <summary>
+            Gets or sets the article section
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Subsection">
+            <summary>
+            Gets or sets the article subsection
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Headline">
+            <summary>
+            Gets or sets the headline
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Summary">
+            <summary>
+            Gets or sets the summary
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Byline">
+            <summary>
+            Gets or sets the byline
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Platform">
+            <summary>
+            Gets or sets the platform
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Id">
+            <summary>
+            Gets or sets the news item Id
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Source">
+            <summary>
+            Gets or sets the article source
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Updated">
+            <summary>
+            Gets or sets the date/time updated
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Created">
+            <summary>
+            Gets or sets the date/time created
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.PubDate">
+            <summary>
+            Gets or sets the published date
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Subtype">
+            <summary>
+            Gets or sets the subtype
+            </summary>
+            <remarks>valid values are News,Editorial, Obituary (Obit), List</remarks>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Kicker">
+            <summary>
+            Gets or sets the Article Kicker
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.SubHeadline">
+            <summary>
+            Gets or sets the sub-headline
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.BlogName">
+            <summary>
+            Gets or sets the Blog name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.IndexingTerms">
+            <summary>
+            Gets or sets the indexing terms mentioned in the article
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Locations">
+            <summary>
+            Gets or sets the locations mentioned in the article
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Organizations">
+            <summary>
+            Gets or sets the organizations mentioned in the article
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.People">
+            <summary>
+            Gets or sets the people mentioned in the article
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Terms">
+            <summary>
+            Gets or sets the terms mentioned in the article
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.RelatedUrls">
+            <summary>
+            Gets or sets the related Urls for a news item as an enumerable of 
+            <see cref="T:NYTimes.Data.Link"/> objects
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.CategoriesTags">
+            <summary>
+            Gets or sets the cateory tages for a news item
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.Media">
+            <summary>
+            Gets or sets the media for a news item as an enumerable collection of 
+            <see cref="T:NYTimes.Data.NewsItemMedia"/> objects.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItem.ItemType">
+            <summary>
+            Gets or sets the type: Article or Blog
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.MediaMetadata">
+            <summary>
+            Media Metadata
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.MediaMetadata.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.MediaMetadata.Format">
+            <summary>
+            Gets or sets the format
+            </summary>
+            <remarks>Valid values include 'Standard Thumbnail'</remarks>
+        </member>
+        <member name="P:NYTimes.Data.MediaMetadata.Height">
+            <summary>
+            Gets or sets the height in pixels
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MediaMetadata.Width">
+            <summary>
+            Gets or sets the width in pixels
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MediaMetadata.Url">
+            <summary>
+            Gets or sets the media Url
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.MediaMetadata.Image">
+            <summary>
+            Gets the image for the Media Url
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Activity">
+            <summary>
+            TimesPeople Activity
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.Id">
+            <summary>
+            Gets or sets the Activity I
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.UserDisplayName">
+            <summary>
+            Gets or sets the User Display Nmae
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.UserId">
+            <summary>
+            Gets or sets the user Id
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.UserPictureUrl">
+            <summary>
+            Gets or sets the URL to the User Picture (64x64 pixel image)
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.UserPicture">
+            <summary>
+            Gets the User Picture (64x64 pixel image)
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.Verb">
+            <summary>
+            Gets or sets the activity verb
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.Object">
+            <summary>
+            Gets or sets the activity object name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.ObjectDescription">
+            <summary>
+            Gets or sets the activiyt object description
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.ObjectUrl">
+            <summary>
+            Gets or sets the activity object URL
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.ObjectType">
+            <summary>
+            Gets or sets the Activity object type
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.ObjectThumbnailUrl">
+            <summary>
+            Gets or sets the Activity object thumbnail URI
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.ObjectThumbnail">
+            <summary>
+            Gets the activty object thumbnail image
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Activity.DateUpdated">
+            <summary>
+            Gets or sets the date updated
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Facet">
+            <summary>
+            Facet for Article searches
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Facet.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Facet.Count">
+            <summary>
+            Gets or sets the number of results for the facet
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Facet.Term">
+            <summary>
+            Gets or sets the term found in the facet
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Asset">
+            <summary>
+            A URL Asset
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Asset.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Asset.Url">
+            <summary>
+            Gets or sets the URL to the asset
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Asset.CommentsUrl">
+            <summary>
+            Gets or sets the Comments API Url
+            </summary>
+        </member>
+        <member name="T:NYTimes.Articles">
+            <summary>
+            New York Times Articles Search API
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/article_search_api</remarks>
+        </member>
+        <member name="F:NYTimes.Articles.BaseUri">
+            <summary>
+            The Base URI
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.NYTArticlesKey">
+            <summary>
+            Application App Key
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.ResultsPerCall">
+            <summary>
+            number of results per call
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.limiting">
+            <summary>
+            10 QPS default rate limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.apiKey">
+            <summary>
+            the Articles API Key
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.beginDate">
+            <summary>
+            the begin date
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.facets">
+            <summary>
+            the facets to request
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.fields">
+            <summary>
+            the fields to request
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.offset">
+            <summary>
+            the current offset
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.client">
+            <summary>
+            The Async web client
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.query">
+            <summary>
+            the query string
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.isLoading">
+            <summary>
+            is the CLR class loading?
+            </summary>
+        </member>
+        <member name="F:NYTimes.Articles.endDate">
+            <summary>
+            the end date
+            </summary>
+        </member>
+        <member name="M:NYTimes.Articles.#ctor">
+            <summary>
+            Initializes a new instance of the Articles class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.Articles.GetArticles">
+            <summary>
+            Get the articles
+            </summary>
+        </member>
+        <member name="M:NYTimes.Articles.GetArticles(System.String,System.Net.DownloadStringCompletedEventHandler)">
+            <summary>
+            Get the articles
+            </summary>
+            <param name="queryString">the query to send to the service</param>
+            <param name="handler">the download completed handler</param>
+        </member>
+        <member name="M:NYTimes.Articles.ParseResults(System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Parse the results from the articles request
+            </summary>
+            <param name="e">the download completed event args.</param>
+        </member>
+        <member name="M:NYTimes.Articles.ParseDate(System.String)">
+            <summary>
+            Parse a date returned from the service
+            </summary>
+            <param name="text">a date in YYYYMMDD format</param>
+            <returns> a DateTime</returns>
+        </member>
+        <member name="M:NYTimes.Articles.ReadJSON(System.IO.TextReader)">
+            <summary>
+            Read the JSON search results
+            </summary>
+            <param name="reader">the text reader</param>
+        </member>
+        <member name="M:NYTimes.Articles.ParseFacets(System.Json.JsonObject)">
+            <summary>
+            Parse the facets returned from the Service
+            </summary>
+            <param name="response">the JSON response</param>
+        </member>
+        <member name="M:NYTimes.Articles.BuildUri(System.String)">
+            <summary>
+            Build the URI
+            </summary>
+            <param name="queryString">the query string</param>
+            <returns>a URI string for the REST request</returns>
+            <exception cref="T:NYTimes.Core.MissingApiKeyException">if the API Key is missing</exception>
+        </member>
+        <member name="M:NYTimes.Articles.OnArticlesReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            fill the Results with the parsed results
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="E:NYTimes.Articles.PropertyChanged">
+            <summary>
+            Property changed event handler
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.IsLoading">
+            <summary>
+            Gets a value indicating whether the results are loading
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Logo">
+            <summary>
+            Gets the logo for Billboard
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.ResultsToGet">
+            <summary>
+            Gets or sets the number of results to get
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Fields">
+            <summary>
+            Gets or sets the Fields to request
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Facets">
+            <summary>
+            Gets or sets the Facets to request (separated by commas, 5 maximum)
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.FacetsReturned">
+            <summary>
+            Gets the facets returned
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Query">
+            <summary>
+            Gets or sets the query
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.ApiKey">
+            <summary>
+            Gets or sets the api key
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Offset">
+            <summary>
+            Gets the results offset
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.BeginDate">
+            <summary>
+            Gets or sets the begin date >= 1/1/1981
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.EndDate">
+            <summary>
+            Gets or sets the end date
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Rank">
+            <summary>
+            Gets or sets the rank order for the results
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Results">
+            <summary>
+            Gets the results of the search
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Tokens">
+            <summary>
+            Gets the tokens returned
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.FieldNames">
+            <summary>
+            Gets the available field names
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.FacetNames">
+            <summary>
+            Gets the facet names to query
+            </summary>
+        </member>
+        <member name="P:NYTimes.Articles.Total">
+            <summary>
+            Gets the total number of results
+            </summary>
+        </member>
+        <member name="T:NYTimes.CommunityCommentsByDate">
+            <summary>
+            Community comments by Date CLR object
+            </summary>
+        </member>
+        <member name="T:NYTimes.Core.CommunityBase">
+            <summary>
+            New York Times Community API Silverlight CLR Base class
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/community_api</remarks>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.NYTCommunityKey">
+            <summary>
+            The Application Resource key for the NYT Community API key
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.ApiVersion">
+            <summary>
+             The API Version
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.BaseUri">
+            <summary>
+            the base URI
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.limiting">
+            <summary>
+            30 QPS rate limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.client">
+            <summary>
+            the web client
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.apiKey">
+            <summary>
+            the API Key
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.copyright">
+            <summary>
+            the Copyright text
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.totalComments">
+            <summary>
+            the total number of comments
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.isLoading">
+            <summary>
+            true if the results are loading
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.results">
+            <summary>
+            the result set
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommunityBase.init">
+            <summary>
+            is initializing
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.#ctor">
+            <summary>
+            Initializes a new instance of the CommunityBase class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.GenerateUriFragment">
+            <summary>
+            Generate the URI string
+            </summary>
+            <returns>the output URI string</returns>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.FetchNextSet">
+            <summary>
+            Fetch the next set (if supported)
+            </summary>
+            <returns>true if the results are done loading.</returns>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.Parse(System.Xml.Linq.XElement)">
+            <summary>
+            Override to parse the result set
+            </summary>
+            <param name="resultSet">the result set</param>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.AppendSortType(System.Text.StringBuilder,NYTimes.Core.CommentSortType)">
+            <summary>
+            Append the sort type
+            </summary>
+            <param name="builder">the string builder</param>
+            <param name="sortType">the sort type</param>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.TriggerPropertyChanged(System.String)">
+            <summary>
+            Trigger the Property changed event handler(s)
+            </summary>
+            <param name="propertyName">the property name</param>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.FetchResults(System.Boolean)">
+            <summary>
+            Fetch the results
+            </summary>
+            <param name="clear">true to clear the result set first</param>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.CreateComment(System.Xml.Linq.XElement)">
+            <summary>
+            Create a comment from an XML Element
+            </summary>
+            <param name="comment">the XML element</param>
+            <returns>a new comment</returns>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.CreateUserCommentsUri(System.String)">
+            <summary>
+            Create a user comment URI
+            </summary>
+            <param name="userComments">the user comment text</param>
+            <returns>a service URI</returns>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.GenerateUri">
+            <summary>
+            Generate the URI
+            </summary>
+            <returns>the URI for the service call</returns>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.OnCommentsReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Comments returned event handler
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.Core.CommunityBase.ParseXml(System.String)">
+            <summary>
+            Parse the XML
+            </summary>
+            <param name="xml">the XML returned from the service</param>
+        </member>
+        <member name="E:NYTimes.Core.CommunityBase.PropertyChanged">
+            <summary>
+            Property changed event handler
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CommunityBase.ApiKey">
+            <summary>
+            Gets or sets the API key
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CommunityBase.IsLoading">
+            <summary>
+            Gets a value indicating whether the results are loading
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CommunityBase.Results">
+            <summary>
+            Gets the comments returned as an observable collection of 
+            <see cref="T:NYTimes.Data.Comment"/> objects.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CommunityBase.Logo">
+            <summary>
+            Gets the logo for the New York Times
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CommunityBase.TotalComments">
+            <summary>
+            Gets or sets the total number of comments
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CommunityBase.Copyright">
+            <summary>
+            Gets the copyright text
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityCommentsByDate.offset">
+            <summary>
+            the result offset
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityCommentsByDate.date">
+            <summary>
+            the date to search
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityCommentsByDate.sort">
+            <summary>
+            The sort order
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByDate.#ctor">
+            <summary>
+            Initializes a new instance of the CommunityCommentsByDate class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByDate.GenerateUriFragment">
+            <summary>
+            Generate a URI for the service
+            </summary>
+            <returns>the output URI string</returns>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByDate.FetchNextSet">
+            <summary>
+            Fetch the next set
+            </summary>
+            <returns>true if done, false if next batch should be returned</returns>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByDate.Date">
+            <summary>
+            Gets or sets the date to get comments for
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByDate.Sort">
+            <summary>
+            Gets or sets the sort order for the results.
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByDate.MaxResults">
+            <summary>
+            Gets or sets the maximum results
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByDate.Offset">
+            <summary>
+            Gets the offset
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.TagConverter">
+            <summary>
+            Value converter for Tags
+            </summary>
+            <seealso cref="T:NYTimes.Data.Tag"/>
+        </member>
+        <member name="M:NYTimes.ValueConverters.TagConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert from a <see cref="T:NYTimes.Data.Tag"/> to its Value property
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.TagConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Synergist.RateLimiting">
+            <summary>
+            Web Client rate limiting
+            </summary>
+        </member>
+        <member name="F:Synergist.RateLimiting.timer">
+            <summary>
+            the dispatcher timer
+            </summary>
+        </member>
+        <member name="F:Synergist.RateLimiting.requests">
+            <summary>
+            the queue of requests
+            </summary>
+        </member>
+        <member name="M:Synergist.RateLimiting.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the RateLimiting class.
+            </summary>
+            <param name="apiName">the API Name</param>
+            <param name="callsPerSecond">calls allowed per second</param>
+        </member>
+        <member name="M:Synergist.RateLimiting.MakeWebRequest(System.Net.WebClient,System.Uri)">
+            <summary>
+            Add a request to the queue
+            </summary>
+            <param name="client">the web client</param>
+            <param name="address">the web address</param>
+        </member>
+        <member name="M:Synergist.RateLimiting.Cancel(System.Net.WebClient)">
+            <summary>
+            A web request has been cancelled so set its client to null.
+            </summary>
+            <param name="client">the web client</param>
+        </member>
+        <member name="M:Synergist.RateLimiting.OnTick(System.Object,System.EventArgs)">
+            <summary>
+            dispatch timer tick hander
+            </summary>
+            <param name="sender">the dispatch timer</param>
+            <param name="e">the event arguments</param>
+        </member>
+        <member name="T:Synergist.RateLimiting.Request">
+            <summary>
+            A web request
+            </summary>
+        </member>
+        <member name="P:Synergist.RateLimiting.Request.Client">
+            <summary>
+            Gets or sets the web client
+            </summary>
+        </member>
+        <member name="P:Synergist.RateLimiting.Request.Address">
+            <summary>
+            Gets or sets the web address
+            </summary>
+        </member>
+        <member name="T:NYTimes.Core.CongressApi">
+            <summary>
+            New York Times Congress API
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/congress_api</remarks>
+        </member>
+        <member name="F:NYTimes.Core.CongressApi.CongressApiKey">
+            <summary>
+            Name of key in application resources
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CongressApi.limiting">
+            <summary>
+            2 QPS rate limiting
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.CongressApi.#ctor">
+            <summary>
+            Initializes a new instance of the CongressApi class.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CongressApi.ApiKey">
+            <summary>
+            Gets or sets the API Key
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CongressApi.Logo">
+            <summary>
+            Gets the logo for the New York Times
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CongressApi.Version">
+            <summary>
+            Gets The API Version
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CongressApi.Limiting">
+            <summary>
+            Gets the rate limiting
+            </summary>
+        </member>
+        <member name="P:NYTimes.Core.CongressApi.BaseUri">
+            <summary>
+            Gets the base URI for all service calls
+            </summary>
+        </member>
+        <member name="T:NYTimes.Bestsellers">
+            <summary>
+            Silverlight CLR class that implements the New York Times Best Sellers API
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/best_sellers_api</remarks>
+        </member>
+        <member name="F:NYTimes.Bestsellers.NYTBestSellersKey">
+            <summary>
+            the Application resource key for the Best Sellers API
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.NYTBestSellersLists">
+            <summary>
+            the isolated storage site settings key for the best sellers list
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.limiting">
+            <summary>
+            8 QPS rate limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.listName">
+            <summary>
+            the list name
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.apiKey">
+            <summary>
+            the API key
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.isLoading">
+            <summary>
+            is the list loading?
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.offset">
+            <summary>
+            list offset
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.listNames">
+            <summary>
+            list names
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.client">
+            <summary>
+            List web client
+            </summary>
+        </member>
+        <member name="F:NYTimes.Bestsellers.listClient">
+            <summary>
+            the web client for getting the list of lists.
+            </summary>
+        </member>
+        <member name="M:NYTimes.Bestsellers.#ctor">
+            <summary>
+            Initializes a new instance of the Bestsellers class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.Bestsellers.UriValue(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Convert a string value in an element to a Uri or null
+            </summary>
+            <param name="element">the parent element</param>
+            <param name="name">the name of the child element with a URI value</param>
+            <returns>a URI or null</returns>
+        </member>
+        <member name="M:NYTimes.Bestsellers.GetListNames">
+            <summary>
+            Get the list names
+            </summary>
+        </member>
+        <member name="M:NYTimes.Bestsellers.OnListNamesReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Web client list names returned
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.Bestsellers.ParseListNames(System.String)">
+            <summary>
+            Parse the list names
+            </summary>
+            <param name="xml">the XML of the list names</param>
+        </member>
+        <member name="M:NYTimes.Bestsellers.GetList">
+            <summary>
+            Gets a bestseller list
+            </summary>
+        </member>
+        <member name="M:NYTimes.Bestsellers.OnListReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            web client list returned event handler
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.Bestsellers.ParseList(System.String)">
+            <summary>
+            Parse the list of results
+            </summary>
+            <param name="xml">the XML for the result set</param>
+            <returns>the total number of results</returns>
+        </member>
+        <member name="E:NYTimes.Bestsellers.PropertyChanged">
+            <summary>
+            Property changed event
+            </summary>
+        </member>
+        <member name="P:NYTimes.Bestsellers.List">
+            <summary>
+            Gets a list of best sellers
+            </summary>
+        </member>
+        <member name="P:NYTimes.Bestsellers.IsLoading">
+            <summary>
+            Gets a value indicating whether the list is loading
+            </summary>
+        </member>
+        <member name="P:NYTimes.Bestsellers.Version">
+            <summary>
+            Gets the API version
+            </summary>
+        </member>
+        <member name="P:NYTimes.Bestsellers.ApiKey">
+            <summary>
+            Gets or sets the API key
+            </summary>
+        </member>
+        <member name="P:NYTimes.Bestsellers.PublicationDate">
+            <summary>
+            Gets or sets the publication date of the list
+            </summary>
+        </member>
+        <member name="P:NYTimes.Bestsellers.Offset">
+            <summary>
+            Gets the offset
+            </summary>
+        </member>
+        <member name="P:NYTimes.Bestsellers.ListNames">
+            <summary>
+            Gets the Best Sellers List Names
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/best_sellers_api#h3-list-names</remarks> 
+        </member>
+        <member name="P:NYTimes.Bestsellers.ResultsToGet">
+            <summary>
+            Gets or sets the number of results to get
+            </summary>
+        </member>
+        <member name="P:NYTimes.Bestsellers.ListName">
+            <summary>
+            Gets or sets the current List Name to
+            </summary>
+        </member>
+        <member name="T:NYTimes.TimesPeopleFollowers">
+            <summary>
+            TimesPeople Followers CLR Object
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleFollowers.#ctor">
+            <summary>
+            Initializes a new instance of the TimesPeopleFollowers class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleFollowers.ParseResultSet(System.Xml.Linq.XElement)">
+            <summary>
+            Parse the result set
+            </summary>
+            <param name="resultSet">the Result set</param>
+        </member>
+        <member name="M:NYTimes.TimesPeopleFollowers.OnException(System.Exception)">
+            <summary>
+            Clear the user list
+            </summary>
+            <param name="failure">the web exception</param>
+        </member>
+        <member name="P:NYTimes.TimesPeopleFollowers.DataType">
+            <summary>
+            Gets the "followers" data type
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesPeopleFollowers.Users">
+            <summary>
+            Gets the users as an observable collection of <see cref="T:NYTimes.Data.Profile"/> 
+            objects.
+            </summary>
+        </member>
+        <member name="T:NYTimes.MembersOfCongress">
+            <summary>
+            NY TImes API to get information about members of congress
+            </summary>
+        </member>
+        <member name="F:NYTimes.MembersOfCongress.congressNumber">
+            <summary>
+            the congress number
+            </summary>
+        </member>
+        <member name="F:NYTimes.MembersOfCongress.chamber">
+            <summary>
+            the chamber
+            </summary>
+        </member>
+        <member name="F:NYTimes.MembersOfCongress.state">
+            <summary>
+            the state (2-character abbreviation)
+            </summary>
+        </member>
+        <member name="F:NYTimes.MembersOfCongress.district">
+            <summary>
+            the district (for house members)
+            </summary>
+        </member>
+        <member name="F:NYTimes.MembersOfCongress.webClient">
+            <summary>
+            the web client
+            </summary>
+        </member>
+        <member name="M:NYTimes.MembersOfCongress.GetMembers">
+            <summary>
+            Get the members of congress
+            </summary>
+        </member>
+        <member name="M:NYTimes.MembersOfCongress.OnMembersResturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Member data has been returned
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.MembersOfCongress.GenerateUri">
+            <summary>
+            Generate the URI
+            </summary>
+            <returns>the REST URL</returns>
+        </member>
+        <member name="P:NYTimes.MembersOfCongress.CongressNumber">
+            <summary>
+            Gets or sets the congress number
+            </summary>
+        </member>
+        <member name="P:NYTimes.MembersOfCongress.Chamber">
+            <summary>
+            Gets or sets the chamber
+            </summary>
+        </member>
+        <member name="P:NYTimes.MembersOfCongress.State">
+            <summary>
+            Gets or sets the 2-character state abbreviation
+            </summary>
+        </member>
+        <member name="P:NYTimes.MembersOfCongress.District">
+            <summary>
+            Gets or sets the district number for House of Representatives.
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.VoteTotal">
+            <summary>
+            Total votes
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.VoteTotal.ToString">
+            <summary>
+            Outputs the book detail properties
+            </summary>
+            <returns>a string with named value pairs</returns>
+        </member>
+        <member name="P:NYTimes.Data.VoteTotal.Yes">
+            <summary>
+            Gets or sets the total yes votes
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.VoteTotal.No">
+            <summary>
+            Gets or sets the total no votes
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.VoteTotal.Present">
+            <summary>
+            Gets or sets the total voting present
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.VoteTotal.NotVoting">
+            <summary>
+            Gets or sets the total members not voting
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.VoteTotal.MajorityPosition">
+            <summary>
+            Gets or sets a value indicating whether this was the majority position
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.VoteTotal.Margin">
+            <summary>
+            Gets or sets the vote margin
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Vote">
+            <summary>
+            A congressional vote
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Vote.ToString">
+            <summary>
+            Outputs the book detail properties
+            </summary>
+            <returns>a string with named value pairs</returns>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Congress">
+            <summary>
+            Gets or sets the Congress number
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Session">
+            <summary>
+            Gets or sets the session number
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.RollCall">
+            <summary>
+            Gets or sets the roll call number
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Bill">
+            <summary>
+            Gets or sets the bill number
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Question">
+            <summary>
+            Gets or sets the question
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Description">
+            <summary>
+            Gets or sets the description
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.VoteType">
+            <summary>
+            Gets or sets the vote type
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.DateTime">
+            <summary>
+            Gets or sets the vote date and time
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Result">
+            <summary>
+            Gets or sets the vote result
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Positions">
+            <summary>
+            Gets or sets the member positions
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Democratic">
+            <summary>
+            Gets or sets the Democratic Party totals
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Republican">
+            <summary>
+            Gets or sets the Republican Party totals
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Independent">
+            <summary>
+            Gets or sets the independent totals
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Vote.Total">
+            <summary>
+            Gets or sets the total voting numbers
+            </summary>
+        </member>
+        <member name="T:NYTimes.UrlMatchType">
+            <summary>
+            The URL Match type
+            </summary>
+        </member>
+        <member name="F:NYTimes.UrlMatchType.ExactMatch">
+            <summary>
+            If you specify exact-match, the first 25 comments associated with that URL will be 
+            returned if the URL is found. If there is no exact match, an empty result set will be 
+            returned.
+            </summary>
+        </member>
+        <member name="F:NYTimes.UrlMatchType.ClosestStemMatch">
+            <summary>
+            If you specify closest-stem-match, the most similar URLs will be returned. (No comments 
+            will be returned.) 
+            </summary>
+        </member>
+        <member name="T:NYTimes.CommunityCommentsByUrl">
+            <summary>
+            Community comments by URL
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/community_api#commentsURL</remarks>
+        </member>
+        <member name="F:NYTimes.CommunityCommentsByUrl.offset">
+            <summary>
+            the offset
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityCommentsByUrl.url">
+            <summary>
+            the query URL
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByUrl.#ctor">
+            <summary>
+            Initializes a new instance of the CommunityCommentsByUrl class. 
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByUrl.GenerateUriFragment">
+            <summary>
+            Generates the URI string
+            </summary>
+            <returns>the output URI string</returns>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByUrl.FetchNextSet">
+            <summary>
+            Fetch the next set of results
+            </summary>
+            <returns>true if the results are done loading, false otherwise.</returns>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByUrl.Parse(System.Xml.Linq.XElement)">
+            <summary>
+            Parse the assets
+            </summary>
+            <param name="resultSet">the result set</param>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUrl.Sort">
+            <summary>
+            Gets or sets the sort
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUrl.Offset">
+            <summary>
+            Gets the offset for the results
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUrl.MaxResults">
+            <summary>
+            Gets or sets the maximum number of results to return (default is 20)
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUrl.Url">
+            <summary>
+            Gets or sets the Url
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUrl.MatchType">
+            <summary>
+            Gets or sets the match type
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUrl.Assets">
+            <summary>
+            Gets the assets returned
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.BestsellerHistoryConverter">
+            <summary>
+            Value converter to convert a book to a best sellers history of that book
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.BestsellerHistoryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert a book to a BestSellerHistory for that book
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>a new BestSellerHistory object</returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.BestsellerHistoryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not Implemented
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:Synergist.MD5Core">
+            <summary>
+            Raw implementation of the MD5 hash algorithm
+            from RFC 1321.
+            </summary>
+            <remarks>Written By: Reid Borsuk
+            Copyright (c) Microsoft Corporation.  All rights reserved.
+            http://code.msdn.microsoft.com/SilverlightMD5
+            </remarks>
+        </member>
+        <member name="M:Synergist.MD5Core.#ctor">
+            <summary>
+            Prevents a default instance of the MD5Core class from being created.
+            </summary>
+        </member>
+        <member name="M:Synergist.MD5Core.GetHash(System.String,System.Text.Encoding)">
+            <summary>
+            Get an MD5 Hash
+            </summary>
+            <param name="input">the input string</param>
+            <param name="encoding">the encoding</param>
+            <returns>the hash array</returns>
+        </member>
+        <member name="M:Synergist.MD5Core.GetHash(System.String)">
+            <summary>
+            Gets an MD5 hash from an input string
+            </summary>
+            <param name="input">the input string</param>
+            <returns>the MD5 hash as a byte stream</returns>
+        </member>
+        <member name="M:Synergist.MD5Core.GetHashString(System.Byte[])">
+            <summary>
+            Gets a hash string from a byte array
+            </summary>
+            <param name="input">the input byte array</param>
+            <returns>the hash string</returns>
+        </member>
+        <member name="M:Synergist.MD5Core.GetHashString(System.String,System.Text.Encoding)">
+            <summary>
+            Get the hash string for an input string
+            </summary>
+            <param name="input">the input string</param>
+            <param name="encoding">the encoding format</param>
+            <returns>the hash string</returns>
+        </member>
+        <member name="M:Synergist.MD5Core.GetHashString(System.String)">
+            <summary>
+            Get the hash string for an input value
+            </summary>
+            <param name="input">the input string</param>
+            <returns>the hash string</returns>
+        </member>
+        <member name="M:Synergist.MD5Core.GetHash(System.Byte[])">
+            <summary>
+            Get the hash array for an input array
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Synergist.MD5Core.R1(System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.Int32,System.UInt32)">
+            <summary>
+            Manually unrolling these equations nets us a 20% performance improvement
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <param name="c"></param>
+            <param name="d"></param>
+            <param name="x"></param>
+            <param name="s"></param>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Synergist.MD5Core.LSR(System.UInt32,System.Int32)">
+            <summary>
+            Implementation of left rotate
+            s is an int instead of a uint becuase the CLR requires the argument passed to &gt;&gt;/&lt;&lt; is of 
+            type int. Doing the demoting inside this function would add overhead.
+            </summary>
+            <param name="i"></param>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Synergist.MD5Core.Converter(System.Byte[])">
+            <summary>
+            Convert input array into array of UInts
+            </summary>
+            <param name="input">the bypte data</param>
+            <returns>an array of unsigned integers</returns>
+        </member>
+        <member name="T:NYTimes.Data.MovieReviewOrder">
+            <summary>
+            The Movie Review order
+            </summary>
+        </member>
+        <member name="F:NYTimes.Data.MovieReviewOrder.Title">
+            <summary>
+            Sort by title
+            </summary>
+        </member>
+        <member name="F:NYTimes.Data.MovieReviewOrder.PublicationDate">
+            <summary>
+            Sort by publication date
+            </summary>
+        </member>
+        <member name="F:NYTimes.Data.MovieReviewOrder.OpeningDate">
+            <summary>
+            Sort by opening date
+            </summary>
+        </member>
+        <member name="F:NYTimes.Data.MovieReviewOrder.DVDReleaseDate">
+            <summary>
+            Sort by DVD release date
+            </summary>
+        </member>
+        <member name="T:NYTimes.CommunityRandomComments">
+            <summary>
+            CLR object for Community Random comments
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityRandomComments.count">
+            <summary>
+            the count of items to return
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityRandomComments.#ctor">
+            <summary>
+            Initializes a new instance of the CommunityRandomComments class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityRandomComments.GenerateUriFragment">
+            <summary>
+            Generate the URI string
+            </summary>
+            <returns>the Modified URI string</returns>
+        </member>
+        <member name="P:NYTimes.CommunityRandomComments.Count">
+            <summary>
+            Gets or sets the number of items to return
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the count is less than 1 or greater than 50.</exception>
+        </member>
+        <member name="T:NYTimes.Core.CommentSortType">
+            <summary>
+            Comment sorting
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommentSortType.Newest">
+            <summary>
+            Sort by newest comment first
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommentSortType.Oldest">
+            <summary>
+            Sort by oldest comment first
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommentSortType.Recommended">
+            <summary>
+            Sort by recommended comments first
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommentSortType.Replied">
+            <summary>
+            Replied comments first
+            </summary>
+        </member>
+        <member name="F:NYTimes.Core.CommentSortType.EditorsSelection">
+            <summary>
+            Editor's selection first
+            </summary>
+        </member>
+        <member name="T:NYTimes.TimesPeopleNewsfeed">
+            <summary>
+            TimesPeople News Feed CLR Object
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleNewsfeed.#ctor">
+            <summary>
+            Initializes a new instance of the TimesPeopleNewsfeed class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleNewsfeed.ParseResultSet(System.Xml.Linq.XElement)">
+            <summary>
+            Parse the activities
+            </summary>
+            <param name="resultSet">the result set</param>
+        </member>
+        <member name="M:NYTimes.TimesPeopleNewsfeed.OnException(System.Exception)">
+            <summary>
+            Clear the activity list
+            </summary>
+            <param name="failure">the web client error</param>
+        </member>
+        <member name="P:NYTimes.TimesPeopleNewsfeed.DataType">
+            <summary>
+            Gets the "newsfeed" data type
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesPeopleNewsfeed.Activities">
+            <summary>
+            Gets the activities as a collection of <see cref="T:NYTimes.Data.Activity"/> objects.
+            </summary>
+        </member>
+        <member name="T:Synergist.DateTimeTypeConverter">
+            <summary>
+            Type converter for DateTime
+            </summary>
+            <seealso cref="T:System.Windows.Controls.DateTimeTypeConverter"/>
+        </member>
+        <member name="M:Synergist.DateTimeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Can convert from a type
+            </summary>
+            <param name="context">the type description context</param>
+            <param name="sourceType">the source type</param>
+            <returns>true if the coversion can happen</returns>
+        </member>
+        <member name="M:Synergist.DateTimeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Can convert to a type
+            </summary>
+            <param name="context">the context</param>
+            <param name="destinationType">the destination type</param>
+            <returns>true if the conversion can work</returns>
+        </member>
+        <member name="M:Synergist.DateTimeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Convert from a type
+            </summary>
+            <param name="context">An object that provides a format context. </param>
+            <param name="culture">The CultureInfo to use as the current culture.</param>
+            <param name="value">The value to convert to the type of this converter. </param>
+            <returns>the converted value</returns>
+        </member>
+        <member name="M:Synergist.DateTimeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Convert to the destination type
+            </summary>
+            <param name="context">An object that provides a format context.</param>
+            <param name="culture">The CultureInfo to use as the current culture.</param>
+            <param name="value">The object to convert</param>
+            <param name="destinationType">The type to convert the object to.</param>
+            <returns>the converted object</returns>
+        </member>
+        <member name="T:NYTimes.Data.NewsItemMedia">
+            <summary>
+            News Item Media
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.NewsItemMedia.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.NewsItemMedia.MediaType">
+            <summary>
+            Gets or sets the Media type
+            </summary>
+            <remarks>valid values are image</remarks>
+        </member>
+        <member name="P:NYTimes.Data.NewsItemMedia.Subtype">
+            <summary>
+            Gets or sets the media subtype
+            </summary>
+            <remarks>valid values are photo</remarks>
+        </member>
+        <member name="P:NYTimes.Data.NewsItemMedia.Caption">
+            <summary>
+            Gets or sets the media caption
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItemMedia.Copyright">
+            <summary>
+            Gets or sets the media copyright
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.NewsItemMedia.Metadata">
+            <summary>
+            Gets or sets the media metadata
+            </summary>
+        </member>
+        <member name="T:NYTimes.Chamber">
+            <summary>
+            the chamber for the vote
+            </summary>
+        </member>
+        <member name="F:NYTimes.Chamber.House">
+            <summary>
+            House of Representatives
+            </summary>
+        </member>
+        <member name="F:NYTimes.Chamber.Senate">
+            <summary>
+            United States Senate
+            </summary>
+        </member>
+        <member name="T:NYTimes.CongressRollCallVotes">
+            <summary>
+            CLR Class for the New York Times Congressional Role Call API
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/congress_api#h3-votes</remarks>
+        </member>
+        <member name="F:NYTimes.CongressRollCallVotes.congressNumber">
+            <summary>
+            the congress number
+            </summary>
+        </member>
+        <member name="F:NYTimes.CongressRollCallVotes.sessionNumber">
+            <summary>
+            the session number
+            </summary>
+        </member>
+        <member name="F:NYTimes.CongressRollCallVotes.rollCallNumber">
+            <summary>
+            the roll call number
+            </summary>
+        </member>
+        <member name="F:NYTimes.CongressRollCallVotes.chamber">
+            <summary>
+            the chamber
+            </summary>
+        </member>
+        <member name="F:NYTimes.CongressRollCallVotes.webClient">
+            <summary>
+            the web client
+            </summary>
+        </member>
+        <member name="F:NYTimes.CongressRollCallVotes.status">
+            <summary>
+            the status returned from the service
+            </summary>
+        </member>
+        <member name="F:NYTimes.CongressRollCallVotes.copyright">
+            <summary>
+            the copyright info
+            </summary>
+        </member>
+        <member name="F:NYTimes.CongressRollCallVotes.vote">
+            <summary>
+            the vote info
+            </summary>
+        </member>
+        <member name="M:NYTimes.CongressRollCallVotes.CreateVoteTotal(System.Xml.Linq.XElement)">
+            <summary>
+            Create a vote total
+            </summary>
+            <param name="vote">the vote element</param>
+            <returns>the vote total</returns>
+        </member>
+        <member name="M:NYTimes.CongressRollCallVotes.FetchVotes">
+            <summary>
+            Fetch the vote info
+            </summary>
+        </member>
+        <member name="M:NYTimes.CongressRollCallVotes.OnVoteReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Download string completed event handler
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.CongressRollCallVotes.CreateUrl">
+            <summary>
+            Create the URL
+            </summary>
+            <returns>the URL for the web service</returns>
+        </member>
+        <member name="E:NYTimes.CongressRollCallVotes.PropertyChanged">
+            <summary>
+            property changed event handler
+            </summary>
+        </member>
+        <member name="P:NYTimes.CongressRollCallVotes.CongressNumber">
+            <summary>
+            Gets or sets the congress number
+            </summary>
+        </member>
+        <member name="P:NYTimes.CongressRollCallVotes.Chamber">
+            <summary>
+            Gets or sets the chamber
+            </summary>
+        </member>
+        <member name="P:NYTimes.CongressRollCallVotes.SessionNumber">
+            <summary>
+            Gets or sets the session number
+            </summary>
+        </member>
+        <member name="P:NYTimes.CongressRollCallVotes.RollCallNumber">
+            <summary>
+            Gets or sets the roll call number
+            </summary>
+        </member>
+        <member name="P:NYTimes.CongressRollCallVotes.Status">
+            <summary>
+            Gets the status
+            </summary>
+        </member>
+        <member name="P:NYTimes.CongressRollCallVotes.Copyright">
+            <summary>
+            Gets the copyright message
+            </summary>
+        </member>
+        <member name="P:NYTimes.CongressRollCallVotes.Vote">
+            <summary>
+            Gets the vote
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.FacetCollection">
+            <summary>
+            Facet Collection
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.FacetCollection.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.FacetCollection.Facets">
+            <summary>
+            Gets or sets the facets
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Link">
+            <summary>
+            Movie Review Link
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Link.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Link.LinkType">
+            <summary>
+            Gets or sets the link type
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Link.Url">
+            <summary>
+            Gets or sets the Url
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Link.SuggestedLinkText">
+            <summary>
+            Gets or sets the suggested link text
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.CollapsedIfNullConverter">
+            <summary>
+            a value converter to turn true into Visibily.Visible and false into Visibility.Collapsed
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.CollapsedIfNullConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI. 
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.CollapsedIfNullConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object. This method is called only in TwoWay bindings. 
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.TimesPeopleProfile">
+            <summary>
+            TimesPeople Profile request.  For more information see 
+            <a href="http://developer.nytimes.com/docs/timespeople_api">this article</a>.
+            </summary>
+        </member>
+        <member name="F:NYTimes.TimesPeopleProfile.profile">
+            <summary>
+            the profile
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleProfile.OnException(System.Exception)">
+            <summary>
+            Error Handler
+            </summary>
+            <param name="failure">the web client error</param>
+        </member>
+        <member name="M:NYTimes.TimesPeopleProfile.ParseResultSet(System.Xml.Linq.XElement)">
+            <summary>
+            Parse the result set
+            </summary>
+            <param name="resultSet">the result set</param>
+        </member>
+        <member name="P:NYTimes.TimesPeopleProfile.DataType">
+            <summary>
+            Gets the "profile" data type
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesPeopleProfile.Profile">
+            <summary>
+            Gets the profile returned as a <see cref="T:NYTimes.Data.Profile"/> object.
+            </summary>
+        </member>
+        <member name="T:NYTimes.TimesPeopleFollowing">
+            <summary>
+            TimesPeople CLR object for getting the profiles of people that this person is following.
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleFollowing.#ctor">
+            <summary>
+            Initializes a new instance of the TimesPeopleFollowing class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.TimesPeopleFollowing.ParseResultSet(System.Xml.Linq.XElement)">
+            <summary>
+            Parse the result set
+            </summary>
+            <param name="resultSet">the result set</param>
+        </member>
+        <member name="M:NYTimes.TimesPeopleFollowing.OnException(System.Exception)">
+            <summary>
+            Clear the user list
+            </summary>
+            <param name="failure">the web client error</param>
+        </member>
+        <member name="P:NYTimes.TimesPeopleFollowing.DataType">
+            <summary>
+            Gets the "following" data type
+            </summary>
+        </member>
+        <member name="P:NYTimes.TimesPeopleFollowing.Users">
+            <summary>
+            Gets the profiles of users that this person is following as a collection of 
+            <see cref="T:NYTimes.Data.Profile"/> objects
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.DateTimeConverter">
+            <summary>
+            DateTime Converter for Data binding
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.DateTimeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts from a DateTime to a string using the parameter as a formatting parameter.
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.DateTimeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts from a string to a DateTime object.
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.Data.VotePosition">
+            <summary>
+            The Member vote position
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.VotePosition.ToString">
+            <summary>
+            Outputs the book detail properties
+            </summary>
+            <returns>a string with named value pairs</returns>
+        </member>
+        <member name="P:NYTimes.Data.VotePosition.MemberId">
+            <summary>
+            Gets or sets the member ID
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.VotePosition.Position">
+            <summary>
+            Gets or sets the possible values of vote_position are Yes, No, Not Voting, Present and Speaker.
+            </summary>
+        </member>
+        <member name="T:NYTimes.CommunityCommentsByUserId">
+            <summary>
+            Silverlight CLR object for New York Times Community Comment API
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityCommentsByUserId.offset">
+            <summary>
+            the offset
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityCommentsByUserId.sort">
+            <summary>
+            the sort order
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityCommentsByUserId.userId">
+            <summary>
+            the user ID to query for
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByUserId.#ctor">
+            <summary>
+            Initializes a new instance of the CommunityCommentsByUserId class
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByUserId.GenerateUriFragment">
+            <summary>
+            Generates the URI string
+            </summary>
+            <returns>the modified URI string</returns>
+        </member>
+        <member name="M:NYTimes.CommunityCommentsByUserId.FetchNextSet">
+            <summary>
+            Fetch the next set
+            </summary>
+            <returns>true if the results are done loading, false otherwise.</returns>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUserId.UserId">
+            <summary>
+            Gets or sets the User id
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUserId.Sort">
+            <summary>
+            Gets or sets the Sort
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUserId.MaxResults">
+            <summary>
+            Gets or sets the maximum number of results to return
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityCommentsByUserId.Offset">
+            <summary>
+            Gets the offset
+            </summary>
+        </member>
+        <member name="T:NYTimes.ValueConverters.FrameworkElementTagToCommentSortTypeConverter">
+            <summary>
+            A Value converter
+            </summary>
+        </member>
+        <member name="M:NYTimes.ValueConverters.FrameworkElementTagToCommentSortTypeConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the source data before passing it to the target for display in the UI. 
+            </summary>
+            <param name="value">The source data being passed to the target </param>
+            <param name="targetType">The Type of data expected by the target dependency property.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic.</param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the target dependency property. </returns>
+        </member>
+        <member name="M:NYTimes.ValueConverters.FrameworkElementTagToCommentSortTypeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Modifies the target data before passing it to the source object. This method is called only in TwoWay bindings. 
+            </summary>
+            <param name="value">The target data being passed to the source.</param>
+            <param name="targetType">The Type of data expected by the source object.</param>
+            <param name="parameter">An optional parameter to be used in the converter logic. </param>
+            <param name="culture">The culture of the conversion.</param>
+            <returns>The value to be passed to the source object.</returns>
+        </member>
+        <member name="T:NYTimes.ResourceType">
+            <summary>
+            Movie Review Resource type
+            </summary>
+        </member>
+        <member name="F:NYTimes.ResourceType.All">
+            <summary>
+            All Resources
+            </summary>
+        </member>
+        <member name="F:NYTimes.ResourceType.Picks">
+            <summary>
+            Critics Picks
+            </summary>
+        </member>
+        <member name="F:NYTimes.ResourceType.DVDPicks">
+            <summary>
+            the DVD Picks
+            </summary>
+        </member>
+        <member name="T:NYTimes.MovieReviewsAndCriticsPicks">
+            <summary>
+            New York Times Movie Review and Critics Picks API
+            </summary>
+            <remarks>http://developer.nytimes.com/docs/movie_reviews_api#h3-reviews</remarks>
+        </member>
+        <member name="F:NYTimes.MovieReviewsAndCriticsPicks.resourceType">
+            <summary>
+            the resource type
+            </summary>
+        </member>
+        <member name="F:NYTimes.MovieReviewsAndCriticsPicks.order">
+            <summary>
+            the sort order
+            </summary>
+        </member>
+        <member name="M:NYTimes.MovieReviewsAndCriticsPicks.GenerateUri">
+            <summary>
+            Generates the URI for the REST Call
+            </summary>
+            <returns>the URI or null</returns>
+        </member>
+        <member name="P:NYTimes.MovieReviewsAndCriticsPicks.ResourceType">
+            <summary>
+            Gets or sets the resource type to return
+            </summary>
+        </member>
+        <member name="P:NYTimes.MovieReviewsAndCriticsPicks.Order">
+            <summary>
+            Gets or sets the order of the results
+            </summary>
+        </member>
+        <member name="T:NYTimes.CommunityRecentComments">
+            <summary>
+            Community Recent comments
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityRecentComments.offset">
+            <summary>
+            the result offset (25-based)
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityRecentComments.maxResults">
+            <summary>
+            The maximum number of results to return
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityRecentComments.forceReplies">
+            <summary>
+            force replies
+            </summary>
+        </member>
+        <member name="F:NYTimes.CommunityRecentComments.sort">
+            <summary>
+            the sort type
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityRecentComments.#ctor">
+            <summary>
+            Initializes a new instance of the CommunityRecentComments class.
+            </summary>
+        </member>
+        <member name="M:NYTimes.CommunityRecentComments.GenerateUriFragment">
+            <summary>
+            Generate the URI string
+            </summary>
+            <returns>the output URI string</returns>
+        </member>
+        <member name="M:NYTimes.CommunityRecentComments.FetchNextSet">
+            <summary>
+            Fetch the next set
+            </summary>
+            <returns>true if the results are done loading, false otherwise.</returns>
+        </member>
+        <member name="P:NYTimes.CommunityRecentComments.ForceReplies">
+            <summary>
+            Gets or sets a value indicating whether to limit the results to comments that have been replied to
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityRecentComments.MaxResults">
+            <summary>
+            Gets or sets the maximum number of results
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityRecentComments.Sort">
+            <summary>
+            Gets or sets the sort order of the results
+            </summary>
+        </member>
+        <member name="P:NYTimes.CommunityRecentComments.Offset">
+            <summary>
+            Gets the offset index (25-based)
+            </summary>
+        </member>
+        <member name="T:NYTimes.NewswireTimePeriod">
+            <summary>
+            The newswire time period
+            </summary>
+        </member>
+        <member name="F:NYTimes.NewswireTimePeriod.Recent">
+            <summary>
+            Get recent news items
+            </summary>
+        </member>
+        <member name="F:NYTimes.NewswireTimePeriod.Last24Hours">
+            <summary>
+            Get news items from the last 24 hours
+            </summary>
+        </member>
+        <member name="T:NYTimes.Newswire">
+            <summary>
+            New York Times newswire API
+            </summary>
+            <remarks>See <a href="http://developer.nytimes.com/docs/times_newswire_api">this article</a> for more information.</remarks>
+        </member>
+        <member name="F:NYTimes.Newswire.NYTNewswireKey">
+            <summary>
+            the NYT Newswire Key in the App resources
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.Version">
+            <summary>
+            The NYT Newswire API Version
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.limiting">
+            <summary>
+            8 QPS rate limiting
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.isLoading">
+            <summary>
+            are the results loading ansyn
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.timePeriod">
+            <summary>
+            The time period
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.client">
+            <summary>
+            the current web client
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.offset">
+            <summary>
+            the current offset
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.url">
+            <summary>
+            the URI to lookup 
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.copyright">
+            <summary>
+            the response copyright
+            </summary>
+        </member>
+        <member name="F:NYTimes.Newswire.status">
+            <summary>
+            the response status 
+            </summary>
+        </member>
+        <member name="M:NYTimes.Newswire.#ctor">
+            <summary>
+            Initializes a new instance of the Newswire class
+            </summary>
+        </member>
+        <member name="M:NYTimes.Newswire.CreateStringCollection(System.Xml.Linq.XElement)">
+            <summary>
+            Create a string collection from a semicolon-delimited field
+            </summary>
+            <param name="element">the element</param>
+            <returns>an array of strings or null</returns>
+        </member>
+        <member name="M:NYTimes.Newswire.FetchResults">
+            <summary>
+            Fetch the results
+            </summary>
+        </member>
+        <member name="M:NYTimes.Newswire.OnResultsReturned(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Process the XML once it is returned
+            </summary>
+            <param name="sender">the web client</param>
+            <param name="e">the download string completed event arguments</param>
+        </member>
+        <member name="M:NYTimes.Newswire.ParseXml(System.String)">
+            <summary>
+            Parse the XML returned from the service
+            </summary>
+            <param name="xml">the XML returned from the service</param>
+        </member>
+        <member name="M:NYTimes.Newswire.GenerateUri">
+            <summary>
+            Generate a URI
+            </summary>
+            <returns>the URI for the Newswire service call</returns>
+        </member>
+        <member name="E:NYTimes.Newswire.PropertyChanged">
+            <summary>
+            Property changed event handler
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.ApiKey">
+            <summary>
+            Gets or sets the API Key
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.Copyright">
+            <summary>
+            Gets the response copyright message
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.Status">
+            <summary>
+            Gets the response status
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.IsLoading">
+            <summary>
+            Gets a value indicating whether the results are being loaded asynchronously
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.Url">
+            <summary>
+            Gets or sets the URI of a specific news item to retrieve.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.ResultsToGet">
+            <summary>
+            Gets or sets the total number of results to get (default is 20)
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.TimePeriod">
+            <summary>
+            Gets or sets the time period
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.Logo">
+            <summary>
+            Gets the logo for New York Times
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.Results">
+            <summary>
+            Gets the Newswire results as an observable collection of <see cref="T:NYTimes.Data.NewsItem"/> objects.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.Result">
+            <summary>
+            Gets the single <see cref="T:NYTimes.Data.NewsItem"/> object requested by a Url.
+            </summary>
+        </member>
+        <member name="P:NYTimes.Newswire.Offset">
+            <summary>
+            Gets or sets the offset for this call
+            </summary>
+        </member>
+        <member name="T:NYTimes.Data.Critic">
+            <summary>
+            Movie review Critic
+            </summary>
+        </member>
+        <member name="M:NYTimes.Data.Critic.ToString">
+            <summary>
+            Gets the properties and values listed
+            </summary>
+            <returns>a string with the property names and values</returns>
+        </member>
+        <member name="P:NYTimes.Data.Critic.DisplayName">
+            <summary>
+            Gets or sets the display name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Critic.SortName">
+            <summary>
+            Gets or sets the sort name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Critic.Status">
+            <summary>
+            Gets or sets the employment status
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Critic.Bio">
+            <summary>
+            Gets or sets the bio of the critic
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Critic.SEOName">
+            <summary>
+            Gets or sets the SEO Name
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Critic.Image">
+            <summary>
+            Gets or sets the image of the critic
+            </summary>
+        </member>
+        <member name="P:NYTimes.Data.Critic.ImageCredit">
+            <summary>
+            Gets or sets the image credit
+            </summary>
+        </member>
+        <member name="T:NYTimes.Core.SampleData">
+            <summary>
+            New York Times Sample Data
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.SampleData.#ctor">
+            <summary>
+            Prevents a default instance of the SampleData class from being created
+            </summary>
+        </member>
+        <member name="M:NYTimes.Core.SampleData.GetSampleData(System.String)">
+            <summary>
+            Gets a sample data stream or returns null if not found
+            </summary>
+            <param name="name">the name of the sample data</param>
+            <returns>a string with the sample data or null if not found</returns>
+        </member>
+    </members>
+</doc>
